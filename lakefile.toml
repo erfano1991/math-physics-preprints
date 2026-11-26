@@ -1,0 +1,15 @@
+name = "ManuscriptProofs"
+version = "0.1.0"
+defaultTargets = ["ManuscriptProofs"]
+
+[leanOptions]
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "85e3a25e006c35636f0e53b0e9296caca2685bc0"
+
+[[lean_lib]]
+name = "ManuscriptProofs"

@@ -1,0 +1,146 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=26mm,top=21mm,bottom=23mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{24,62,103}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,pdfencoding=auto]{hyperref}
+\urlstyle{same}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{I}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\SU}{\mathrm{SU}}
+\author{Erfan Oliaei\\[2pt]\small Independent researcher}
+\date{25 November 2026}
+\raggedbottom
+\title{Uniform Carleman truncation under a Diophantine gap}
+\hypersetup{pdfauthor={Erfan Oliaei},pdftitle={Uniform Carleman truncation under a Diophantine gap}}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a quadratic complex differential equation with a diagonal nonexpanding linear flow and Diophantine nonresonant spectrum, we give an explicit small-data condition under which Carleman truncations converge geometrically, uniformly for all forward time. The radius is dimension independent when expressed in terms of the gap and the norm of the entrywise absolute quadratic tensor in the eigenbasis. A marked-tree count bounds the small divisors of the analytic linearizer. A two-dimensional example has a bounded global trajectory whose Carleman approximants diverge at a fixed time.
+\end{abstract}
+
+\section{An explicit small-data estimate}
+In an eigenbasis consider
+\begin{equation}\label{eq:ode}
+ \dot x=\Lambda x+B(x\otimes x),\qquad
+ \Lambda=\operatorname{diag}(\lambda_1,\ldots,\lambda_d),\qquad
+ \operatorname{Re}\lambda_i\le0,
+\end{equation}
+with the Euclidean norm throughout. Write \(\mathbb{N}_0=\{0,1,2,\ldots\}\). Assume for some \(\Delta>0\) and \(\nu>0\) that
+\begin{equation}\label{eq:gap}
+ |\alpha\cdot\lambda-\lambda_i|\ge\Delta(|\alpha|-1)^{-\nu}
+ \quad(\alpha\in\mathbb{N}_0^d,\ |\alpha|\ge2,\ 1\le i\le d).
+\end{equation}
+The level-\(k\) Carleman system for \((x,x^{\otimes2},\ldots,x^{\otimes k})\) comes from the tensor product rule, with the term containing \(x^{\otimes(k+1)}\) dropped. It starts at the tensor powers of \(x_0\). Write \(Y_i^{[k]}(t)\) for its \(i\)-th block.
+
+Jennings et al.\ study exactly this gap in the Siegel domain, where zero lies in the convex hull of the spectrum. Their factorial upper estimate does not establish convergence \cite[Sec.~5.4.2 and App.~I]{jennings}. Siegel's analytic linearization theorem already supplies the qualitative local conjugacy \cite{siegel}. Carletti gives tree estimates under more general arithmetic conditions \cite[Lemma~5.4]{carletti}. Giorgilli and Marmi derive quantitative bounds on the radius of analytic linearization \cite{gm}. The calculation below gives the radius in the Euclidean tensor norm and a geometric bound for every finite Carleman block.
+
+\begin{theorem}\label{thm:carleman}
+Let \(\beta=\|\,|B|\,\|\), where \(|B|\) is the entrywise absolute value of the \(d\)-by-\(d^2\) matrix in \eqref{eq:ode}. For \(\beta>0\) set
+\[
+ A=2^{3+4\nu}\beta/\Delta,\qquad r=(8A)^{-1},\qquad M=8r/7 .
+\]
+If \(q=2\|x_0\|/r<1\), equivalently \(\beta\|x_0\|/\Delta<2^{-(7+4\nu)}\), the solution exists for all \(t\ge0\) and, for \(1\le i\le k\),
+\begin{equation}\label{eq:rate}
+ \sup_{t\ge0}\big\|x(t)^{\otimes i}-Y_i^{[k]}(t)\big\|
+       \le M^i\,\frac{q^{k+1}}{1-q}.
+\end{equation}
+In particular \(\|x_0\|\le r/4\) gives a first-block error at most \(M2^{-k}\). If each column of \(B\) has at most \(s\) nonzero entries, \(\beta\) may be replaced throughout by \(\sqrt{s}\|B\|\). For \(B=0\) the truncation is exact.
+\end{theorem}
+
+\section{Counting small divisors on one tree}
+Seek \(H(y)=y+\sum_{m\ge2}H_m(y)\) with homogeneous \(H_m\), satisfying
+\begin{equation}\label{eq:conjugate}
+ DH(y)\Lambda y=\Lambda H(y)+B(H(y)\otimes H(y)).
+\end{equation}
+Write \(h_{i,\alpha}\) for the coefficient of \(y^\alpha\) in \(H_i\), with \(h_{i,e_j}=\mathbf1_{\{i=j\}}\). At degree \(|\alpha|\ge2\), \eqref{eq:conjugate} gives
+\[
+ (\alpha\cdot\lambda-\lambda_i)h_{i,\alpha}
+  = \sum_{j,\ell} B_{i,j\ell}
+     \sum_{\substack{\beta+\gamma=\alpha\\|\beta|,|\gamma|\ge1}}
+       h_{j,\beta}h_{\ell,\gamma}.
+\]
+The two child slots are ordered. Iterating the recursion gives one term per ordered full binary tree with a choice of labels and the prescribed leaf multiset. At each internal vertex \(v\), the divisor is \(D_v=\alpha_v\cdot\lambda-\lambda_{i_v}\), with \(\alpha_v\) counting the leaves below \(v\).
+
+\begin{lemma}\label{lem:tree}
+For any such labelled tree with \(m\ge2\) leaves,
+\[
+ \prod_{v\ {\rm internal}}\frac{\Delta}{|D_v|}
+ \ \le\ 2^{(1+4\nu)(m-1)} .
+\]
+\end{lemma}
+\begin{proof}
+Fix a dyadic integer \(b=2^j\), \(j\ge0\). Mark the vertices with \(|D_v|<\Delta/(2b^\nu)\). A marked subtree has more than \(b\) leaves by \eqref{eq:gap}. If a marked vertex \(w\) lies strictly below a marked \(v\), write \(e_{i_w}\) for the coordinate unit vector, so \(e_{i_w}\cdot\lambda=\lambda_{i_w}\). Subtracting the divisors gives
+\[
+ \begin{aligned}
+ D_v-D_w&=(\alpha_v-\alpha_w)\cdot\lambda+\lambda_{i_w}-\lambda_{i_v}\\
+        &=(\alpha_v-\alpha_w+e_{i_w})\cdot\lambda-\lambda_{i_v}.
+ \end{aligned}
+\]
+The multi-index is nonnegative of degree \(|\alpha_v|-|\alpha_w|+1\ge2\). Since \(|D_v-D_w|<\Delta/b^\nu\), \eqref{eq:gap} gives \(|\alpha_v|-|\alpha_w|>b\).
+
+Join each marked vertex to its nearest marked ancestor, forming a forest. A terminal vertex accounts for all the leaves below it. A vertex with one marked child accounts for the leaves outside that child's subtree but inside its own. Nested marked vertices account for disjoint sets because a unary vertex excludes its marked child's subtree. Vertices in separate subtrees also account for disjoint sets. Each set has at least \(b+1\) leaves. With \(t\) terminal and \(u\) unary vertices, \(t+u\le m/(b+1)\). In a nonempty forest with \(\ell\) branching vertices and \(c\) components, counting edges gives \(u+2\ell\le t+u+\ell-c\), hence \(\ell\le t-c\). The number of marks is at most \(2m/(b+1)-1\le2(m-1)/b\). The bound \(2(m-1)/b\) also holds for an empty forest. At \(b=1\), there are at most \(m-1\) marks, the total number of internal vertices.
+
+For each vertex,
+\[
+ \log_2^+\frac{\Delta}{|D_v|}
+ \le 1+\nu\sum_{j\ge0}{\bf1}\{|D_v|<\Delta 2^{-\nu j}/2\}.
+\]
+Indeed, if a vertex is marked at \(a\) levels, its first unmarked level is \(a\), where \(\Delta/|D_v|\le2^{1+\nu a}\). Summing the mark bound over \(j\) adds at most \(4\nu(m-1)\) to the \(m-1\) initial units. Exponentiating proves the lemma.
+\end{proof}
+
+\section{From the linearizer to the finite sections}
+There are at most \(4^{m-1}\) ordered full binary trees with \(m\) leaves. In a fixed tree bound the entire product of inverse divisors by Lemma~\ref{lem:tree} before summing over labels. The remaining entrywise majorant is the same tree with \(|B|\) at each vertex, applied to the absolute input vectors. Its multilinear norm is at most \(\beta^{m-1}\), since \(\|u\otimes v\|=\|u\|\|v\|\). Thus \(H_m(y)\) is the diagonal evaluation of an \(m\)-linear map of norm at most \(A^{m-1}\). Column sparsity gives the asserted estimate by Cauchy--Schwarz:
+\[
+ \big\||B|^*v\big\|^2
+ \le s\sum_i |v_i|^2\sum_j|B_{ij}|^2
+ \le s\|B\|^2\|v\|^2 .
+\]
+
+On \(\|y\|\le r\) the derivative of \(H-I\), where \(I\) is the identity map, has norm at most
+\(\sum_{m\ge2}m(Ar)^{m-1}=15/49<1/2\).
+For \(\|y\|\le r\), the coefficient bound gives \(\|H(y)-y\|\le Ar^2/(1-Ar)=r/7\). Thus for \(\|x\|<r/2\) the map \(y\mapsto x-(H(y)-y)\) takes the closed \(r\)-ball into itself and is a contraction by the derivative bound. Its fixed point \(H^{-1}(x)\) is holomorphic in \(x\), by the inverse function theorem. Since \(e^{t\Lambda}\) preserves the \(r\)-ball for \(t\ge0\), the flow
+\[
+ \Phi_t(x)=H(e^{t\Lambda}H^{-1}(x))
+\]
+exists and has norm at most \(r/(1-Ar)=M\) for every \(t\ge0\) on this initial ball. It solves \eqref{eq:ode} by the convergent identity \eqref{eq:conjugate}.
+
+Finally consider \(\Phi_t(\zeta x_0)^{\otimes i}\) as a function of a scalar \(\zeta\). The tensor product rule holds coefficient by coefficient, and block \(k+1\) vanishes through degree \(k\) because \(\Phi_t(0)=0\). Thus the Taylor polynomials through degree \(k\), evaluated at \(\zeta=1\), satisfy the finite Carleman system with its prescribed initial conditions. Uniqueness identifies them with \(Y_i^{[k]}(t)\). For \(x_0\ne0\), the polynomials approximate a holomorphic function bounded by \(M^i\) on \(|\zeta|<1/q\), where \(\|\zeta x_0\|<r/2\). Cauchy's estimate on circles with radii increasing to \(1/q\) gives the coefficient bound \(M^i q^\ell\) at degree \(\ell\). Summing the tail gives \eqref{eq:rate}. The origin is immediate. In original coordinates \(x_{\rm phys}=Qx\), use \(B=Q^{-1}F_2Q^{\otimes2}\), \(x_0=Q^{-1}x_{\rm phys}(0)\), and multiply the \(i\)-th block bound by \(\|Q\|^i\).
+
+\section{A bounded trajectory with divergent truncations}
+The size condition matters even when the full spectrum lies on the imaginary axis. Consider
+\[
+ \dot x=ix+x^2,\qquad \dot y=-i\sqrt2\,y+xy,\qquad (x(0),y(0))=(1,1).
+\]
+The spectrum has zero in its convex hull and satisfies \eqref{eq:gap} with \(\nu=1,\ \Delta=1/(3\sqrt2)\). After removing the factor \(i\), each divisor is \(p+q\sqrt2\) with integer coefficients, which cannot both vanish since \(|\alpha|\ge2\). Its algebraic norm is a nonzero integer. Hence \(|p+q\sqrt2|\ge1/(|p|+\sqrt2|q|)\), and
+\(|p|+\sqrt2|q|\le\sqrt2(|\alpha|+1)\le3\sqrt2(|\alpha|-1)\), including the subtraction of one output eigenvalue.
+Starting instead at \((\zeta,\zeta)\) gives
+\[
+ x(t)=\frac{\zeta e^{it}}{1-\zeta u(t)},\qquad
+ y(t)=\frac{\zeta e^{-i\sqrt2\,t}}{1-\zeta u(t)},\qquad
+ u(t)=\frac{e^{it}-1}{i}.
+\]
+For \(\zeta=1\) the denominator has modulus at least \(\sqrt2-1\) for every \(t\). At \(t=\pi\), however, the \(x\)-coordinate of the \(k\)-th truncation is
+\(-\sum_{\ell=0}^{k-1}(2i)^\ell\). Its difference from the exact first coordinate is \((2i)^k/(1-2i)\), with modulus \(2^k/\sqrt5\). Thus boundedness of the real-time trajectory alone cannot replace control of the initial-data Taylor series.
+
+\paragraph{Acknowledgment.} I used OpenAI Codex to assist with literature searches, developing and checking the proofs, and preparing this manuscript.
+
+\small
+\begin{thebibliography}{9}
+\bibitem{jennings} D. Jennings, K. Korzekwa, M. Lostaglio, A. T. Sornborger, Y. Suba\c{s}{\i} and G. Wang, \href{https://quantum-journal.org/papers/q-2026-10-08-2233/}{Quantum algorithms for general nonlinear dynamics based on the Carleman embedding}, Quantum \textbf{10}, 2233 (2026).
+\bibitem{siegel} C. L. Siegel, \href{https://www.mathnet.ru/eng/mat176}{\"Uber die Normalform analytischer Differentialgleichungen in der N\"ahe einer Gleichgewichtsl\"osung}, Nachr. Akad. Wiss. G\"ottingen (1952), 21--30.
+\bibitem{carletti} T. Carletti, \href{https://arxiv.org/abs/math/0110135}{The Lagrange inversion formula on non-Archimedean fields. Non-analytical form of differential and finite difference equations}, arXiv:math/0110135.
+\bibitem{gm} A. Giorgilli and S. Marmi, \href{https://doi.org/10.3934/dcdss.2010.3.601}{Convergence radius in the Poincar\'e--Siegel problem}, Discrete Contin. Dyn. Syst. Ser. S \textbf{3}, 601--621 (2010).
+\end{thebibliography}
+\end{document}

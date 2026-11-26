@@ -1,0 +1,170 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=25mm,top=21mm,bottom=23mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{23,61,105}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,pdfencoding=auto]{hyperref}
+\hypersetup{pdfauthor={Erfan Oliaei},pdftitle={The slowest coupon collector on a regular graph}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Id}{I}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\dd}{\,\mathrm d}
+\DeclareMathOperator{\Poi}{Poi}
+\newcommand{\ack}{\paragraph*{Acknowledgment.} I used OpenAI Codex to assist with literature searches, developing and checking the proofs, and preparing this manuscript.}
+\raggedbottom
+\setlength{\emergencystretch}{1.5em}
+\title{The slowest coupon collector on a regular graph}
+\author{Erfan Oliaei}
+\date{26 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+At each step a vertex of a finite regular graph is chosen uniformly and covers a uniformly chosen uncovered neighbor, if one exists. We prove a distributional comparison at every positive time after Poissonization. If the graph has degree \(d\) and its order is divisible by \(2d\), disjoint copies of \(K_{d,d}\) uniquely maximize the expected number of steps. The comparison allows arbitrary component sizes and gives an explicit positive gap in terms of neighborhood intersections. The proof compares the backward equations with a product of Poisson tails.
+\end{abstract}
+
+\section{The extremal graph}
+
+Let \(G=(V,E)\) be a nonempty simple undirected \(d\)-regular graph with \(n\) vertices and \(d\ge1\). Give each vertex an independent rate-one Poisson clock. When \(v\)'s clock rings, it covers one uniformly chosen uncovered neighbor, if available. Initially every vertex is uncovered. Write \(T_G\) for the time at which all vertices are covered and \(\operatorname{cc}(G)\) for the expected number of rings up to completion, counting unsuccessful rings. The ringing vertices are independent uniform samples, independent of the interarrival times, so \(\operatorname{cc}(G)=n\E T_G\). Set
+\[
+p_0(t)=1,\qquad p_k(t)=\Pr\{\Poi(dt)\ge k\}\quad(k\ge1).
+\]
+
+\begin{theorem}\label{main}
+For every \(t>0\),
+\[
+                 \Pr\{T_G\le t\}\ \ge\ p_d(t)^{\,n/d}.
+\]
+Equality at a single positive time holds precisely when every component of \(G\) is \(K_{d,d}\). In that case equality holds at all times. Thus for \(2d\mid n\), the union of \(n/(2d)\) copies of \(K_{d,d}\) uniquely maximizes \(\operatorname{cc}(G)\) up to isomorphism.
+\end{theorem}
+
+Alon introduced this graph coupon collector and conjectured that unions of cliques were slowest \cite[Sec.~6]{Alon}. Deng and Wang \cite{DW} disproved that conjecture for every \(d\ge2\) and solved the degree-two problem, including orders with \(4\nmid n\). In higher degree they established an eventual tail comparison at fixed admissible order and an expected-time comparison for bounded component sizes at sufficiently large order \cite[Cor.~4.3 and Thm.~4.4]{DW}. Theorem~\ref{main} gives a single comparison for all times and all component sizes. For \(2d\nmid n\) it gives a strict bound. The extremizer at these orders remains to be identified in higher degree.
+
+\section{A product of Poisson tails}
+
+For fixed \(t>0\) put \(R_k=p_{k-1}(t)/p_k(t)\) for \(k\ge1\).
+
+\begin{lemma}\label{mean}
+If \(k_1,\ldots,k_d\) are positive integers, then
+\[
+ \sum_{j=1}^d \frac{R_{k_j}}{k_j}
+ \ \le\ \left(\sum_{j=1}^d\frac1{k_j}\right)
+        \left(\prod_{j=1}^d R_{k_j}\right)^{1/d}.
+\]
+Equality holds exactly when the \(k_j\) are all equal.
+\end{lemma}
+\begin{proof}
+Write \(x=dt\). The ratio \(p_k/\Pr\{\Poi(x)=k-1\}\) is the sum over \(j\ge1\) of \(x^j/[k(k+1)\cdots(k+j-1)]\), so it strictly decreases with \(k\). Hence \(R_k\) strictly increases. On the other hand \(m_k=k!p_k\) is the \(k\)th moment of \(\min(X,x)\) for \(X\) exponential of mean one. Indeed, for \(k\ge1\) that moment is \(k\int_0^x y^{k-1}e^{-y}\dd y=k!p_k\). Moment log-convexity shows that \(R_k/k=m_{k-1}/m_k\) is nonincreasing.
+
+Order the \(k_j\). The sequences \(R_{k_j}/k_j\) and \(1/R_{k_j}\) are ordered in the same direction. Chebyshev's sum inequality, followed by the harmonic--geometric mean inequality, gives
+\[
+ \frac{\sum_j R_{k_j}/k_j}{\sum_j 1/k_j}
+ \ \le\ \frac{d}{\sum_j 1/R_{k_j}}
+ \ \le\ \left(\prod_jR_{k_j}\right)^{1/d}.
+\]
+If the \(k_j\) differ, strict increase of \(R_k\) makes the harmonic--geometric mean inequality strict.
+\end{proof}
+
+Let \(U\subseteq V\) denote the remaining uncovered set. Put \(k_v=|N(v)\cap U|\). For \(u\in U\) its covering rate is \(q_u(U)=\sum_{v\sim u}1/k_v\). Write \(Q_U=\sum_{u\in U}q_u(U)=|\{v:k_v>0\}|\) and let
+\[
+ (\mathcal L f)_U=\sum_{u\in U}q_u(U)(f_{U\setminus\{u\}}-f_U).
+\]
+Let \(F_U(t)\) be the probability of completion within time \(t\) starting from \(U\). While \(U\) is fixed, the clocks with \(k_v=0\) may be discarded. The remaining clocks are independent and have total rate \(Q_U\). A ring at \(v\) is marked uniformly with one of its \(k_v\) uncovered neighbors, so the mark rate for \(u\) is exactly \(q_u(U)\). For nonempty \(U\), the first removal time is exponential at rate \(Q_U\), with joint density \(q_u(U)e^{-Q_U s}\) for removal of \(u\) at time \(s\). Conditioning on it gives \(F_U(t)=\sum_{u\in U}q_u(U)\int_0^t e^{-Q_U(t-s)}F_{U\setminus\{u\}}(s)\dd s\). Continuity follows by induction on \(|U|\) from this formula. Multiplying by \(e^{Q_U t}\) and using the fundamental theorem of calculus gives \(F'=\mathcal L F\), with \(F_U(0)=\mathbf1_{\{U=\varnothing\}}\) and \(F_\varnothing(t)=1\). Compare it with
+\[
+                       H_U(t)=\prod_{v\in V}p_{k_v}(t)^{1/d}.
+\]
+The initial values agree. From \(p'_k=d(p_{k-1}-p_k)\) we get
+\[
+ \frac{H'_U}{H_U}=\sum_{v:k_v>0}(R_{k_v}-1),
+ \qquad
+ \frac{H_{U\setminus\{u\}}}{H_U}
+       =\left(\prod_{v\sim u}R_{k_v}\right)^{1/d}.
+\]
+Apply Lemma~\ref{mean} to the neighbors of each \(u\in U\). Summing its left side counts \(R_{k_v}/k_v\) exactly \(k_v\) times for each active \(v\). Thus \(\psi_U=(\mathcal LH)_U-H'_U\ge0\). For \(D_U=F_U-H_U\) we have
+\begin{equation}\label{comp}
+  D'_U+Q_U D_U
+       =\sum_{u\in U}q_u(U)D_{U\setminus\{u\}}+\psi_U .
+\end{equation}
+Since \(D_\varnothing=0\), integration with the positive factor \(e^{Q_Ut}\) and induction on \(|U|\) give \(D_U\ge0\). The argument at zero follows by continuity, or by integrating from a positive time and letting it decrease to zero. Taking \(U=V\) proves the bound.
+
+\section{Strictness and the size of the gap}
+
+In one \(K_{d,d}\), each side is covered by the \(d\)th ring from the opposite side. The two covering times are independent with distribution function \(p_d\), and different components are independent. This proves the equality assertion for these graphs. Degree one consists entirely of such components. For \(d\ge2\) we quantify the converse.
+
+For \(a\ne b\) write \(j_{ab}=|N(a)\cap N(b)|\). Set \(h=p_{d-1}p_d^{n/d-1}\) and, with all ratios evaluated at the same time, define
+\[
+ \ell_j=\left(\frac j{d-1}+\frac{d-j}{d}\right)
+          R_{d-1}^{j/d}R_d^{1-j/d}
+          -\frac{jR_{d-1}}{d-1}-\frac{(d-j)R_d}{d}
+ \qquad(0\le j\le d).
+\]
+Lemma~\ref{mean} gives \(\ell_0=\ell_d=0\) and \(\ell_j>0\) for \(0<j<d\).
+
+\begin{proposition}\label{gap}
+For every \(d\ge2\) and \(t>0\),
+\[
+ \Pr\{T_G\le t\}-p_d(t)^{n/d}
+ \ \ge\ \sum_{a\ne b}\int_0^t (t-s)e^{-n(t-s)}h(s)\ell_{j_{ab}}(s)\dd s .
+\]
+The sum is over ordered pairs. When \(2d\mid n\), the excess in expected ring count of the extremizer over \(G\) is at least
+\(n^{-1}\sum_{a\ne b}\int_0^\infty h(s)\ell_{j_{ab}}(s)\dd s\).
+\end{proposition}
+\begin{proof}
+At \(U_a=V\setminus\{a\}\), we have \(k_v=d-1\) on \(N(a)\) and \(k_v=d\) elsewhere. Consequently \(H_{U_a}=h\), and the slack from Lemma~\ref{mean} gives \(\psi_{U_a}=h\sum_{b\ne a}\ell_{j_{ab}}\). Also \(Q_{U_a}=Q_V=n\) and \(q_a(V)=1\). Apply \eqref{comp} first at \(U_a\) and then at \(V\), retaining the displayed nonnegative contributions. Convolving the two exponential kernels gives \((t-s)e^{-n(t-s)}\). When \(2d\mid n\), the expected-time difference is the integral of \(F_V-p_d^{n/d}\), by the survival-function formula. Tonelli's theorem applies to the nonnegative gap integrand, and \(\int_s^\infty(t-s)e^{-n(t-s)}\dd t=n^{-2}\). Multiplying by \(n\) gives the expected ring-count bound.
+\end{proof}
+
+If \(0<j_{ab}<d\), then its integrand is strictly positive on \(0<s<t\) for every \(t>0\). Thus equality at any positive time forces intersecting neighborhoods to coincide. For an edge \(uv\), put \(A=N(v)\), \(B=N(u)\). Each \(a\in A\) has \(N(a)=B\), since \(a\) and \(u\) have common neighbor \(v\). Simplicity gives \(A\cap B=\varnothing\), and regularity gives \(N(b)=A\) for all \(b\in B\). Thus \(A\cup B\) is a component \(K_{d,d}\). This finishes the proof of Theorem~\ref{main}.
+
+\section{Expected ring counts}
+\begin{corollary}\label{dense}
+With \(u=\log(n/d)\), every simple \(d\)-regular graph satisfies
+\[
+          \operatorname{cc}(G)\le
+          n\left(1+\sqrt{\frac{2u}{d}}+\frac{u}{d}\right).
+\]
+At order \(n=2d\), the extremal expectation is exactly
+\[
+          \operatorname{cc}(K_{d,d})
+          =2d\left(1+\frac{\binom{2d}{d}}{4^d}\right).
+\]
+In particular the additive excess has order \(n/\sqrt d\) in this dense family.
+\end{corollary}
+\newpage
+\begin{proof}
+Put \(m=n/d\) and let \(X\) be the \(d\)th arrival at rate \(d\). For real \(m\ge1\), \(p_d^m\) increases continuously from zero to one and has density \(m p_d^{m-1}p'_d\le m p'_d\). Theorem~\ref{main} and Jensen's inequality therefore give, for \(0<\lambda<d\),
+\[
+ \E T_G\le\frac{1}{\lambda}\log\!\left(m\E e^{\lambda X}\right)
+ =\frac{u-d\log(1-\lambda/d)}{\lambda}
+ \le 1+\frac{u}{\lambda}+\frac{\lambda}{2d(1-\lambda/d)} .
+\]
+The last estimate uses the logarithm series. With \(a=\sqrt{2u/d}>0\), take \(\lambda=da/(1+a)\in(0,d)\). The two excess terms sum to \(a(1+a)/2+a/2=a+a^2/2\).
+
+For \(K_{d,d}\) take two independent copies \(X,Y\) of that arrival time. Changing variables in their joint density shows that \(U=X/(X+Y)\) has the beta \((d,d)\) density and is independent of \(X+Y\), of mean two. Thus \(\E\max(X,Y)=1+\E|2U-1|\). With \(B(d,d)=(d-1)!^2/(2d-1)!\), direct integration gives
+\[
+ \E|2U-1|
+ =\frac{2}{B(d,d)}\int_{1/2}^1(2v-1)[v(1-v)]^{d-1}\dd v
+ =\frac{2}{d\,4^d B(d,d)}=\frac{\binom{2d}{d}}{4^d}.
+\]
+Stirling's formula gives the stated order.
+\end{proof}
+
+The uniform bound implies \(\operatorname{cc}(G)=O(n+(n/d)\log n)\). Deng and Wang \cite[Sec.~5, Prop.~5.2]{DW} identify this order estimate as compatible with their counterexample to Alon's proposed additive estimate. The exact value above displays the necessary square-root scale already at the extremizer.
+
+\ack
+\begin{thebibliography}{9}
+\bibitem{Alon} N. Alon, \href{https://kam.mff.cuni.cz/~matousek/cla/alon-extremalII.pdf}{Problems and results in extremal combinatorics---II}, \emph{Discrete Math.} \textbf{308} (2008), 4460--4472.
+\bibitem{DW} X. Deng and G. Wang, \href{https://arxiv.org/abs/2611.11345}{Extremal graphs for Alon's graph coupon-collector conjecture}, arXiv:2611.11345 (2026).
+\end{thebibliography}
+\end{document}

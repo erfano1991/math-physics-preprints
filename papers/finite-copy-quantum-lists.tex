@@ -1,0 +1,157 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=25mm,top=21mm,bottom=23mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{23,61,105}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,pdfencoding=auto]{hyperref}
+\hypersetup{pdfauthor={Erfan Oliaei},pdftitle={Which quantum states can be classified without error from finitely many copies?}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Id}{I}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\dd}{\,\mathrm d}
+\DeclareMathOperator{\Poi}{Poi}
+\newcommand{\ack}{\paragraph*{Acknowledgment.} I used OpenAI Codex to assist with literature searches, developing and checking the proofs, and preparing this manuscript.}
+\raggedbottom
+\setlength{\emergencystretch}{1.5em}
+\title{Which quantum states can be classified without error\protect\\ from finitely many copies?}
+\author{Erfan Oliaei}
+\date{26 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+An unknown member of a finite family of density matrices is prepared repeatedly. A measurement must return a list that contains the true label with certainty. We characterize exactly which prescribed families of lists suffice with finitely many copies. The only obstruction is a pair of nonorthogonal vectors whose combined support labels fit no allowed list. A tensor expansion and a conversion of signed decompositions into measurements prove sufficiency and give a finite copy bound. For ordinary state exclusion we also characterize the power of separable measurements and of local operations on individual copies. Five explicit rank-two qutrit states admit collective exclusion with finitely many copies while every finite-copy separable measurement has positive error. Three pure qubit states separate separable measurements from local operations.
+\end{abstract}
+
+\section{The smallest list}
+
+Let \(\rho_1,\ldots,\rho_n\) be density matrices on a finite-dimensional complex Hilbert space \(H\), \(n\ge1\), and \(S_i=\ran\rho_i\). Input \(i\) supplies \(\rho_i^{\otimes N}\). The output is a member of a nonempty family \(\mathcal T\subseteq 2^{[n]}\), where \([n]=\{1,\ldots,n\}\). A zero-error measurement has effects \(E_T\ge0\) summing to \(I\), with \(\tr(E_T\rho_i^{\otimes N})=0\) whenever \(i\notin T\). Unused outputs are permitted. List size one is identification, and lists of size at most \(n-1\) give ordinary exclusion. Repeated states are allowed. Pure-state exclusion and classification with several copies are studied in \cite{Roy,Johnston}. The convention of \cite{Roy} additionally requires each designated exclusion outcome to occur on some input.
+
+For \(v\ne0\) set \(L(v)=\{i:v\in S_i\}\). For \(A\subseteq[n]\) put \(U_A=\bigcap_{i\in A} S_i\), with \(U_\varnothing=H\). Say a set of labels \emph{fits} if it is contained in a member of \(\mathcal T\).
+
+\begin{theorem}\label{criterion}
+A zero-error measurement exists for some finite \(N\) if and only if \(L(v)\cup L(w)\) fits for every pair \(v,w\) with \(\langle v,w\rangle\ne0\). Equivalently, \(U_A\perp U_B\) whenever \(A\cup B\) fails to fit. In particular, the smallest attainable maximum list size is
+\[
+                  K=\max_{U_A\not\perp U_B}|A\cup B|.
+\]
+\end{theorem}
+
+\emph{Necessity.}
+If \(i\in L(v)\) then \(v^{\otimes N}\in S_i^{\otimes N}\), so an outcome omitting \(i\) annihilates this vector. Two nonorthogonal \(v,w\) must have a common possible outcome on their tensor powers, since \(\langle v^{\otimes N},(\sum_T E_T)w^{\otimes N}\rangle\ne0\). At that outcome the list contains both label sets. Choosing vectors in \(U_A,U_B\) proves the equivalent subspace formulation. Sufficiency takes two steps.
+
+\section{From a signed decomposition to a measurement}
+
+On \(b\) copies call a positive operator \emph{admissible for \(T\)} if it annihilates \(S_i^{\otimes b}\) for each \(i\notin T\). Let \(C_b\) be the cone of finite sums of operators admissible for individual lists. Thus membership of the block identity in \(C_b\) supplies a zero-error measurement.
+
+\begin{lemma}\label{activate}
+If \(I=B-D\) on \(b\) copies with \(B,D\in C_b\), a zero-error measurement exists on \(M\) such blocks for every integer \(M\ge1+\|D\|\). It is separable across the blocks.
+\end{lemma}
+\begin{proof}
+If \(D=0\), measure one block. Otherwise put \(c=\|D\|\), \(A=D/c\), \(R=I-A\ge0\). Both \(A\) and
+\[
+           A+R/M=B/M+\frac{M-1-c}{cM}D
+\]
+belong to \(C_b\). Expand \(I^{\otimes M}=(A+R)^{\otimes M}\). Keep terms with at least two \(A\)'s. In each of the \(M\) terms with exactly one \(A\), replace it by \(A+R/M\). These additions account for the whole all-\(R\) term. Every resulting positive product now has a factor in \(C_b\). Expand that factor and assign its permitted list to the product. Grouping by output list yields the measurement.
+\end{proof}
+
+\begin{proof}[Proof of sufficiency in Theorem~\ref{criterion}]
+Use \(b=2n\) copies and expand the factors of \(I^{\otimes b}\) successively. For a partial product \(X\) on \(k\) copies, maintain
+\[
+ \rho_i^{\otimes k}X=0\quad(i\notin A),\qquad
+ X\rho_i^{\otimes k}=0\quad(i\notin B).
+\]
+Both conditions are vacuous initially, when \(A=B=[n]\). Tensoring by a new factor preserves every existing condition.
+
+Stop a term when \(A\cup B\) fits. Otherwise let \(P_A,P_B\) project onto \(U_A,U_B\). The hypothesis gives \(P_AP_B=0\). Write \(K_i\) for the projection onto \(S_i^\perp\) and, for \(C=A,B\), put \(T_C=\sum_{i\in C}K_i\). Positivity gives \(\ker T_C=\bigcap_{i\in C}\ker K_i=U_C\). Thus the inverse \(T_C^+\) on \(U_C^\perp\), extended by zero on \(U_C\), satisfies \(T_CT_C^+=T_C^+T_C=I-P_C\). The next identity factor expands as
+\begin{equation}\label{expansion}
+ I=(I-P_A)+P_A(I-P_B)
+   =\sum_{i\in A} K_i T_A^+
+       +\sum_{j\in B} P_A T_B^+ K_j .
+\end{equation}
+For example, the child indexed by \(i\in A\) has product \(X\otimes K_iT_A^+\). For the newly removed label, left multiplication gives
+\[
+ (\rho_i^{\otimes k}X)\otimes(\rho_iK_iT_A^+)=0.
+\]
+Every earlier left zero persists in the first tensor factor, as does every earlier right zero. The right child \(X\otimes P_AT_B^+K_j\) gains the right zero for \(j\) by the same multiplication. Summing all children returns \(X\otimes I\) by \eqref{expansion}; padding a stopped branch has the identical effect on its sum.
+
+Each step lowers \(|A|+|B|\) by one, and the empty union fits. Pad products that stop early with identity factors to reach \(b\) copies. For a terminal product \(X\) and a list containing its terminal union, both conditions hold for every omitted label. Hence \(H_X=(X+X^*)/2\) kills \(S_i^{\otimes b}\) for each omitted \(i\). Its positive and negative spectral parts kill the same subspace, since both scalar part functions vanish at zero. Taking Hermitian parts of \(\sum X=I\) gives \(I=\sum H_X\), so the spectral parts give the signed decomposition in Lemma~\ref{activate}.
+\end{proof}
+
+For an explicit copy bound, let \(\gamma\) be the smallest positive eigenvalue among the nonzero \(T_C\) for subsets \(C\subseteq[n]\), and put \(s=\max\{1,2n/\gamma\}\). The projections have norm at most one and \(\|T_C^+\|\le1/\gamma\), so the sum of norms of the at most \(2n\) local factors is at most \(s\), including steps padded by an identity. The sum of product norms grows by at most \(s\) per step. As \(\|(H_X)_-\|\le\|X\|\), this gives \(\|D\|\le s^{2n}\) and hence \(2n\lceil1+s^{2n}\rceil\) copies. If every \(T_C=0\), the singletons give \(K_i=0\) for all \(i\). All supports then equal \(H\), and the criterion requires a list containing every label.
+
+\section{Consequences for mixed preparations}
+
+\begin{corollary}\label{generic}
+Suppose the supports are independent, uniformly distributed subspaces of codimension \(c\) in dimension \(d\), \(1\le c<d\). Almost surely
+\[
+                   K=\min\{n,\,2\lfloor(d-1)/c\rfloor\}.
+\]
+\end{corollary}
+\begin{proof}
+The intersection of \(h\) specified supports has dimension \(\max(0,d-hc)\) almost surely, by general position. Thus each nonzero vector belongs to at most \(\lfloor(d-1)/c\rfloor\) of them. Conversely, split the asserted number of labels into two disjoint groups of at most that size. Their intersections are nonzero and, for nonempty groups, independent invariant subspaces. They are nonorthogonal almost surely. The empty group gives \(H\).
+\end{proof}
+
+In particular, four generic rank-two qutrit states resist exclusion on every finite number of copies, whereas five admit it. For three rank-two qutrit states exclusion is possible exactly when the kernel lines are mutually orthogonal. Indeed a nonzero triple intersection violates the criterion. Otherwise the three kernel vectors are independent. The intersection of each pair of supports must be orthogonal to the third support, so it equals the third kernel line. This gives pairwise orthogonality, and the three kernel projections supply a one-copy measurement.
+
+A failed list condition also bounds the error quantitatively. Take unit witnesses \(v,w\) with nonzero overlap. For each \(i\in L(v)\) we have \(\rho_i\ge a vv^*\), and analogously for \(w\), for a common \(a>0\) obtained from the positive eigenvalues on the supports. Give the labels positive priors with minimum \(p_{\min}\). Every list omits an element of the witness union. Its contribution to the error is at least \(p_{\min}a^N\) times the smaller of its probabilities on \(v^{\otimes N},w^{\otimes N}\). The sum of these minima is at least \(1-\sqrt{1-|\langle v,w\rangle|^{2N}}\), by the trace distance of two pure states. Consequently
+\[
+       P_{\mathrm{err}}^{(N)}\ge
+       \tfrac12p_{\min}\bigl(a|\langle v,w\rangle|^2\bigr)^N .
+\]
+Thus a fixed family of permitted lists has superexponentially small optimal error only if it has zero error at some finite copy number.
+
+\section{Separable measurements and local operations}
+
+We now specialize to ordinary exclusion, with one input copy per laboratory. A separable effect is a finite sum of positive product operators. Local operations and classical communication (LOCC) allow adaptive local instruments, local memory and classical messages without shared entanglement. Work on one copy and put \(C=C_1\), generated here by positive operators that annihilate at least one \(S_i\). For pure multipartite product states, Manna and Das Bhowmik \cite[Thm.~2]{Manna} show that perfect exclusion by LOCC implies that one party can exclude the ensemble locally. We treat mixed repeated-copy ensembles and give a positive error bound for arbitrary finite-round protocols, which also applies to their closure.
+
+\begin{theorem}\label{local}
+Perfect exclusion is possible on finitely many copies by a separable measurement if and only if \(I\in\spn_{\R}C\). It is possible by individual-copy LOCC if and only if \(I\in C\). The latter assertion also holds for the closure of finite-round LOCC.
+\end{theorem}
+\begin{proof}
+Separable sufficiency follows from Lemma~\ref{activate}. If \(I\notin\spn_{\R}C\), choose a Hermitian \(W\) orthogonal to this span in the trace pairing with \(\tr W\ne0\). Each product summand \(\bigotimes_j A_j\) of an effect excluding input \(i\) has probability \(\prod_j\tr(A_j\rho_i)=0\). A factor with zero pairing annihilates \(S_i\) and belongs to \(C\). Thus \(\prod_j\tr(A_jW)=0\), the pairing with \(W^{\otimes N}\). Summing a whole measurement would give \((\tr W)^N=0\), a contradiction.
+
+For LOCC, \(I\in C\) gives a one-copy measurement. Otherwise compactness makes the one-copy minimum of \(\sum_i\tr(\rho_iE_i)\) positive. Its semidefinite dual gives a Hermitian \(Y\le\rho_i\) for all \(i\) with \(\tr Y>0\) \cite{Bandy}. Strict primal feasibility follows from \(E_i=I/n\). For \(A\ge0\), put \(w(A)=\max\{0,\tr(YA)\}\le\tr(\rho_i A)\). Refinement into positive pieces cannot decrease the sum of their \(w\)-values. At a node of a fine-grained LOCC protocol let \(A_j\) be the cumulative input effect at laboratory \(j\). Give it weight \(\prod_j w(A_j)\). A local instrument refines just one factor, so total weight cannot decrease at a split. For input \(i\), the leaf probability is \(\prod_j\tr(\rho_i A_j)\), at least its weight. The error is therefore at least \(p_{\min}(\tr Y)^N>0\), uniformly in the number of rounds. For a measurable local refinement, take the positive operator density \(A(x)\) with respect to the trace measure of that refinement. Then \(\int w(A(x))\ge w(\int A(x))\), by the definition of \(w\), so the same argument uses iterated integrals. At fixed \(N\), error is a continuous linear functional of the final finite-label POVM in the componentwise operator norm. The lower bound therefore holds on the closure of finite-round LOCC.
+\end{proof}
+
+\section{Two strict separations}
+
+\begin{corollary}
+There are five rational rank-two qutrit states for which collective exclusion succeeds with finitely many copies and separable exclusion fails on every finite number of copies.
+\end{corollary}
+\begin{proof}
+For \(t=1,\ldots,5\) take \(k_t=(1,t,t^2)^{\mathsf T}\) and
+\[
+      \rho_t=\tfrac12\left(I-\frac{k_tk_t^*}{\|k_t\|^2}\right).
+\]
+Any three kernel vectors are independent by the Vandermonde determinant. Hence every nonzero vector belongs to at most two input supports. Two vectors together carry at most four labels, and Theorem~\ref{criterion} gives collective exclusion. In fact \(K=4\). The supports indexed by distinct \(u,v\) meet along \((uv,-u-v,1)^{\mathsf T}\), and two such lines from disjoint pairs are nonorthogonal.
+
+On one copy the cone \(C\) is generated by the five matrices \(k_tk_t^*\). Each has equal \((1,3)\) and \((2,2)\) entries. The identity violates this linear relation, so Theorem~\ref{local} rules out finite-copy separable exclusion.
+\end{proof}
+
+For the separation between separability and LOCC take \(\psi_0=|0\rangle\) and \(\psi_\pm=\sqrt{5/8}|0\rangle\pm\sqrt{3/8}|1\rangle\). Put \(F_i=I-\psi_i\psi_i^*\), \(A=F_0\), and \(R=I-A\). Each generator \(F_i\) has strictly negative trace pairing with \(Z=\operatorname{diag}(1,-1)\), while \(\tr Z=0\). Thus \(I\notin C\). On the other hand
+\[
+      A+R/2=\tfrac23(F_++F_-)+F_0/6,\qquad
+      I^{\otimes2}=A\otimes A+(A+R/2)\otimes R+R\otimes(A+R/2).
+\]
+Label each product by its \(F_i\) factor. This gives a two-copy separable measurement, and every exclusion label occurs with positive probability on another preparation.
+
+\ack
+\begin{thebibliography}{9}
+\bibitem{Bandy} S. Bandyopadhyay, R. Jain, J. Oppenheim and C. Perry, \href{https://doi.org/10.1103/PhysRevA.89.022336}{Conclusive exclusion of quantum states}, \emph{Phys. Rev. A} \textbf{89} (2014), 022336.
+\bibitem{Roy} D. Roy, T. Gupta, P. Ghosal, S. Sen and S. Bandyopadhyay, \href{https://arxiv.org/abs/2601.14410}{Quantum state exclusion with many copies}, arXiv:2601.14410 (2026).
+\bibitem{Johnston} N. Johnston, B. Lovitz, V. Russo and J. Sikora, \href{https://arxiv.org/abs/2609.17411}{Sharp bounds for perfect quantum state classification beyond antidistinguishability}, arXiv:2609.17411 (2026).
+\bibitem{Manna} S. Manna and A. Das Bhowmik, \href{https://arxiv.org/abs/2602.15452}{Nonlocality without entanglement in exclusion of quantum states}, arXiv:2602.15452 (2026).
+\end{thebibliography}
+\end{document}

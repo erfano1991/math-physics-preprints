@@ -1,0 +1,5 @@
+$ lean verification/Closure.lean
+Local object declarations: 808; total logical roots: 792; generated partial runtime helpers excluded and unreachable: 16
+Actual transitive mathematical constants: 59958
+Axioms reached in proof terms: [Quot.sound, Classical.choice, propext]
+PASS: complete mathematical dependency closure replayed into the empty Lean kernel environment.

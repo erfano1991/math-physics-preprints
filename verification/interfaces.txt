@@ -1,0 +1,163 @@
+$ lean verification/Interfaces.lean
+ManuscriptProofs.Quantum.finite_simplicial_complex_on_qubit.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V]
+  (K : Finset V → Prop) (hempty : K ∅) (hvertex : ∀ (v : V), K {v}) (hdown : ∀ ⦃S T : Finset V⦄, S ⊆ T → K T → K S) :
+  ∃ r M, ∀ (S : Finset V), (Quantum.Compatible fun v => M ↑v) ↔ K S
+ManuscriptProofs.Quantum.finite_copy_lists_iff.{u, u_1, u_2} {d : Type u} {ι : Type u_1} {Ω : Type u_2} [Fintype d]
+  [DecidableEq d] [Fintype ι] [Nonempty ι] [Fintype Ω] [Nonempty Ω] (ρ : ι → Quantum.Operator d)
+  (hρ : ∀ (i : ι), Matrix.PosSemidef (ρ i)) (lists : Ω → Set ι) :
+  (∃ n, 0 < n ∧ Quantum.ZeroError ρ lists n) ↔
+    ∀ (x y : d → ℂ),
+      star x ⬝ᵥ y ≠ 0 →
+        ∃ o, ∀ (i : ι), ((∃ v, Matrix.mulVec (ρ i) v = x) ∨ ∃ w, Matrix.mulVec (ρ i) w = y) → i ∈ lists o
+ManuscriptProofs.Quantum.signed_decomposition_of_list_condition.{u_1, u_2, u_3} {d : Type u_1} {ι : Type u_2}
+  {Ω : Type u_3} [Fintype d] [DecidableEq d] [Fintype Ω] [Fintype ι] [Nonempty Ω] (ρ : ι → Quantum.Operator d)
+  (hρ : ∀ (i : ι), Matrix.PosSemidef (ρ i)) (lists : Ω → Set ι)
+  (hpair :
+    ∀ (x y : d → ℂ),
+      star x ⬝ᵥ y ≠ 0 →
+        ∃ o, ∀ (i : ι), ((∃ v, Matrix.mulVec (ρ i) v = x) ∨ ∃ w, Matrix.mulVec (ρ i) w = y) → i ∈ lists o)
+  (n : ℕ) (hn : 2 * Fintype.card ι ≤ n) :
+  ∃ B D,
+    (∀ (o : Ω), Matrix.PosSemidef (B o)) ∧
+      (∀ (o : Ω), Matrix.PosSemidef (D o)) ∧
+        ∑ o, B o - ∑ o, D o = 1 ∧
+          ∀ (o : Ω),
+            ∀ i ∉ lists o, (B o * Quantum.tensorPower (ρ i) n).trace = 0 ∧ (D o * Quantum.tensorPower (ρ i) n).trace = 0
+ManuscriptProofs.Quantum.noiseless_code_of_invertible_lift_factor.{u_1, u_2, u_3} {d : Type u_1} {e : Type u_2}
+  {D : Type u_3} [Fintype d] [DecidableEq d] [Fintype e] [DecidableEq e] [Fintype D] [DecidableEq D]
+  (V : Matrix (d × e) D ℂ) (hV : V.conjTranspose * V = 1) (Y : Quantum.Operator D) (K R : Quantum.Operator d)
+  (hKR : K * R = 1) (hRK : R * K = 1) (H : Quantum.Operator e) (hH : H ≠ 0)
+  (hf : Quantum.liftToDilation V Y = Matrix.kroneckerMap (fun x1 x2 => x1 * x2) K H) :
+  ∃ J,
+    J.conjTranspose * J = 1 ∧
+      ∀ (X : Quantum.Operator d),
+        J.conjTranspose * Quantum.compress V (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) X 1) * J = X
+ManuscriptProofs.PureExclusion.connected_of_frame_fibers.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [TopologicalSpace X]
+  [CompactSpace X] [TopologicalSpace Y] [T2Space Y] [ConnectedSpace Y] (f : X → Y) (hf : Continuous f)
+  (h : ∀ (y : Y), IsConnected (f ⁻¹' {y})) : IsConnected Set.univ
+ManuscriptProofs.PureExclusion.exclusion_phase_on_connected_family.{u_1} {X : Type u_1} [TopologicalSpace X]
+  [PreconnectedSpace X] (a b : X → ℂ) (ha : Continuous a) (hb : Continuous b) (x y : X) (hx : ‖a x‖ ≤ ‖b x‖)
+  (hy : ‖b y‖ ≤ ‖a y‖) : ∃ u z, ‖z‖ = 1 ∧ a u + z * b u = 0
+ManuscriptProofs.GraphCollector.first_removal_backward (q : ℝ) (g : ℝ → ℝ) (hg : Continuous g) (t : ℝ) :
+  have F := fun u => ∫ (s : ℝ) in 0..u, Real.exp (-q * (u - s)) * g s;
+  HasDerivAt F (g t - q * F t) t
+ManuscriptProofs.Optical.fixed_separation_necessity.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  (x y : E) (s t₁ t₂ : ℝ) (hs : 0 < s) (hxy : ‖inner ℂ x y‖ = Real.exp (-s / 2)) (hx : ‖x‖ = Real.exp (-t₂ * s / 2))
+  (hy : ‖y‖ = Real.exp (-t₁ * s / 2)) : t₁ + t₂ ≤ 1
+ManuscriptProofs.Optical.saturation_subcollection.{u_1, u_2} {E : Type u_1} {F : Type u_2} [NormedAddCommGroup E]
+  [InnerProductSpace ℂ E] [NormedAddCommGroup F] [InnerProductSpace ℂ F] (x y : E) (hx : x ≠ 0) (hy : y ≠ 0)
+  (h : ‖inner ℂ x y‖ = ‖x‖ * ‖y‖) (T : E →ₗ[ℂ] F) (hT : ‖T x‖ ≤ ‖x‖) :
+  ∃ r, 0 ≤ r ∧ r ≤ 1 ∧ inner ℂ (T x) (T y) = ↑r * inner ℂ x y
+ManuscriptProofs.Qutrit.switch_floor {s : ℝ} (hs : 0 ≤ s) (ht : s ≤ 1) :
+  Qutrit.kappa ≤ Qutrit.switchMoment s - s / 20 + Qutrit.gamma * s ^ 3
+ManuscriptProofs.Qutrit.switch_probability {s : ℝ} (hs : 0 < s) (ht : s ≤ 1) :
+  have c := Qutrit.switchMoment s / s;
+  have a := 1 / 20 + Qutrit.kappa - Qutrit.gamma * s ^ 2;
+  0 < c ∧ 0 ≤ a / c ∧ a / c ≤ 1
+ManuscriptProofs.Qutrit.visibility_and_gap :
+  2 / 5 + 3 * Qutrit.kappa = 29588543 / 73801728 ∧ 5 / 12 - (2 / 5 + 3 * Qutrit.kappa) = 1162177 / 73801728
+ManuscriptProofs.Qutrit.gate_bias_exact : ↑Qutrit.gateBias = Qutrit.gamma
+ManuscriptProofs.Qutrit.radial_zero_above_degree {d : ℕ} (hd : 15 < d) : Qutrit.radialSwitchCoeff d = 0
+ManuscriptProofs.Qutrit.radial_coefficients_exact :
+  Qutrit.radialCoefficients =
+    List.map (fun n => n / 3404184409866240) do
+      let a ← Qutrit.switchNumerators
+      pure ↑a
+ManuscriptProofs.Qutrit.radial_sum_eq_switch (s : ℝ) :
+  Qutrit.evalCoefficients s Qutrit.radialCoefficients = Qutrit.switchMoment s
+ManuscriptProofs.Qutrit.radial_sum_floor {s : ℝ} (hs : 0 ≤ s) (ht : s ≤ 1) :
+  Qutrit.kappa ≤ Qutrit.evalCoefficients s Qutrit.radialCoefficients - s / 20 + Qutrit.gamma * s ^ 3
+ManuscriptProofs.PureExclusion.unitary_trace_inverse_bound.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι]
+  (U : ↥(Matrix.unitaryGroup ι ℂ)) (eigen t : ι → ℝ) (p k : ι) (a : ℝ) (hl : ∀ (j : ι), 0 ≤ eigen j)
+  (hmax : ∀ (j : ι), eigen j ≤ eigen k) (ha : 0 < a) (ht : ∀ i ∈ Finset.univ.erase p, 0 < t i)
+  (hT : 0 < ∑ i ∈ Finset.univ.erase p, t i) :
+  have R := (↑U * Matrix.diagonal fun j => ↑(eigen j)) * (↑U).conjTranspose;
+  have invY := Matrix.diagonal fun i => ↑(if i = p then 1 / a else -(1 / t i));
+  (invY * R).trace.re ≤ eigen k / a - (∑ j ∈ Finset.univ.erase k, √(eigen j)) ^ 2 / ∑ i ∈ Finset.univ.erase p, t i
+ManuscriptProofs.PureExclusion.complex_unit_sphere_connected.{u_1} (E : Type u_1) [NormedAddCommGroup E]
+  [NormedSpace ℂ E] [FiniteDimensional ℂ E] (h : 0 < Module.finrank ℂ E) : IsConnected (Metric.sphere 0 1)
+ManuscriptProofs.PureExclusion.connected_orthogonal_extensions.{u_1, u_2, u_3} {B : Type u_1} {E : Type u_2}
+  {ι : Type u_3} [TopologicalSpace B] [T2Space B] [CompactSpace B] [ConnectedSpace B] [NormedAddCommGroup E]
+  [InnerProductSpace ℂ E] [FiniteDimensional ℂ E] [Fintype ι] (v : ι → B → E) (hv : ∀ (i : ι), Continuous (v i))
+  (hcard : Fintype.card ι < Module.finrank ℂ E) :
+  have V := fun b => (Submodule.span ℂ (Set.range fun i => v i b))ᗮ;
+  IsConnected Set.univ
+ManuscriptProofs.Quantum.paired_plane_parameters {u v : ℝ} (hu : 0 ≤ u) (huv : u < v) (hv : v < 1) :
+  2 * u / (1 + u ^ 2) < 2 * v / (1 + v ^ 2) ∧ 0 < (1 - u ^ 2) / (1 + u ^ 2)
+ManuscriptProofs.Quantum.flat_mixer_weight (n : ℝ) (hn : n ≠ 0) (same : Bool) :
+  Complex.normSq { re := (if same = true then 1 else 0) - 2 / (401 * n), im := 40 / (401 * n) } =
+    if same = true then 1 - (n - 1) * (4 / (401 * n ^ 2)) else 4 / (401 * n ^ 2)
+ManuscriptProofs.Quantum.blocks_of_two_commutators.{u_1, u_2} {s : Type u_1} {e : Type u_2} [Fintype s] [DecidableEq s]
+  [Fintype e] [DecidableEq e] (L : Quantum.Operator (s × e)) (B : Quantum.Operator s) (z : s → ℂ)
+  (hz : Commute L (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) (Matrix.diagonal z) 1))
+  (hb : Commute L (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) B 1))
+  (hoff : ∀ (i j : s), i ≠ j → (z i + z j) * B i j = 0)
+  (hsep : ∀ (i j : s), z i = z j → 2 * z i * B i i = 2 * z j * B j j → i = j) :
+  ∃ H, L = Quantum.diagonalEnvironmentBlocks H ∧ ∀ (i j : s), B i j ≠ 0 → H i = H j
+ManuscriptProofs.Quantum.three_setting_product_rigidity.{u_1, u_2, u_3} {s : Type u_1} {e : Type u_2} [Fintype s]
+  [DecidableEq s] [Fintype e] [DecidableEq e] {κ : Type u_3} [Fintype κ] [Nonempty κ] (L : Quantum.Operator (s × e))
+  (B : Quantum.Operator s) (z : s → ℂ)
+  (hz : Commute L (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) (Matrix.diagonal z) 1))
+  (hb : Commute L (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) B 1))
+  (hoff : ∀ (i j : s), i ≠ j → (z i + z j) * B i j = 0)
+  (hsep : ∀ (i j : s), z i = z j → 2 * z i * B i i = 2 * z j * B j j → i = j) (key : s → κ) (rep : κ → s)
+  (hedge : ∀ (i : s), i = rep (key i) ∨ B i (rep (key i)) ≠ 0) (K : Finset κ) (hK : ∀ (i j : κ), i ∉ K → j ∉ K → i = j)
+  (c : ℝ) (hc : c ≠ 0)
+  (havg :
+    ∀ i ∈ K,
+      ∀ (x y : e),
+        L (rep i, x) (rep i, y) =
+          (1 - ↑(Fintype.card κ) * c) • L (rep i, x) (rep i, y) + c • ∑ j, L (rep j, x) (rep j, y)) :
+  ∃ H, L = Matrix.kroneckerMap (fun x1 x2 => x1 * x2) 1 H
+ManuscriptProofs.Quantum.selected_gram_bound.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (G : Matrix ι ι ℂ)
+  (μ ev : ℝ) (hd : ∀ (i : ι), G i i = 1) (ho : ∀ (i j : ι), i ≠ j → ‖G i j‖ ≤ μ)
+  (he : Module.End.HasEigenvalue (Matrix.toLin' G) ↑ev) : ev ≤ 1 + ↑(Fintype.card ι - 1) * μ
+ManuscriptProofs.Quantum.selected_frame_bound.{u_1, u_2} {d : Type u_1} {ι : Type u_2} [Fintype d] [DecidableEq d]
+  [Nonempty d] [Fintype ι] [DecidableEq ι] (A : Matrix d ι ℂ) (μ : ℝ) (hμ : 0 ≤ μ)
+  (hd : ∀ (i : ι), (A.conjTranspose * A) i i = 1) (ho : ∀ (i j : ι), i ≠ j → ‖(A.conjTranspose * A) i j‖ ≤ μ) :
+  A * A.conjTranspose ≤ (1 + ↑(Fintype.card ι - 1) * μ) • 1
+ManuscriptProofs.Quantum.retained_trace_pos {E : Quantum.Operator (Fin 2)} (h : Matrix.PosSemidef E) (hn : E ≠ 0) :
+  0 < (Matrix.trace E).re / 2
+ManuscriptProofs.Quantum.parent_string_witness.{u_1, u_2} {ι : Type u_1} {Ω : Type u_2} [Fintype ι] [Fintype Ω]
+  [DecidableEq Ω] (G : Quantum.POVM (Fin 2) Ω) (W : ι → Quantum.Operator (Fin 2)) (events : ι → Finset Ω) (δ : ℝ)
+  (h : ∀ (o : Ω), (∑ i, if o ∈ events i then W i else 0) ≤ δ • 1) : (∑ i, (W i * G.event (events i)).trace.re) / 2 ≤ δ
+ManuscriptProofs.LossyQubit.clipped_interval_average (f : ℝ → ℝ) (hf : MonotoneOn f (Set.Icc 0 1)) (h0 : 0 ≤ f 0)
+  (h1 : f 1 ≤ 1) {h : ℝ} (hh : 0 ≤ h) (hh1 : h ≤ 1) :
+  ∫ (t : ℝ) in 0..1, f (min 1 (t + h)) ≤ (∫ (t : ℝ) in 0..1, f t) + h
+ManuscriptProofs.LossyQubit.representative_average.{u_1} {X : Type u_1} [MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (u v : X → ℝ) (f : ℝ → ℝ) (hf : Monotone f) (h0 : 0 ≤ f 0) (h1 : f 1 ≤ 1) {h : ℝ}
+  (hh : 0 ≤ h) (hh1 : h ≤ 1) (hu : MeasureTheory.MeasurePreserving u μ (MeasureTheory.volume.restrict (Set.Ioc 0 1)))
+  (hv : ∀ (x : X), v x ≤ 1 ∧ v x ≤ u x + h) (hint : MeasureTheory.Integrable (fun x => f (v x)) μ) :
+  ∫ (x : X), f (v x) ∂μ ≤ (∫ (t : ℝ) in 0..1, f t) + h
+ManuscriptProofs.LossyQubit.finite_menu_minimax.{u_1} {ι : Type u_1} [Fintype ι] [Nonempty ι] [DecidableEq ι]
+  (S : Set (ι → ℝ)) (hs : S.Nonempty) (hk : IsCompact ((convexHull ℝ) S)) (c : ℝ)
+  (h : ∀ p ∈ stdSimplex ℝ ι, ∃ v ∈ S, c ≤ ∑ i, p i * v i) :
+  ∃ t, ↑t ⊆ S ∧ t.card ≤ Fintype.card ι + 1 ∧ ∃ v ∈ (convexHull ℝ) ↑t, ∀ (i : ι), c ≤ v i
+ManuscriptProofs.Optical.coherent_cross_ratio (a b c : ℂ) :
+  Optical.coherentOverlap a c * Optical.coherentOverlap c b / Optical.coherentOverlap a b =
+    Complex.exp (-((starRingEnd ℂ) a - (starRingEnd ℂ) c) * (b - c))
+ManuscriptProofs.Optical.cutoff_response.{u_1, u_2} {d : Type u_1} {k : Type u_2} [Fintype d] [DecidableEq d]
+  [Fintype k] (w : k → ℝ) (Q : k → Quantum.Operator d) (hw : ∀ (i : k), 0 ≤ w i) (hs : ∑ i, w i = 1)
+  (hp : ∀ (i : k), 0 ≤ 1 + Q i) (hm : ∀ (i : k), 0 ≤ 1 - Q i) (p S : ℝ) (hS : 0 ≤ S) (hl : S ≤ p) (hu : S ≤ 1 - p)
+  (t : k → ℝ) (ht : ∀ (i : k), |t i| ≤ 1) :
+  have M := Optical.cutoffParent w Q hw hs hp hm;
+  have prob := fun o => if o.2 = true then p + S * t o.1 else p - S * t o.1;
+  (∀ (o : k × Bool), 0 ≤ prob o ∧ prob o ≤ 1) ∧ ∑ o, prob o • M.effect o = p • 1 + S • ∑ i, (w i * t i) • Q i
+ManuscriptProofs.Optical.cutoff_radius_bound {r y : ℝ} (hr : 0 ≤ r) (hr1 : r ≤ 1) (hy : 0 ≤ y) (hy' : y ≤ r ^ 2 / 36) :
+  y + 2 * (Real.exp (2 * r * √y) - 1) ≤ min 1 (Real.exp (r ^ 2) - 1)
+ManuscriptProofs.SpinWigner.continuous_log_with_local_formula.{u_1} {X : Type u_1} [TopologicalSpace X]
+  [SimplyConnectedSpace X] [LocallyPathConnectedSpace X] (f : X → ℂ) (hf : Continuous f) (hn : ∀ (x : X), f x ≠ 0)
+  (x₀ : X) :
+  ∃ g,
+    Continuous g ∧
+      (∀ (x : X), Complex.exp (g x) = f x) ∧ ∀ (x : X), ∀ᶠ (y : X) in nhds x, g y = g x + Complex.log (f y / f x)
+ManuscriptProofs.Carleman.finite_section_unique.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  (A : E →L[ℝ] E) {f g : ℝ → E} {T : ℝ} (hf : ContinuousOn f (Set.Icc 0 T)) (hg : ContinuousOn g (Set.Icc 0 T))
+  (df : ∀ t ∈ Set.Ico 0 T, HasDerivWithinAt f (A (f t)) (Set.Ici t) t)
+  (dg : ∀ t ∈ Set.Ico 0 T, HasDerivWithinAt g (A (g t)) (Set.Ici t) t) (hzero : f 0 = g 0) : Set.EqOn f g (Set.Icc 0 T)
+ManuscriptProofs.LossyQubit.branch_quadrature.{u_1} {X : Type u_1} [MeasurableSpace X] (μ : MeasureTheory.Measure X)
+  (u v : X → ℝ) {h r : ℝ} (hh : 0 ≤ h) (hh1 : h ≤ 1) (hr : 0 ≤ r) (hr1 : r ≤ 1)
+  (hu : MeasureTheory.MeasurePreserving u μ (MeasureTheory.volume.restrict (Set.Ioc 0 1)))
+  (hv : ∀ (x : X), v x ∈ Set.Icc 0 1) (hclose : ∀ (x : X), v x ≤ u x + h)
+  (hint : MeasureTheory.Integrable (fun x => LossyQubit.branchResponse r (v x)) μ) :
+  ∫ (x : X), LossyQubit.branchResponse r (v x) ∂μ ≤ (∫ (t : ℝ) in 0..1, LossyQubit.branchResponse r t) + h

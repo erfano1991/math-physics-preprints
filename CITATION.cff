@@ -1,0 +1,23 @@
+{
+  "cff-version": "1.2.0",
+  "message": "Use this citation for the collection and Lean verification library. Individual manuscript citations are in papers.bib.",
+  "title": "Mathematics and Quantum Physics Preprints",
+  "authors": [
+    {
+      "given-names": "Erfan",
+      "family-names": "Oliaei"
+    }
+  ],
+  "type": "software",
+  "version": "1.0.0",
+  "date-released": "2026-11-26",
+  "repository-code": "https://github.com/erfano1991/math-physics-preprints",
+  "url": "https://github.com/erfano1991/math-physics-preprints/releases/tag/v1.0.0",
+  "keywords": [
+    "mathematics",
+    "mathematical physics",
+    "quantum information",
+    "Lean 4",
+    "formal verification"
+  ]
+}
