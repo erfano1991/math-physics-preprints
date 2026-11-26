@@ -1,0 +1,494 @@
+% Run pdflatex until references stabilize. The bibliography is part of this file.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[a4paper,left=25mm,right=25mm,top=19mm,bottom=20mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkink}{RGB}{18,70,78}
+\usepackage[colorlinks=true,linkcolor=linkink,citecolor=linkink,urlcolor=linkink,
+  pdftitle={Every finite joint measurability structure is realizable on one qubit},
+  pdfauthor={Erfan Oliaei},pdfsubject={Quantum measurement incompatibility}]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+\newcommand{\Id}{I}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\K}{\mathcal K}
+\newcommand{\D}{\mathcal D}
+\setlength{\emergencystretch}{1.5em}
+\title{\bfseries Every finite joint measurability structure\\ is realizable on one qubit}
+\author{Erfan Oliaei}
+\date{26 November 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Every finite abstract simplicial complex is the family of jointly measurable
+subsets of a collection of measurements on one qubit. This resolves a
+conjecture of Andrejic and Kunjwal. For \(r\ge2\) maximal faces, the merged
+construction uses at most \(r\) outcomes per measurement and gives real
+rational effects in a common basis. Each measurement reports labels for
+the maximal faces that omit its vertex. Distinct labels are mutually
+exclusive in a joint measurement because their rank-one effects have
+different ranges. The signed construction with suitably separated Bloch
+axes uses at most \(2r-2\) outcomes per measurement and tolerates every
+depolarizing noise fraction below \(1/(2r^2)\). We give explicit
+bounds for independent perturbations of both constructions. At fixed
+Hilbert space dimension and fixed outcome cap, only \(2^{O(n\log n)}\)
+labelled pairwise compatibility graphs can occur on \(n\) measurements.
+Thus no fixed outcome cap is universal in any fixed dimension.
+\end{abstract}
+
+\section{The question}
+A joint measurement records one outcome for each observable in a single
+experiment and reproduces each observable's statistics on every input state. Forgetting
+coordinates gives a joint measurement for each subcollection. Jointly measurable subsets therefore form a simplicial
+complex. Kunjwal, Heunen and Fritz proved the converse with binary
+measurements on a Hilbert space whose dimension can grow with the
+complex~\cite{KHF}. Andrejic and Kunjwal realized all structures on four
+vertices and two infinite families on a qubit. They conjectured that
+qubit measurements with arbitrary finite outcome alphabets can realize
+every finite structure~\cite[Conjecture~4]{AK}. Kunjwal returned to this
+question in 2025~\cite[Sec.~5.3]{HDR}. Section~\ref{sec:count} shows that
+any fixed outcome cap excludes some structures.
+
+A finite positive operator-valued measure (POVM) is a family \(M=(M(x))_{x\in X}\) of
+positive semidefinite operators summing to the identity \(\Id\).
+A labelled subfamily \((M_v)_{v\in S}\) is \emph{jointly measurable}, or
+\emph{compatible}, if there is a POVM \(G\) on \(\prod_{v\in S}X_v\) such that
+\[
+     \sum_{\boldsymbol x:\,x_v=x}G(\boldsymbol x)=M_v(x)
+     \qquad (v\in S,\ x\in X_v).
+\]
+We use the usual order \(A\preceq B\) for positive semidefinite \(B-A\).
+A complex \(\K\) on a finite set \(V\) contains the empty set and all
+singletons and is closed under subsets. Its maximal faces are its
+\emph{facets}.
+
+\begin{theorem}[Qubit universality]\label{thm:universal}
+Every finite simplicial complex \(\K\) is the compatibility complex of a
+family of POVMs on \(\C^2\). If \(\K\) has \(r\ge2\) facets, there is a
+realization with at most \(r\) outcomes per POVM and with real rational
+effects in a common basis. The least Hilbert space dimension is one
+for a simplex and two for every other complex.
+\end{theorem}
+
+A measurement at \(v\) can report the labels of the facets that \emph{omit}
+\(v\). A set of vertices is a face precisely when at least one label is
+absent from their combined list. Assigning different spin bases to different
+labels forces a parent measurement to count their weights separately.
+
+\section{Encoding the facets}
+Fix \(r\) orthonormal qubit bases \((p_{j,+},p_{j,-})\), with no ray shared
+by distinct bases, and write \(P_{j,s}=p_{j,s}p_{j,s}^*\). Give each label
+\(j\) a weight \(w_j>0\), and put \(w(A)=\sum_{j\in A}w_j\) for
+\(A\subseteq[r]=\{1,\ldots,r\}\). Whenever \(w(A)\le1\), define
+\begin{equation}\label{eq:measurement}
+ M_A(j,s)=w_jP_{j,s}\quad (j\in A,\ s\in\{+,-\}),\qquad
+ M_A(\bot)=(1-w(A))\Id .
+\end{equation}
+This is a POVM. With probability \(w_j\) it measures basis \(j\) and
+reports both \(j\) and its sign. With the remaining probability it reports
+\(\bot\). A zero outcome may always be omitted.
+
+\begin{lemma}[Union criterion]\label{lem:union}
+The measurements \(M_{A_1},\ldots,M_{A_\ell}\) are jointly measurable if and
+only if \(w(A_1\cup\cdots\cup A_\ell)\le1\).
+\end{lemma}
+\begin{proof}
+Write \(U=\bigcup_i A_i\). If \(w(U)\le1\), use \(M_U\) as parent. For
+each \(i\), keep a label in \(A_i\) and send every other outcome to \(\bot\).
+
+Conversely, suppose there is a joint POVM \(G\). For each \(j\in U\) choose
+one index \(i(j)\) with \(j\in A_{i(j)}\). Let \(B_j\) be the event that
+coordinate \(i(j)\) reports label \(j\) with either sign. Marginalizing gives
+\(G(B_j)=w_j\Id\). For \(j\ne k\), the events are disjoint if \(i(j)=i(k)\)
+because a coordinate reports one label at most. If \(i(j)\ne i(k)\), any
+atom in \(B_j\cap B_k\) has an effect \(H\) bounded by both marginals,
+\[
+          0\preceq H\preceq w_jP_{j,s},\qquad H\preceq w_kP_{k,t},
+\]
+where \(s,t\) are the reported signs. A positive \(H\preceq wP\) vanishes
+on \(\ker P\) because \(\|H^{1/2}x\|^2\le w\langle x,Px\rangle=0\) there.
+Thus the range of \(H\) lies in both rays and \(H=0\). Each nonzero atom
+contributes at most once, so \(\sum_{j\in U}G(B_j)=w(U)\Id\preceq\Id\).
+\end{proof}
+
+For singleton label sets with common weight, this criterion recovers the
+\(1/r\) efficiency threshold for \(r\) lossy projective
+measurements~\cite{SC}. Keeping the basis label also lets us group any
+admissible collection of those tests into one observable.
+
+\begin{proof}[Proof of Theorem~\ref{thm:universal}]
+List the facets as \(F_1,\ldots,F_r\). For \(r\ge2\), set
+\begin{equation}\label{eq:facetchoice}
+       A_v=\{j:v\notin F_j\},\qquad w_j=c=\frac1{r-1},
+       \qquad M_v=M_{A_v}.
+\end{equation}
+Each vertex belongs to a facet, so \(|A_v|\le r-1\). The union criterion
+gives the two equivalences
+\[
+ (M_v)_{v\in S}\ \text{compatible}
+ \quad\Longleftrightarrow\quad \bigcup_{v\in S}A_v\ne[r]
+ \quad\Longleftrightarrow\quad S\subseteq F_j\ \text{for some }j .
+\]
+If \(|A_v|=r-1\) the erasure effect is zero, leaving \(2r-2\) outcomes.
+Otherwise there are at most \(2r-3\). We call this the \emph{signed
+realization}.
+
+To reduce the alphabet to \(r\) outcomes, send every negative sign to
+\(\bot\), leaving just one reported outcome per label in \(A_v\) and one
+residual outcome. Explicitly, the reported effect is \(cP_j\) for each
+\(j\in A_v\), and the residual effect is \(\Id-\sum_{j\in A_v}cP_j\).
+Choose the positive rays close to \(e_1=(1,0)^{\mathsf T}\) by taking
+\begin{equation}\label{eq:rational}
+ P_j=P_{j,+}=\frac1{1+t_j^2}
+       \begin{pmatrix}1&t_j\\ t_j&t_j^2\end{pmatrix},\qquad
+ t_j=j/r^2,\qquad P_{j,-}=\Id-P_j .
+\end{equation}
+These bases share no ray, and their projectors have rational entries.
+For \(U=\bigcup_{v\in S}A_v\), the merged measurements on \(S\) have a
+parent exactly when
+\begin{equation}\label{eq:mergedunion}
+                    \sum_{j\in U}cP_j\preceq\Id .
+\end{equation}
+For necessity, take a joint POVM \(G\). For each \(j\in U\), choose a
+vertex \(v_j\in S\) with \(j\in A_{v_j}\). Let \(B_j\) be the event that
+\(v_j\) reports \(j\), so \(G(B_j)=cP_j\). The rank-one argument of
+Lemma~\ref{lem:union} gives \(G(B_j\cap B_k)=0\) for \(j\ne k\), hence
+\[
+              \sum_{j\in U}cP_j=\sum_{j\in U}G(B_j)\preceq\Id.
+\]
+For sufficiency, the effects \(cP_j\), \(j\in U\), and their residual
+form a parent. Each vertex keeps its own
+labels and sends the rest to \(\bot\). Faces have \(|U|\le r-1\), so they
+satisfy \eqref{eq:mergedunion}. A nonface has \(U=[r]\), and
+\[
+   \left\langle e_1,\Big(\sum_jcP_j\Big)e_1\right\rangle
+       =c\sum_j\frac1{1+t_j^2}\ \ge\ \frac{rc}{1+r^{-2}}\ >\ 1 .
+\]
+This proves the bound of \(|A_v|+1\le r\) with real rational effects.
+
+In dimension one the product of the individual distributions is a parent,
+so the realizable complexes are exactly the simplices, including the one
+on the empty vertex set. Scalar POVMs realize them on a qubit as well.
+\end{proof}
+
+\begin{example}
+For facets \(\{1,2,3\}\), \(\{2,4\}\) and \(\{3,4\}\), the label sets
+in vertex order are \(\{2,3\}\), \(\{3\}\), \(\{2\}\) and \(\{1\}\),
+with weight \(1/2\) per label. Exactly two minimal sets display all three
+labels, namely \(\{1,4\}\) and \(\{2,3,4\}\).
+\end{example}
+
+Cardinality thresholds already occur with binary measurements. For integers
+\(1\le k<N\), give vertex \(j\in[N]\) the two effects \(P_j/k\) and
+\(\Id-P_j/k\), using \eqref{eq:rational} with \(r=N\). The proof of
+\eqref{eq:mergedunion} with weight \(1/k\) shows that \(S\) is compatible
+exactly when \(\sum_{j\in S}P_j\preceq k\Id\). This holds for \(|S|\le k\).
+For \(|S|\ge k+1\), the expectation of the sum in \(e_1\) is at least
+\((k+1)/(1+N^{-2})>k\). Thus \(k=2\) gives, for every \(N\ge3\), the
+\(N\)-complete scenario in which every pair is compatible and every triple
+is incompatible~\cite[Example~3 and Sec.~VI]{AK}. The parent with at most one
+reported label also occurs in the lossy binary construction of Bene and
+V\'ertesi~\cite[Sec.~IV]{BV}. Zhang and Chen use the distinct-ray argument
+to determine a parent for binary measurements from a rank-one
+informationally complete POVM~\cite{ZC}.
+
+\section{Quantitative stability}
+For \(0\le\varepsilon\le1\), depolarization acts on an effect by
+\[
+   \D_\varepsilon(E)=(1-\varepsilon)E+\varepsilon\tau(E)\Id,
+   \qquad \tau(E)=\tfrac12\tr(E).
+\]
+This unital positive map preserves every compatible set by acting on its
+parent. To keep the nonfaces incompatible we use the overlap witness of
+Skrzypczyk and Cavalcanti~\cite[Secs.~IV--V and Eq.~(12)]{SC}.
+Their noise condition specializes to ours with detection efficiency
+\(c\), visibility \(1-\varepsilon\), and dimension two. The facet labels
+let us apply it to every nonface of a single measurement family.
+
+\begin{theorem}[Depolarizing noise]\label{thm:noise}
+Let \(\K\) have \(r\ge2\) facets. For the signed measurements
+in \eqref{eq:facetchoice}, let
+\[
+ \mu=\max_{\substack{j\ne k\\s,t\in\{+,-\}}}
+                 |\langle p_{j,s},p_{k,t}\rangle|,\qquad
+ \delta=1-\mu>0 .
+\]
+Then \((\D_\varepsilon M_v)_{v\in V}\) has compatibility complex \(\K\)
+whenever \(0\le\varepsilon<2\delta/r\). The bases can be chosen so that
+every \(0\le\varepsilon<1/(2r^2)\) is allowed.
+\end{theorem}
+\begin{proof}
+Fix a nonface \(S\). Every label occurs in \(S\), so choose \(v_j\in S\)
+with \(j\in A_{v_j}\) for each \(j\). For any compatible family \(N\) on
+\(S\) with these outcome alphabets, we claim
+\begin{equation}\label{eq:witness}
+ \mathcal W_S(N):=
+ \sum_{j=1}^{r}\sum_{s=\pm}\tau\big[(P_{j,s}-\mu\Id)\,N_{v_j}(j,s)\big]
+ \ \le\ \delta .
+\end{equation}
+On a fixed outcome string of a parent, let \(J\) contain the labels \(j\)
+for which coordinate \(v_j\) reports \((j,s_j)\) for some sign \(s_j\).
+For nonempty \(J\), the Gram matrix of the selected unit vectors has
+absolute row sums at most \(1+(|J|-1)\mu\). Its largest eigenvalue is
+also the largest eigenvalue of \(\sum_{j\in J}P_{j,s_j}\). Consequently
+\[
+   \sum_{j\in J}(P_{j,s_j}-\mu\Id)\preceq\delta\Id .
+\]
+The bound holds for empty \(J\) as well. Taking the normalized trace
+against the positive parent effect on each string and summing proves
+\eqref{eq:witness}. A coordinate selected for several labels can report
+only one of them, so repeated choices of \(v_j\) cause no change.
+
+For a rank-one qubit projector \(P\), use \(P^2=P\) and \(\tau(P)=1/2\) to get
+\[
+ \tau\big[(P-\mu\Id)\D_\varepsilon(cP)\big]
+ =\frac c2\big[(1-\varepsilon)(1-\mu)+\varepsilon(1/2-\mu)\big]
+ =\frac c2(\delta-\varepsilon/2).
+\]
+Summing over the two signs for every label gives
+\begin{equation}\label{eq:gap}
+     \mathcal W_S(\D_\varepsilon M)-\delta
+       = r c(\delta-\varepsilon/2)-\delta
+       = c(\delta-r\varepsilon/2).
+\end{equation}
+A positive gap excludes a joint measurement. This proves the first claim
+for every nonface at once.
+
+For the second claim, write a spin projector with Bloch direction
+\(u\in\mathbb S^2\) as \(P(u)=(\Id+u\cdot\boldsymbol\sigma)/2\), where
+\(\boldsymbol\sigma\) denotes the three Pauli matrices. Choose \(r\) axes
+so that \(|u_j\cdot u_k|\le1-1/r\) for \(j\ne k\). Such a choice is
+possible successively. For a fixed \(u_j\), the region
+\(|u_j\cdot u|>1-1/r\) occupies \(1/r\) of the sphere, since \(u_j\cdot u\)
+is uniform on \([-1,1]\) for uniform \(u\). The union of at most \(r-1\)
+excluded regions has normalized area at most \((r-1)/r<1\), so another
+axis can be chosen. As
+\(\tr[P(u)P(v)]=(1+u\cdot v)/2\), both choices of sign give
+\[
+  \delta\ \ge\ 1-\sqrt{1-\frac1{2r}}\ \ge\ \frac1{4r}.
+\]
+\end{proof}
+
+For an explicit signed realization with real effects, take the \(r\)
+unoriented Bloch axes at angles \(j\pi/r\), \(0\le j<r\), in the \(xz\)-plane.
+Then \(\delta=1-\cos(\pi/(2r))\), giving the sufficient noise threshold
+\(\varepsilon<2[1-\cos(\pi/(2r))]/r\).
+For \(r=2\), take two singleton facets and the orthogonal Pauli axes
+\(X,Z\). The theorem guarantees incompatibility for \(\varepsilon<1-1/\sqrt2\).
+At equality,
+\[
+        G(s,t)=\tfrac14\big[\Id+(sX+tZ)/\sqrt2\big],
+        \qquad s,t\in\{-1,1\},
+\]
+is a parent. Mixing it with the uniform parent covers larger noise
+fractions, giving the exact two-axis threshold~\cite{Busch}.
+
+The merged realization has a positive margin as well. Set
+\[
+ \rho=e_1e_1^*,\qquad Q=\sum_j\tr(\rho P_j)>r-1,\qquad
+ L=Q+\frac r2(\delta^{-1}-1)>0,
+\]
+where \(\delta\in(0,1]\) is the separation of the rational bases in
+\eqref{eq:rational}, as defined in Theorem~\ref{thm:noise}.
+For every nonface choose one vertex \(v_j\) reporting each positive label
+\(j\). On any jointly measurable family \(N\) of these observables,
+\begin{equation}\label{eq:merged-witness}
+   \sum_j \tr\left[\left(\rho-\frac{\Id-P_j}{\delta}\right)
+                         N_{v_j}(j)\right]\le 1 .
+\end{equation}
+If a parent string reports the selected labels \(J\ne\varnothing\),
+the Gram bound gives \(\sum_{j\in J}(\Id-P_j)\succeq (|J|-1)\delta\Id\).
+Combining this with \(\rho\preceq\Id\) gives
+\[
+ \sum_{j\in J}\left(\rho-\frac{\Id-P_j}{\delta}\right)
+ \preceq |J|\rho-(|J|-1)\Id\preceq\rho .
+\]
+For \(J=\varnothing\) the sum is zero. Tracing against the positive
+parent effects and summing gives \eqref{eq:merged-witness}.
+After depolarization the left side equals \(c(Q-\varepsilon L)\).
+Thus the merged pattern survives whenever
+\begin{equation}\label{eq:mergedthreshold}
+              0\le\varepsilon<(Q-r+1)/L .
+\end{equation}
+
+\begin{corollary}[Independent perturbations]\label{cor:perturb}
+Let \(\K\) have \(r\ge2\) facets and let \(M\) be either realization.
+Omit zero effects. Put \(\pi_v(x)=\tau(M_v(x))>0\) and \(f=\max_j|F_j|\). Suppose POVMs \(N_v(x)=\D_\varepsilon(M_v(x))+H_v(x)\)
+on the same alphabets satisfy
+\(\|H_v(x)\|_{\op}\le h\,\pi_v(x)\) for every \(v,x\). Their compatibility
+complex is \(\K\) provided \(h\ge0\), \(0<\varepsilon\le1\), and
+\begin{align}
+ h&<\min\{\varepsilon/f,\ 2\delta/r-\varepsilon\}
+       &&\text{for the signed realization},\label{eq:radius}\\
+ h&<\min\left\{\varepsilon/f,\
+        \frac{2(Q-r+1-\varepsilon L)}{r(1+1/\delta)}\right\}
+       &&\text{for the merged realization}.\label{eq:mergedradius}
+\end{align}
+\end{corollary}
+\begin{proof}
+For a face \(S\), take a parent \(G\) of \((M_v)_{v\in S}\) on the
+product outcome space. A parent for the perturbed family is
+\[
+ (1-\varepsilon)G(\boldsymbol x)
+ +\Big(\prod_{v\in S}\pi_v(x_v)\Big)
+   \left(\varepsilon\Id+\sum_{v\in S}\frac{H_v(x_v)}{\pi_v(x_v)}\right).
+\]
+The bracket is positive because \(|S|h<\varepsilon\). Since
+\(\sum_x H_v(x)=0\), the second term contributes exactly
+\(\varepsilon \pi_v(x_v)\Id+H_v(x_v)\) to marginal \(v\). For a nonface in the signed
+realization, each selected outcome has \(\pi_{v_j}(j,s)=c/2\), and
+\(\tau(|P_{j,s}-\mu\Id|)=1/2\). Hence the change in \eqref{eq:witness}
+is at most \(rch/2\), smaller than the gap in \eqref{eq:gap}.
+For the merged realization, each selected label again has \(\pi_{v_j}(j)=c/2\).
+The trace norm of \(\rho-(\Id-P_j)/\delta\) is at most \(1+1/\delta\).
+Thus \eqref{eq:mergedradius} bounds the change in \eqref{eq:merged-witness}
+strictly below its gap \(c(Q-r+1-\varepsilon L)\).
+\end{proof}
+
+For positive \(\varepsilon\) below the corresponding noise threshold, the
+strict bounds give an open neighborhood with pattern \(\K\) in the affine space
+of Hermitian families on the fixed alphabets with \(\sum_x E_v(x)=\Id\)
+for each \(v\). The lower bound \((\varepsilon-h)\pi_v(x)\Id\) makes all
+effects there positive definite. For a simplex, the parent formula with
+\(S=V\) and \(\varepsilon=1\) works near strictly positive scalar POVMs when
+\(|V|h<1\).
+
+\emph{Distinct settings.} For settings with at least two outcomes, coincidence under a fixed outcome
+permutation is a proper affine condition: change two effects of one setting by \(+t\Id\) and \(-t\Id\) while holding the other setting fixed. Normalization is preserved and at most one value of \(t\) solves a specified coincidence. Each such affine subspace has empty interior, and a finite union of them has empty interior. The finitely many such conditions
+can be avoided within the open neighborhood. In the real construction with
+a rational noise fraction, rational symmetric perturbations suffice.
+Vertices in every facet can use distinct biased binary coins within the
+bounds for \(r\ge2\). Appending or forgetting independent coins preserves
+compatibility.
+
+\section{Why the outcome alphabet must grow}\label{sec:count}
+A \emph{pairwise compatibility graph} has an edge \(ij\) when \(M_i\)
+and \(M_j\) have a common parent. Grinko and Uola characterize compatibility
+for families of unbiased binary qubit measurements~\cite{GU}. We count these
+graphs at fixed dimension and outcome cap, allowing arbitrary bias.
+One-outcome POVMs give only complete graphs, so we take \(q\ge2\).
+
+\begin{theorem}[Fixed outcome cap]\label{thm:count}
+Fix a Hilbert space dimension \(d\ge1\) and an outcome cap \(q\ge2\).
+Let \(g_{d,q}(n)\) count the labelled pairwise compatibility graphs
+realized by \(n\) POVMs with at most \(q\) outcomes each. With
+\(m=d^2(q-1)\), there is a constant \(C_{d,q}\) such that, for all
+sufficiently large \(n\),
+\begin{equation}\label{eq:count}
+       g_{d,q}(n)\le(C_{d,q}n)^{mn}.
+\end{equation}
+Consequently the proportion of labelled graphs so realizable tends to zero.
+Thus for every fixed \(d\) and \(q\), some finite complexes have no realization
+with \(q\) or fewer outcomes per measurement in dimension \(d\).
+\end{theorem}
+\begin{proof}
+Pad each alphabet to \(q\) outcomes with zero effects. A point \(x\in\R^m\)
+specifies the first \(q-1\) Hermitian matrices, and normalization gives the
+last. Let \(R(x,y)\) hold when the two lists are POVMs with a common parent.
+A parent consists of \(q^2\) positive semidefinite matrices \(G_{ab}\) whose
+row and column sums equal the prescribed effects, enforcing their positivity.
+These conditions are polynomial equalities and inequalities, using principal
+minors for positivity. By Tarski--Seidenberg~\cite{Seidenberg}, their projection
+\(R\) onto \((x,y)\) is semialgebraic. A fixed Boolean function of \(b\)
+polynomial signs decides \(R\), with the degrees bounded by \(D\) and
+\(b,D\ge1\) depending only on \(d,q\).
+
+The graph depends on the signs of \(s=b\binom n2\) polynomials in \(N=mn\)
+variables. As in the argument cited by Sauermann~\cite[App.~A.1]{Sauermann},
+choose a point per realized pattern and a common \(\xi>0\) smaller than every
+nonzero \(|p|\) at these points. The strict signs of the \(2s\) polynomials
+\(p\pm\xi\) recover all original patterns. Warren's bound~\cite[Thm.~3]{Warren}
+therefore gives, for \(s\ge N\),
+\[
+       g_{d,q}(n)\le (8eDs/N)^N
+       = \left(\frac{4ebD(n-1)}{m}\right)^{mn},
+\]
+which implies \eqref{eq:count}.
+
+There are \(2^{\binom n2}\) labelled graphs. Each is the pairwise graph
+of a simplicial complex, for instance the complex consisting of its
+edges, vertices and the empty face. Universality would require all these
+graphs.
+\end{proof}
+
+For an explicit obstruction, let \(B_t\) be bipartite with parts \([t]\)
+and \(2^{[t]}\), joining \(i\) to \(T\) exactly when \(i\in T\).
+Fix the \(t\) left measurements. The signs of \(bt\) polynomials in the
+\(m\) coordinates of a right measurement determine its neighbourhood.
+The same bound allows \(O_{d,q}(t^m)\) possibilities. Since \(B_t\) requires
+\(2^t\), it is impossible at any fixed \((d,q)\) for all sufficiently large
+\(t\), including the binary qubit case \(d=q=2\).
+
+The facet construction gives an outcome upper bound for each complex. The
+counting argument shows that the worst-case outcome requirement diverges
+with the number of vertices. Determining its growth rate remains open.
+
+\paragraph{Acknowledgment.}
+I used OpenAI Codex to develop and check proofs, run auxiliary
+computations, and prepare this manuscript. The preprint is archived on
+\href{https://doi.org/10.5281/zenodo.24528781}{Zenodo}.
+
+\begin{thebibliography}{99}
+\small
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\raggedright
+\bibitem{KHF}
+R.~Kunjwal, C.~Heunen and T.~Fritz,
+Quantum realization of arbitrary joint measurability structures,
+\href{https://doi.org/10.1103/PhysRevA.89.052126}{Phys.\ Rev.\ A
+\textbf{89}, 052126 (2014)}.
+\bibitem{AK}
+N.~Andrejic and R.~Kunjwal,
+Joint measurability structures realizable with qubit measurements:
+Incompatibility via marginal surgery,
+\href{https://doi.org/10.1103/PhysRevResearch.2.043147}{Phys.\ Rev.\ Research
+\textbf{2}, 043147 (2020)}.
+\bibitem{HDR}
+R.~Kunjwal, \emph{Quantumness via Discrete Structures},
+habilitation thesis, Aix-Marseille Universit\'e (2025), \href{https://arxiv.org/abs/2512.10063}{arXiv:2512.10063}.
+\bibitem{SC}
+P.~Skrzypczyk and D.~Cavalcanti, Loss-tolerant Einstein-Podolsky-Rosen
+steering for arbitrary-dimensional states: Joint measurability and unbounded
+violations under losses,
+\href{https://doi.org/10.1103/PhysRevA.92.022354}{Phys.\ Rev.\ A
+\textbf{92}, 022354 (2015)}.
+\bibitem{BV}
+E.~Bene and T.~V\'ertesi, Measurement incompatibility does not give rise
+to Bell violation in general,
+\href{https://doi.org/10.1088/1367-2630/aa9ca3}{New J.\ Phys.\
+\textbf{20}, 013021 (2018)}.
+\bibitem{ZC}
+Y.-X.~Zhang and J.-L.~Chen, Measurement incompatibility and noiseless quantum codes,
+\href{https://arxiv.org/abs/2610.37347}{arXiv:2610.37347 (2026)}.
+\bibitem{Busch}
+P.~Busch, Unsharp reality and joint measurements for spin observables,
+\href{https://doi.org/10.1103/PhysRevD.33.2253}{Phys.\ Rev.\ D
+\textbf{33}, 2253--2261 (1986)}.
+\bibitem{GU}
+D.~Grinko and R.~Uola, Compatibility of binary qubit measurements,
+\href{https://doi.org/10.1103/vv1h-5mf9}{Phys.\ Rev.\ Lett.\
+\textbf{135}, 200201 (2025)}.
+\bibitem{Seidenberg}
+A.~Seidenberg, A new decision method for elementary algebra,
+\href{https://doi.org/10.2307/1969640}{Ann.\ of Math.\ (2)
+\textbf{60}, 365--374 (1954)}.
+\bibitem{Sauermann}
+L.~Sauermann, On the speed of algebraically defined graph classes,
+\href{https://doi.org/10.1016/j.aim.2021.107593}{Adv.\ Math.\
+\textbf{380}, 107593 (2021)}.
+\bibitem{Warren}
+H.~E.~Warren, Lower bounds for approximation by nonlinear manifolds,
+\href{https://doi.org/10.1090/S0002-9947-1968-0226281-1}{Trans.\ Amer.\
+Math.\ Soc.\ \textbf{133}, 167--178 (1968)}.
+\end{thebibliography}
+\end{document}

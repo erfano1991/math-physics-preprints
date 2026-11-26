@@ -1,0 +1,11 @@
+paper	pages	parser warnings	page renders	TeX verification
+finite-copy-quantum-lists	4	0	4	Two passes, no overfull boxes, missing glyphs or unresolved references
+graph-coupon-collector	4	0	4	Two passes, no overfull boxes, missing glyphs or unresolved references
+lossy-qubit-threshold	4	0	4	Two passes, no overfull boxes, missing glyphs or unresolved references
+optical-detector-threshold	2	0	2	Two passes, no overfull boxes, missing glyphs or unresolved references
+pure-state-exclusion	4	0	4	Two passes, no overfull boxes, missing glyphs or unresolved references
+qubit-universality	6	0	6	Two passes, no overfull boxes, missing glyphs or unresolved references
+qutrit-common-parent	3	0	3	Two passes, no overfull boxes, missing glyphs or unresolved references
+spin-wigner-negativity	2	0	2	Two passes, no overfull boxes, missing glyphs or unresolved references
+three-binary-measurements	4	0	4	Two passes, no overfull boxes, missing glyphs or unresolved references
+uniform-carleman-truncation	3	0	3	Two passes, no overfull boxes, missing glyphs or unresolved references

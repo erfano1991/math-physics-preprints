@@ -1,0 +1,143 @@
+$ lean Audit.lean
+'ManuscriptProofs.Quantum.finite_simplicial_complex_on_qubit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.facetMeasurement_outcome_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.facetMeasurement_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.merged_compatible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.no_full_code_in_maximally_entangled_hyperplane' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Quantum.proper_subspace_has_product_copy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.uniform_block_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.sixEffectParent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.sixEffects_annihilation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.opposite_slacks_zero_mixed_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.diagonal_environment_mixed_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.third_pair_environment_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.lift_annihilates_of_compressed_slack' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Quantum.lift_compress_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.lift_opposite_slack_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.noiseless_code_of_product_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.noiseless_code_of_lift_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Quantum.lists_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.hermitian_range_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.posSemidef_sum_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.orthogonal_support_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.list_tensor_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.signed_decomposition_of_list_condition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Quantum.zero_error_on_blocks_of_list_condition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Quantum.no_separable_exclusion_of_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.activation_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.activate_signed_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.hasBalancedBlocks_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.ratio_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.ratio_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.comparison_of_backward_equation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.GraphCollector.hasDerivAt_poisson_tail_succ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.GraphCollector.poisson_ratio_strictMonoOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.poisson_ratio_div_antitoneOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.GraphCollector.poisson_ratio_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.poissonBarrier_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.hasDerivAt_poissonBarrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.poissonBarrier_erase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.GraphCollector.poissonBarrier_deriv_le_generator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.GraphCollector.poissonBarrier_le_of_backward_equation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.LossyQubit.two_setting_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.LossyQubit.branch_capacity_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.LossyQubit.rank_one_branch_signed_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.blochEffect_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.blochEffect_residual_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.exists_blochEffect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.rank_one_click_residual_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.PureExclusion.qutrit_sqrt_triangle_iff_purity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.PureExclusion.weighted_spectral_sum_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.PureExclusion.spectral_dual_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.PureExclusion.top_excess_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.PureExclusion.strict_top_of_positive_excess' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.SpinWigner.negative_open_set_of_zero_overlap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.SpinWigner.abs_overlap_le_negative_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Carleman.divisor_sub_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Carleman.marked_ancestor_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Carleman.Tree.marks_le_internal_vertices' depends on axioms: [propext, Quot.sound]
+'ManuscriptProofs.Carleman.Tree.dyadic_mark_bound' depends on axioms: [propext, Quot.sound]
+'ManuscriptProofs.Carleman.inverse_divisor_product_of_dyadic_counts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Carleman.LabelledTree.inverse_divisor_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Carleman.riccati_error_at_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Carleman.riccati_denominator_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.finite_copy_lists_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.zero_error_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.noiseless_code_of_invertible_lift_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.PureExclusion.connected_of_frame_fibers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.PureExclusion.exclusion_phase_on_connected_family' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.GraphCollector.first_removal_backward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Optical.fixed_separation_necessity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Optical.saturation_subcollection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.switch_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.endpoint_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.switch_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.visibility_and_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.gate_bias_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.radial_zero_above_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.radial_coefficients_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.radial_sum_eq_switch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Qutrit.radial_sum_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.PureExclusion.unitary_trace_inverse_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.PureExclusion.complex_unit_sphere_connected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.PureExclusion.connected_orthogonal_extensions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Quantum.paired_plane_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.flat_mixer_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.blocks_of_two_commutators' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.three_setting_product_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.selected_gram_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.selected_frame_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.retained_trace_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Quantum.parent_string_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.LossyQubit.clipped_interval_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.LossyQubit.representative_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.LossyQubit.finite_menu_minimax' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Optical.coherent_cross_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Optical.cutoff_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.Optical.cutoff_radius_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.SpinWigner.continuous_log_with_local_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptProofs.Carleman.finite_section_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptProofs.LossyQubit.branch_quadrature' depends on axioms: [propext, Classical.choice, Quot.sound]

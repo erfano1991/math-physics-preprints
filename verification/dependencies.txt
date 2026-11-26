@@ -1,0 +1,10 @@
+Git HEAD, normalized tracked diff and full porcelain status checked for each dependency.
+mathlib 85e3a25e006c35636f0e53b0e9296caca2685bc0 clean
+plausible d9598f07b1bc701f1e3aae163d2681c1fd978793 clean
+LeanSearchClient ba67e212be1197b84c1f1f6299488a10a3002713 clean
+importGraph d8823026ac7ef130c253089d95685f9877b95323 clean
+proofwidgets a8acbfd87375ff4abe14ce09db5b7664d383bc7f clean
+aesop 18889deb9e83ea7420ef51c160d6f88552e744e3 clean
+Qq 507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3 clean
+batteries d54dddc581e08be364c278052863524bff7a99a9 clean
+Cli ab3a82db9fea14cf0fd7f5a2de650f4b534640af clean

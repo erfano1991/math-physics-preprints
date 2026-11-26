@@ -1,0 +1,210 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=25mm,top=19mm,bottom=21mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{24,62,103}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,pdfencoding=auto]{hyperref}
+\urlstyle{same}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{I}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\SU}{\mathrm{SU}}
+\author{Erfan Oliaei\\[2pt]\small Independent researcher}
+\date{26 November 2026}
+\raggedbottom
+\title{Minimal compatibility-threshold tests for noiseless quantum codes}
+\hypersetup{pdfauthor={Erfan Oliaei},pdftitle={Minimal compatibility-threshold tests for noiseless quantum codes}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct two tests for a noiseless copy of a finite-dimensional quantum system. In each test one measurement varies, and a channel admits an isometric noiseless encoding exactly when it preserves the compatibility threshold. If all measurements are binary, the minimum number of settings is three in dimensions at least three and two for a qubit. If two settings are allowed, a ternary and a binary measurement suffice in every dimension. For dimensions at least three their five outcomes are minimal. A single channel without a code preserves the compatibility status of every binary pair, yielding the common lower bound.
+\end{abstract}
+
+\section{The threshold}
+Write \(\Lambda:M_d\to M_D\) for the Heisenberg adjoint of a quantum channel, a unital completely positive map. A \emph{noiseless \(d\)-dimensional code} is an isometry \(J:\C^d\to\C^D\) with
+\(J^*\Lambda(X)J=X\) for every \(X\in M_d\). The binary measurement associated with a Hermitian contraction \(O\) has effects \((I\pm O)/2\).
+A tuple belongs to the compatibility set \(K_{d,k}\) exactly when it has a parent
+\begin{equation}\label{eq:parent}
+ G_s\succeq0,\qquad \sum_s G_s=I,\qquad
+ O_i=\sum_s s_iG_s,\qquad s\in\{-1,1\}^k .
+\end{equation}
+Classical postprocessing gives this form by taking the product of the response distributions conditional on the original parent outcome. The set is compact, convex and full dimensional: for small \(O_i\), the effects \(2^{-k}(I+\sum_i s_iO_i)\) work.
+
+Zhang and Chen \cite{zc} constructed a threshold test with \(d^2\) binary measurements and asked whether fewer suffice. Theorem~\ref{thm:main} gives the optimal count. Theorem~\ref{thm:ternary} gives the optimal two-setting outcome count. The all-binary construction also sharpens the existence result on incompatibility under proper compression \cite{uola,zc}. A three-setting qutrit example for that compression question was previously recorded \cite{qutrit}.
+\begin{theorem}\label{thm:main}
+For each \(d\ge2\) there are binary observables \(O_1,\ldots,O_k\) and an \(\epsilon>0\) such that \(T(t)=(tO_1,O_2,\ldots,O_k)\) consists of valid measurements for \(0\le t\le1+\epsilon\). Its compatibility threshold is \(1\). For every \(D\) and every \(\Lambda:M_d\to M_D\) as above,
+\[
+ \max\{t\in[0,1+\epsilon]:\Lambda(T(t))\in K_{D,k}\}=1
+ \quad\Longleftrightarrow\quad
+ \Lambda\ \text{admits a noiseless \(d\)-dimensional code}.
+\]
+The least possible count is \(k=2\) for \(d=2\) and \(k=3\) for \(d\ge3\).
+\end{theorem}
+
+\section{What a supporting functional detects}
+At any boundary point of \(K_{D,k}\) choose a nonzero supporting functional \(Y=(Y_i)\) oriented to be minimized there, with trace pairing on Hermitian matrices. For any parent \(J_s\) of that point there is a Hermitian \(H\) such that
+\begin{equation}\label{eq:slack}
+ Z_s=H+\sum_i s_iY_i\succeq0,\qquad Z_s J_s=0,\qquad H\succeq0,\ H\ne0.
+\end{equation}
+Indeed, minimize \(\sum_s\tr((\sum_i s_iY_i)J_s)\) subject to \(\sum_sJ_s=I,\ J_s\succeq0\). Strict primal feasibility at \(2^{-k}I\) gives a dual optimum \(H\) and complementary slackness by finite-dimensional semidefinite duality. Since \(2H=Z_s+Z_{-s}\), \(H=0\) would force every \(Z_s=0\), then \(Y=0\).
+
+Use \(\Lambda(X)=V^*(X\otimes I_E)V\) with \(V:\C^D\to\C^d\otimes E\) an isometry. If \(\Lambda(O)\) is on the boundary and \(G_s\) is a parent of \(O\), take \(J_s=\Lambda(G_s)\). Write \(L=VHV^*\) and \(\widehat Z_s=VZ_sV^*\). Cyclicity gives \(\tr[\widehat Z_s(G_s\otimes I_E)]=\tr(Z_sJ_s)=0\). Two positive operators with zero trace product have zero product, since that trace is the squared Hilbert--Schmidt norm of the product of their square roots. Thus
+\begin{equation}\label{eq:lift}
+ \widehat Z_s(G_s\otimes I_E)=0,\qquad
+ \widehat Z_s+\widehat Z_{-s}=2L,\qquad
+ 0\ne L\succeq0,\quad \operatorname{ran}L\subseteq\operatorname{ran}V .
+\end{equation}
+If these constraints force \(L=I_d\otimes H_*\), choose a unit \(e\in\operatorname{ran}H_*\). Then \(\C^d\otimes e\subseteq\operatorname{ran}V\), so \(Jx=V^*(x\otimes e)\) is the required code. Conversely, the code identity forces this product-subspace property in every Stinespring representation: the isometry \(VJ\) sends each basis vector \(e_a\) to \(e_a\otimes h_a\), by testing the rank-one basis projections. Testing the matrix units gives \(\langle h_a,h_b\rangle=1\), hence a common unit \(h_a\).
+
+\section{Six parent effects in every dimension}
+Put \(m=\lfloor d/2\rfloor\) and \(n=d-m\). Take an orthonormal basis \(e_1,\dots,e_n,f_1,\dots,f_m\). The last \(e_n\) is unpaired only when \(n=m+1\). On the planes \((e_k,f_k)\), \(1\le k\le m\), use \(Z=\left(\begin{smallmatrix}1&0\\0&-1\end{smallmatrix}\right)\) and \(X=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)\). Define
+\[
+ A=Z,\quad
+ B=b_kZ+a_kX,\quad
+ C_0=-(3Z+4X)/5,\quad
+ b_k=\frac{2u_k}{1+u_k^2},\quad a_k=\frac{1-u_k^2}{1+u_k^2},
+ \quad u_k=\frac{k}{20m}.
+\]
+On the unpaired line set \((A,B,C_0)=(1,-1,0)\). Let \(v=n^{-1/2}\sum_{j=1}^n e_j\), \(z=(399+40i)/401\), \(U=I+(z-1)vv^*\), and set \(C=UC_0U^*\), \(P=I-C^2\). Thus \(A,B\) are involutions, \(C\) has eigenvalues in \(\{-1,0,1\}\), and \(P\) is a projection commuting with \(A\). These matrices have rational real and imaginary parts. On a paired plane,
+\(\|B-X\|\le2u_k\le1/10\) and \(\|Z+X+C_0\|=1/\sqrt5\). Since \(\|C-C_0\|\le2|z-1|=4/\sqrt{401}\), we have
+\begin{equation}\label{eq:fourth}
+ \|A+B+C\|\le1/\sqrt5+1/10+4/\sqrt{401}<1 .
+\end{equation}
+
+Take \(s^1=(1,1,-1)\), \(s^2=(1,-1,1)\), \(s^3=(-1,1,1)\). Define the nonzero allowed parent outcomes by
+\begin{equation}\label{eq:six}
+ G_{\pm s^1}=(I+P)(I\mp A)/6,\quad
+ G_{\pm s^2}=(I\mp B)/6,\quad
+ G_{\pm s^3}=(I-P\mp C)/6 .
+\end{equation}
+Set the remaining two effects to zero. The first pair is positive since \(A\) commutes with \(P\). Positivity for the second follows from \(B^2=I\), and for the third from \(I-P=C^2\) and \(C^2\mp C\succeq0\). The three pair sums are \((I+P)/3,I/3,(I-P)/3\), so they sum to \(I\). Define \(O\) by the signed marginals \eqref{eq:parent}. Put \(X_1=(A+B)/2\), \(X_2=(A+C)/2\), and \(X_3=(B+C)/2\). The matrices \(I+\sum_i s_iX_i\) at \(\pm s^1,\pm s^2,\pm s^3\) are \(I\pm A,I\pm B,I\pm C\), respectively. The last two are \(I\pm(A+B+C)\) and are positive by \eqref{eq:fourth}. The six products with \(G_s\) vanish by \(A^2=B^2=I\), \(AP=PA\), and \(C^3=C\). Thus the nonconstant affine functional \(d+\sum_i\tr(X_i O_i')\) is nonnegative on \(K_{d,3}\) and vanishes at \(O\).
+
+\paragraph{Rigidity.}
+For each opposite pair write \(Q_\pm\) for its two support projections in the dilation and \(Z_\pm\) for the corresponding lifted slacks. Equation~\eqref{eq:lift} gives \(Z_\pm Q_\pm=Q_\pm Z_\pm=0\) by self-adjointness. Hence \(Q_+LQ_-=\tfrac12 Q_+(Z_++Z_-)Q_-=0\). In the first two pairs the supports are complementary eigenspaces, so \(L\) commutes with \(A\otimes I_E\) and \(B\otimes I_E\). The anticommutator \(AB+BA\) has the distinct eigenvalues \(2b_k\) on the paired planes and \(-2\) on the possible extra line. In a paired plane, commuting with \(Z\) makes \(L\) diagonal in the two system blocks. Commutation with \(b_kZ+a_kX\), where \(a_k\ne0\), then makes those blocks equal. Thus \(L\) acts by \(H_k\) on both \(e_k,f_k\), and by \(H_n\) on any unpaired \(e_n\), with no off-diagonal system blocks.
+
+The third pair gives the same mixed-block vanishing between the \(+1\) and \(-1\) eigenspaces of \(C\), even when \(C\) has a kernel. Write \(g_k=Ue_k\) and expand it as \(\sum_a \langle e_a,g_k\rangle e_a\). The mixed block of \(L\) between the unit eigenvectors \((g_k-2f_k)/\sqrt5\) and \((2g_k+f_k)/\sqrt5\) is
+\[
+ \frac{2}{5}\left(\sum_{a=1}^n|\langle e_a,g_k\rangle|^2 H_a-H_k\right)=0,
+\]
+since the mixed system entries of \(L\) vanish. Consequently
+\begin{equation}\label{eq:average}
+ H_k=\sum_{a=1}^n|\langle e_a,g_k\rangle|^2 H_a
+ \qquad(1\le k\le m).
+\end{equation}
+Every off-diagonal weight equals \(c=|z-1|^2/n^2>0\), and each diagonal weight is \(1-(n-1)c\). Substitution in \eqref{eq:average} and division by \(c\) give \(nH_k=\sum_a H_a\) on every paired plane. In odd dimension the sum has \(n-1\) blocks equal to this average and one unpaired block, so the unpaired block equals the same average. This proves \(L=I_d\otimes H_*\), as required.
+
+\paragraph{Varying one measurement.}
+At the source, \eqref{eq:lift} with \(V=I\) gives \(H=hI\), \(h>0\). For any supporting \(Y\), \eqref{eq:slack} and the full complementary eigenspaces of the first two pairs give
+\(\sum_i s_i^1Y_i=hA\) and \(\sum_i s_i^2Y_i=hB\).
+Consequently \(2Y_1=h(A+B)\ne0\). The pair \((O_2,O_3)\) is interior to \(K_{d,2}\), since a supporting normal to that pair would extend by zero to one with \(Y_1=0\). The triple \(T(0)=(0,O_2,O_3)\) is interior as well. Indeed an interior pair has a strictly positive parent by mixing a slightly enlarged compatible pair with the uniform parent. Split each outcome equally using a fair coin. A strictly positive parent gives interiority since small changes \(\delta O_i\) are lifted by adding \(2^{-k}\sum_i s_i\delta O_i\) to each \(G_s\).
+
+Every proper compression of this \(O\) is interior, since a boundary image of the constructed triple would require a \(d\)-dimensional code. In particular all scalar compressions are interior, so \(\|O_1\|<1\). Choose \(\epsilon>0\) with \((1+\epsilon)\|O_1\|\le1\). The segment from \(T(0)\) to \(T(1)\) is compatible. A compatible \(T(t)\) at \(t>1\) would make \(T(1)\) interior by taking convex combinations of \(T(t)\) with a ball around \(T(0)\). If the channel has no code, \(\Lambda(T(1))\) is interior, so compatibility extends to some \(t\in(1,1+\epsilon]\) by continuity. If the channel has a code, compressing any image parent with \(J\) recovers a source parent. This proves the three-setting upper bound.
+
+For \(d=2\) take rows \((1,1),(1,-1)\) and effects \((I\mp Z)/4\), \((I\mp X)/4\) on their respective opposite pairs. The linear witness is obtained by assigning the two rows to \(Z,X\) as above. Every lifted \(L\) commutes with \(Z\otimes I_E,X\otimes I_E\), hence equals \(I_2\otimes H_*\). Both signed marginals have norm \(1/\sqrt2\) and \(T(0)\) is interior. The same segment argument proves the two-setting upper bound.
+
+\section{One ternary and one binary measurement}
+\begin{theorem}\label{thm:ternary}
+In every finite dimension \(d\ge2\) there are an explicit three-outcome POVM
+\(G\) and a one-parameter binary effect \(B(t)\) whose compatibility threshold
+is \(1\). A unital completely positive map \(\Lambda:M_d\to M_D\) preserves this
+threshold exactly if there is an isometry \(J:\C^d\to\C^D\) with
+\(J^*\Lambda(X)J=X\) for every \(X\). For \(d\ge3\) the outcome counts
+\((3,2)\) are minimal among tests with two settings.
+\end{theorem}
+The binary effect \(B\) is compatible with \(G\) exactly when it belongs to
+\(\mathcal B(G)=\{\sum_i C_i:0\preceq C_i\preceq G_i\}\). The six effects
+\(C_i,G_i-C_i\) then give a joint measurement. It contains a neighborhood of \(I/2\): starting from \(C_i=G_i/2\), vary one split by a sufficiently small Hermitian matrix when all \(G_i\) are positive definite.
+
+\paragraph{Construction.}
+Let \(p=\lceil d/2\rceil,\ q=\lfloor d/2\rfloor\). Choose three real
+\(q\times p\) matrices \(T_i\), namely zero, the rectangular diagonal
+\(\operatorname{diag}(1,\ldots,q)/(2p)\) with a final zero column if needed,
+and the all-ones matrix divided by \(2p\). All have norm less than one.
+In \(\C^p\oplus\C^q\) put
+\[
+ P=\operatorname{diag}(I_p,0),\quad Z=2P-I,\quad
+ U_i=\begin{pmatrix}I&T_i^*\\T_i&I\end{pmatrix},\quad
+ S=\sum_i U_i^2,\quad M_i=S^{-1/2}U_i.
+\]
+Set \(G_i=M_iM_i^*\), \(B=\sum_i M_i P M_i^*\), and
+\(B(t)=I/2+t(B-I/2)\). The columns \((x,T_ix)\) span all of \(\C^d\)
+as \(i\) varies, since the diagonal \(T_i\) is onto. The columns
+\((T_i^*y,y)\) also span it because the all-ones matrix supplies the possible
+unpaired direction. Hence \(0\prec B\prec I\). Fix \(\epsilon>0\) small
+enough that \(B(t)\) is an effect throughout \([0,1+\epsilon]\).
+
+The functional with matrix \(S^{1/2}ZS^{1/2}\) attains its maximum over
+\(\mathcal B(G)\) at \(B\). Indeed any allowed split has the form \(M_i D_i M_i^*\)
+with \(0\le D_i\le I\), and
+\[
+ U_i^* Z U_i=\operatorname{diag}(I-T_i^*T_i,-(I-T_iT_i^*)).
+\]
+The maximizing split is \(D_i=P\). Since \(I/2\) is interior, \(B(t)\)
+is compatible through \(t=1\) and fails the supporting inequality for \(t>1\).
+
+\paragraph{Rigidity under channels.}
+Write \(\Lambda(X)=V^*(X\otimes I_E)V\) with \(V\) isometric. Each \(\Lambda(G_i)\) remains positive definite by unitality, so its split set is full dimensional. A boundary
+point \(\Lambda(B)\) of \(\mathcal B(\Lambda(G))\) has a nonzero Hermitian
+supporting matrix \(Y\), oriented to maximize. Set
+\(L=(S^{-1/2}\otimes I_E)VYV^*(S^{-1/2}\otimes I_E)\).
+In the image split one may independently replace \(P\otimes I_E\) by any
+positive contraction on \(\C^d\otimes E\), between the factors
+\(V^*(M_i\otimes I_E)\) and its adjoint. Thus \(P\otimes I_E\) maximizes
+the linear functional with matrix \((U_i^*\otimes I_E)L(U_i\otimes I_E)\).
+It commutes with that matrix, as follows by differentiating its unitary
+conjugates. For \(T_i=0\) this gives \(L=\operatorname{diag}(A,-D')\).
+The other mixed blocks give \(A T_i^*=T_i^*D'\), with identity tensors
+suppressed. Taking adjoints, \(A,D'\) commute with \(T_i^*T_i,T_iT_i^*\),
+respectively. The diagonal choice has simple squared singular values
+(including the possible single zero), so both matrices are diagonal in
+system blocks. The all-ones choice equates every upper block with every
+lower block. Therefore \(L=Z\otimes H\) with \(H\ne0\).
+Undoing the congruence gives
+\[
+ VYV^*=(S^{1/2}ZS^{1/2})\otimes H .
+\]
+The first factor is invertible. Thus \(\C^d\otimes\operatorname{ran}H\subseteq
+\operatorname{ran}V\). Choose a unit \(e\in\operatorname{ran}H\).
+Then \(Jx=V^*(x\otimes e)\) is a noiseless code. An interior image stays
+compatible for some \(t>1\). Conversely a code compresses each image
+parent to a source parent and preserves the threshold.
+
+The binary-pair obstruction in Section~\ref{sec:lower} proves minimality. A one-outcome setting is deterministic and is compatible with any other setting.
+
+\section{The obstruction for two binary settings}\label{sec:lower}
+An incompatible binary pair on \(\C^d\) violates CHSH with a pure state in \(\C^d\otimes\C^2\) and suitable observables on the companion qubit, by Proposition~2 and its proof in Wolf, P\'erez-Garc\'ia and Fern\'andez \cite{wolf}. The state's Schmidt support on the original system has dimension at most two. Compression to that support preserves the violating correlations, so the compressed pair is incompatible.
+
+Here is one finite channel that sees \emph{every} such compression. In \(\C^d\otimes\C^d\) let
+\[
+ \Omega=d^{-1/2}\sum_{a=1}^d e_a\otimes e_a,\qquad S=\Omega^\perp,
+ \qquad \Lambda_S(X)=P_S(X\otimes I)|_S .
+\]
+For every proper \(F\subset\C^d\), a unit \(h\perp\overline F\) gives \(F\otimes h\subset S\). Compressing the image to that copy recovers the compression to \(F\). Yet \(S\) contains no \(\C^d\otimes h\) for \(h\ne0\), since \(\Omega\) has full Schmidt rank. The product-subspace criterion after \eqref{eq:lift} excludes a code. For \(d\ge3\), \(\Lambda_S\) therefore preserves the compatibility status of every binary pair and hence every two-binary-setting threshold. A single binary measurement is always compatible. This completes Theorem~\ref{thm:main}.
+
+\begin{corollary}
+For every \(d\ge3\), three is the least number of binary measurements that can be incompatible on \(\C^d\) and compatible on every proper subspace.
+\end{corollary}
+\begin{proof}
+At \(t=1\) all codimension-one compressions of \(T(t)\) are interior. The isometries \(\C^{d-1}\to\C^d\) form a compact set and compression is continuous. In the maximum of the three operator norms, their compressed triples at \(t=1\) have positive distance from the closed complement of \(\operatorname{int}K_{d-1,3}\). Hence a single sufficiently small increase of \(t\) keeps all these compressions compatible. Smaller subspaces inherit compatible parents. The two-setting obstruction follows from the CHSH compression argument.
+\end{proof}
+
+\paragraph{Acknowledgment.} I used OpenAI Codex to assist with literature searches, developing and checking the proofs, and preparing this manuscript.
+
+\small
+\begin{thebibliography}{9}
+\bibitem{zc} Y.-X. Zhang and J.-L. Chen, \href{https://arxiv.org/abs/2610.37347}{Measurement incompatibility and noiseless quantum codes} (2026).
+\bibitem{uola} R. Uola et al., \href{https://doi.org/10.1103/PhysRevA.103.022203}{Quantum measurement incompatibility in subspaces}, Phys. Rev. A \textbf{103}, 022203 (2021).
+\bibitem{qutrit} AFTD, \href{https://rainwangphy.github.io/aftd-platform/d/open_problem_693_three_dim_fewer_than_nine/}{Three-dimensional example with fewer than nine binary measurements}, public proof record (2026).
+\bibitem{wolf} M. M. Wolf, D. P\'erez-Garc\'ia and C. Fern\'andez, \href{https://doi.org/10.1103/PhysRevLett.103.230402}{Measurements incompatible in quantum theory cannot be measured jointly in any other no-signaling theory}, Phys. Rev. Lett. \textbf{103}, 230402 (2009).
+\end{thebibliography}
+\end{document}

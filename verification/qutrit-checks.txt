@@ -1,0 +1,10 @@
+$ python certificates/check_qutrit.py
+gamma = 419/11440 and kappa = 339259/1107025920 (attained at s=1)
+visibility = 29588543/73801728 and projective gap = 1162177/73801728
+Without the qubit input: visibility = 4369/11200
+
+$ python certificates/check_direct_integral.py
+gamma = 419/11440 and kappa = 339259/1107025920 (attained at s=1)
+visibility = 29588543/73801728 and projective gap = 1162177/73801728
+All 17 exact direct Haar integrals agree with the degree-14 polynomial.
+The power-basis coefficients match the Lean definition exactly.

@@ -1,0 +1,826 @@
+$ lean verification/Inventory.lean
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree	inductive	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.divisor	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.divisor_sub_eq	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.geometric_truncation_error	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.marked_ancestor_gap	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.riccati_denominator_lower	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.riccati_error_at_pi	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	_private.ManuscriptProofs.Carleman.0.ManuscriptProofs.Carleman.norm_one_sub_two_i	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.Separated	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree._sizeOf_1	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree._sizeOf_inst	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.below	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.brecOn	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.casesOn	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered_le_leaves	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.ctorElim	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.ctorElimType	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.ctorIdx	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.dyadic_mark_bound	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.fork	constructor	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaf	constructor	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves_pos	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks_le_internal_vertices	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.noConfusion	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.noConfusionType	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks_eq_zero	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.rec	recursor	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.recOn	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.marked_ancestor_gap._proof_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.marked_ancestor_gap._simp_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.Separated._f	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.Separated._sunfold	definition	
+RUNTIME	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.Separated._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.Separated._unsafe_rec	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.Separated.match_1	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.brecOn.eq	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.brecOn.go	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered._f	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered._sunfold	definition	
+RUNTIME	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered._unsafe_rec	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered.eq_1	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered.eq_2	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered.eq_3	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered.eq_def	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered_le_leaves._proof_1_8	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.covered_le_leaves._proof_1_9	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.dyadic_mark_bound._proof_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.dyadic_mark_bound._proof_1_2	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.dyadic_mark_bound._proof_1_3	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.fork.elim	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.fork.inj	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.fork.injEq	theorem	propext
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.fork.noConfusion	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.fork.sizeOf_spec	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaf.elim	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaf.sizeOf_spec	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves._f	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves._sunfold	definition	
+RUNTIME	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves._unsafe_rec	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves.eq_1	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves.eq_2	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves.eq_def	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves.match_1	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.leaves_pos._proof_1_4	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_12	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_13	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_14	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_15	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_16	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_17	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_18	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_19	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.mark_budget._proof_1_20	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks._f	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks._sunfold	definition	
+RUNTIME	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks._unsafe_rec	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks.eq_1	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks.eq_2	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks.eq_def	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks_le_internal_vertices._proof_1_7	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.marks_le_internal_vertices._proof_1_8	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks._f	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks._sunfold	definition	
+RUNTIME	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks._unsafe_rec	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks.eq_1	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks.eq_2	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks.eq_3	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks.eq_def	theorem	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks.match_1	definition	
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks_eq_zero._proof_1_5	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	ManuscriptProofs.Carleman.Tree.outerMarks_eq_zero._proof_1_6	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Carleman	_private.ManuscriptProofs.Carleman.0.ManuscriptProofs.Carleman.Tree.leaves.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.Carleman	_private.ManuscriptProofs.Carleman.0.ManuscriptProofs.Carleman.Tree.leaves.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.Carleman	_private.ManuscriptProofs.Carleman.0.ManuscriptProofs.Carleman.Tree.leaves.match_1.splitter	definition	
+DECL	ManuscriptProofs.Carleman	_private.ManuscriptProofs.Carleman.0.ManuscriptProofs.Carleman.Tree.outerMarks.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.Carleman	_private.ManuscriptProofs.Carleman.0.ManuscriptProofs.Carleman.Tree.outerMarks.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.Carleman	_private.ManuscriptProofs.Carleman.0.ManuscriptProofs.Carleman.Tree.outerMarks.match_1.eq_3	theorem	
+DECL	ManuscriptProofs.Carleman	_private.ManuscriptProofs.Carleman.0.ManuscriptProofs.Carleman.Tree.outerMarks.match_1.splitter	definition	
+DECL	ManuscriptProofs.CarlemanProduct	ManuscriptProofs.Carleman.dyadicThreshold	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanProduct	ManuscriptProofs.Carleman.dyadicThreshold_eq	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanProduct	ManuscriptProofs.Carleman.dyadicThreshold_mono	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanProduct	ManuscriptProofs.Carleman.inverse_divisor_product_of_dyadic_counts	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanProduct	_private.ManuscriptProofs.CarlemanProduct.0.ManuscriptProofs.Carleman.card_filter_cast	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanProduct	_private.ManuscriptProofs.CarlemanProduct.0.ManuscriptProofs.Carleman.half_geometric_sum_le	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanProduct	_private.ManuscriptProofs.CarlemanProduct.0.ManuscriptProofs.Carleman.scalar_le_threshold_at_count	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanProduct	ManuscriptProofs.Carleman.dyadicThreshold._proof_1	theorem	propext
+DECL	ManuscriptProofs.CarlemanProduct	_private.ManuscriptProofs.CarlemanProduct.0.ManuscriptProofs.Carleman.scalar_le_threshold_at_count._proof_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanProduct	_private.ManuscriptProofs.CarlemanProduct.0.ManuscriptProofs.Carleman.scalar_le_threshold_at_count._proof_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanSections	ManuscriptProofs.Carleman.finite_section_unique	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree	inductive	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.DiophantineGap	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree._sizeOf_1	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree._sizeOf_inst	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.below	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches_length	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.brecOn	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.casesOn	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.count_marked	theorem	propext
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.ctorElim	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.ctorElimType	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.ctorIdx	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.divisorNorm	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.fork	constructor	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.inverse_divisor_product	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaf	constructor	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked_leaves	theorem	propext
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.noConfusion	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.noConfusionType	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.rec	recursor	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.recOn	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.rootLabel	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.separated_of_ancestor_marking	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.sum_leafCounts	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_counts_le	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_filter_count	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_leaves_bounds	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.reciprocal_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.unique_outer_branch	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches._f	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches._sunfold	definition	
+RUNTIME	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches._unsafe_rec	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches.eq_1	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches.eq_2	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches.eq_def	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.branches_length._proof_1_7	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.brecOn.eq	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.brecOn.go	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.divisorNorm.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.divisorNorm.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.fork.elim	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.fork.inj	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.fork.injEq	theorem	propext
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.fork.noConfusion	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.fork.sizeOf_spec	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.inverse_divisor_product._proof_1_10	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.inverse_divisor_product._proof_1_8	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.inverse_divisor_product._proof_1_9	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaf.elim	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaf.inj	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaf.injEq	theorem	propext
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaf.noConfusion	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaf.sizeOf_spec	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts._f	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts._sunfold	definition	
+RUNTIME	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts._unsafe_rec	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts.congr_simp	theorem	Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts.eq_1	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts.eq_2	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts.eq_def	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leafCounts.match_1	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves._f	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves._sunfold	definition	
+RUNTIME	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves._unsafe_rec	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves.eq_1	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves.eq_2	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves.eq_def	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.leaves_pos._proof_1_4	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked._f	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked._sunfold	definition	
+RUNTIME	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked._unsafe_rec	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked.eq_1	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked.eq_2	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.marked.eq_def	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.rootLabel.match_1	definition	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.separated_of_ancestor_marking._proof_1_11	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.separated_of_ancestor_marking._proof_1_12	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.separated_of_ancestor_marking._proof_1_13	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.separated_of_ancestor_marking._proof_1_14	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.separated_of_ancestor_marking._proof_1_15	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.separated_of_ancestor_marking._proof_1_16	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.LabelledTree.separated_of_ancestor_marking._proof_1_17	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.Tree.Separated.eq_1	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.Tree.Separated.eq_2	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.Tree.Separated.eq_3	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	ManuscriptProofs.Carleman.Tree.Separated.eq_def	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_counts_le._proof_1_10	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_counts_le._proof_1_9	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_counts_le._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_counts_le._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_leaves_bounds._proof_1_10	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_leaves_bounds._proof_1_11	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_leaves_bounds._proof_1_9	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_leaves_bounds._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.branch_leaves_bounds._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.unique_outer_branch._proof_1_10	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.unique_outer_branch._proof_1_11	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.unique_outer_branch._proof_1_12	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.leafCounts.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.leafCounts.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.leafCounts.match_1.splitter	definition	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.rootLabel.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.rootLabel.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.LabelledTree.rootLabel.match_1.splitter	definition	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.Tree.Separated.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.Tree.Separated.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.Tree.Separated.match_1.eq_3	theorem	
+DECL	ManuscriptProofs.CarlemanTrees	_private.ManuscriptProofs.CarlemanTrees.0.ManuscriptProofs.Carleman.Tree.Separated.match_1.splitter	definition	
+DECL	ManuscriptProofs.ExclusionFrames	ManuscriptProofs.PureExclusion.connected_of_frame_fibers	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionFrames	ManuscriptProofs.PureExclusion.exclusion_phase_on_connected_family	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionTrace	ManuscriptProofs.PureExclusion.trace_bound_of_overlaps	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionTrace	ManuscriptProofs.PureExclusion.unitary_trace_inverse_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionTrace	_private.ManuscriptProofs.ExclusionTrace.0.ManuscriptProofs.PureExclusion.diagonal_in_basis	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionTrace	_private.ManuscriptProofs.ExclusionTrace.0.ManuscriptProofs.PureExclusion.sqrt_row	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionTrace	_private.ManuscriptProofs.ExclusionTrace.0.ManuscriptProofs.PureExclusion.unitaries_cols	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionTrace	_private.ManuscriptProofs.ExclusionTrace.0.ManuscriptProofs.PureExclusion.unitaries_rows	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionTrace	ManuscriptProofs.PureExclusion.unitary_trace_inverse_bound._simp_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.ExclusionTrace	ManuscriptProofs.PureExclusion.unitary_trace_inverse_bound._simp_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.FrameExtensions	ManuscriptProofs.PureExclusion.complex_unit_sphere_connected	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.FrameExtensions	ManuscriptProofs.PureExclusion.connected_orthogonal_extensions	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.FrameExtensions	ManuscriptProofs.PureExclusion.connected_unit_extensions	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.FrameExtensions	ManuscriptProofs.PureExclusion.complex_unit_sphere_connected._proof_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.FrameExtensions	ManuscriptProofs.PureExclusion.connected_orthogonal_extensions._proof_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.coverageGenerator	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.coverageRate	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.hasDerivAt_poissonBarrier	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier_continuous	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier_deriv_le_generator	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier_erase	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier_initial	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier_le_of_backward_equation	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_powered_tail	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_tail_ratio	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.poissonRatio_zero	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.poissonTail_continuous	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.poissonTail_zero_arg	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.uncovered_pos_of_neighbor	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.coverageGenerator.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.coverageRate.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.hasDerivAt_poissonBarrier._proof_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier_erase._simp_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	ManuscriptProofs.GraphCollector.poissonBarrier_erase._simp_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_powered_tail._simp_1_1	theorem	propext
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_powered_tail._simp_1_2	theorem	propext
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_powered_tail._simp_1_3	theorem	propext
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_powered_tail._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_powered_tail._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_powered_tail._simp_1_6	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.hasDerivAt_powered_tail._simp_1_7	theorem	propext
+DECL	ManuscriptProofs.GraphBarrier	_private.ManuscriptProofs.GraphBarrier.0.ManuscriptProofs.GraphCollector.poissonTail_zero_arg._proof_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.HasBalancedBlocks	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.comparison_of_backward_equation	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.hasBalancedBlocks_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.incidence_sum	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_generator	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_mean	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.uncoveredNeighbors	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.incidence_sum._simp_1_1	theorem	propext
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_generator._proof_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_mean._simp_1_1	theorem	propext
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_mean._simp_1_2	theorem	propext
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_mean._simp_1_3	theorem	propext
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_mean._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_mean._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_mean._simp_1_6	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.ratio_mean._simp_1_7	theorem	propext
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.uncoveredNeighbors.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphCollector	ManuscriptProofs.GraphCollector.uncoveredNeighbors.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphFirstRemoval	ManuscriptProofs.GraphCollector.first_removal_backward	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.hasDerivAt_poisson_tail_succ	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poissonMass	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poissonRatio	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poissonTail	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poisson_ratio_div_antitoneOn	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poisson_ratio_generator	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poisson_ratio_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poisson_ratio_strictMonoOn	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poisson_tail_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poisson_tail_succ	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poisson_tail_zero	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_hasSum	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_succ	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_div_eq_scaled	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_succ_formula	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.scaledTail	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.scaledTerm	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.scaledTerm_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.scaledTerm_step	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.scaled_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.scaled_tail_logConvex	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.sum_scaledTerm	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.summable_tail	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.term_logConvex	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poissonMass.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poissonRatio.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poissonTail.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	ManuscriptProofs.GraphCollector.poisson_tail_succ._proof_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_succ._simp_1_2	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_succ._simp_1_3	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_succ._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_succ._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_succ._simp_1_6	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_succ._simp_1_7	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.mass_succ._simp_1_8	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_div_eq_scaled._simp_1_3	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_div_eq_scaled._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_div_eq_scaled._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_div_eq_scaled._simp_1_6	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_div_eq_scaled._simp_1_7	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_div_eq_scaled._simp_1_8	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.ratio_div_eq_scaled._simp_1_9	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.scaledTail.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.scaledTerm_step._proof_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio._proof_1_2	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio._simp_1_3	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio._simp_1_6	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio._simp_1_7	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio._simp_1_8	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.strict_tail_mass_ratio._simp_1_9	theorem	propext
+DECL	ManuscriptProofs.GraphPoisson	_private.ManuscriptProofs.GraphPoisson.0.ManuscriptProofs.GraphCollector.term_logConvex._proof_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.LossyClipping	ManuscriptProofs.LossyQubit.branchResponse	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyClipping	ManuscriptProofs.LossyQubit.branch_quadrature	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyClipping	ManuscriptProofs.LossyQubit.clipped_interval_average	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyClipping	ManuscriptProofs.LossyQubit.representative_average	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyClipping	ManuscriptProofs.LossyQubit.branchResponse._proof_1	theorem	propext
+DECL	ManuscriptProofs.LossyClipping	ManuscriptProofs.LossyQubit.branchResponse.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyMinimax	Caratheodory.minCardFinsetOfMemConvexHull.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyMinimax	ManuscriptProofs.LossyQubit.finite_menu_minimax	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyMinimax	_private.ManuscriptProofs.LossyMinimax.0.ManuscriptProofs.LossyQubit.payoff	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyMinimax	_private.ManuscriptProofs.LossyMinimax.0.ManuscriptProofs.LossyQubit.payoff._proof_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyMinimax	_private.ManuscriptProofs.LossyMinimax.0.ManuscriptProofs.LossyQubit.payoff._proof_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyMinimax	_private.ManuscriptProofs.LossyMinimax.0.ManuscriptProofs.LossyQubit.payoff.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch	inductive	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Feasible	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.branch_capacity_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.rank_one_branch_capacity_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.rank_one_branch_signed_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.signed	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.two_setting_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	_private.ManuscriptProofs.LossyQubit.0.ManuscriptProofs.LossyQubit.common_point	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	_private.ManuscriptProofs.LossyQubit.0.ManuscriptProofs.LossyQubit.sum_two_signs	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	_private.ManuscriptProofs.LossyQubit.0.ManuscriptProofs.LossyQubit.unsigned_distance_le	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch._sizeOf_1	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch._sizeOf_inst	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.a	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.b	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.bloch	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.casesOn	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.ctorIdx	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.mk	constructor	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.noConfusion	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.noConfusionType	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.rec	recursor	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.recOn	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.s	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.t	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.weight	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Feasible._proof_1	theorem	propext
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.signed.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.two_setting_iff._abel_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	_private.ManuscriptProofs.LossyQubit.0.ManuscriptProofs.LossyQubit.common_point._abel_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	_private.ManuscriptProofs.LossyQubit.0.ManuscriptProofs.LossyQubit.unsigned_distance_le._abel_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.mk._flat_ctor	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.mk.inj	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.mk.injEq	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.mk.noConfusion	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.LossyQubit	ManuscriptProofs.LossyQubit.Branch.mk.sizeOf_spec	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.coherentOverlap	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.coherent_cross_ratio	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.cutoffParent	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.cutoff_radius_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.cutoff_response	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	_private.ManuscriptProofs.OpticalCutoff.0.ManuscriptProofs.Optical.arm	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.coherentOverlap._proof_1	theorem	propext
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.cutoffParent._proof_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.cutoffParent._proof_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	ManuscriptProofs.Optical.cutoffParent.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalCutoff	_private.ManuscriptProofs.OpticalCutoff.0.ManuscriptProofs.Optical.arm.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.fixed_separation_necessity	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.saturation_subcollection	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.saturation_subcollection._simp_1_1	theorem	propext
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.saturation_subcollection._simp_1_2	theorem	propext
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.saturation_subcollection._simp_1_3	theorem	propext
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.saturation_subcollection._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.saturation_subcollection._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.saturation_subcollection._simp_1_6	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.OpticalSaturation	ManuscriptProofs.Optical.saturation_subcollection._simp_1_7	theorem	propext
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.qutrit_sqrt_triangle_iff_purity	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_dual_upper_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.strict_top_of_positive_excess	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.top_excess_eq	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.weighted_spectral_sum_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization._simp_1_1	theorem	propext
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization._simp_1_2	theorem	propext
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization._simp_1_3	theorem	propext
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization._simp_1_4	theorem	propext
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization._simp_1_5	theorem	propext
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization._simp_1_6	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization._simp_1_7	theorem	propext
+DECL	ManuscriptProofs.PureExclusion	ManuscriptProofs.PureExclusion.spectral_witness_trace_normalization._simp_1_8	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.endpoint_exact	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.gamma	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.kappa	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switch_floor	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switch_probability	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.visibility_and_gap	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.gamma._proof_1	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.gamma._proof_2	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.gamma.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.kappa._proof_1	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.kappa._proof_2	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.kappa.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_1	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_10	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_11	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_2	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_3	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_4	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_5	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_6	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_7	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_8	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment._proof_9	theorem	propext
+DECL	ManuscriptProofs.QutritCertificate	ManuscriptProofs.Qutrit.switchMoment.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.evalCoefficients	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.gateBias	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.gate_bias_exact	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.haarMomentCoeff	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radialCoefficients	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radialSwitchCoeff	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_coefficients_exact	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_sum_eq_switch	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_sum_floor	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.switchNumerators	definition	
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.alternating	definition	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.angularCoeff	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.gate	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.moment_zero_above_degree	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.shifted	definition	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.sumTo	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.sumTo_zero	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.evalCoefficients.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.gate_bias_exact._proof_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_coefficients_exact._proof_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_10	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_2	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_3	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_4	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_5	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_6	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_7	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_8	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.radial_zero_above_degree._proof_1_9	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	ManuscriptProofs.Qutrit.switchNumerators.eq_1	theorem	
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.moment_zero_above_degree._proof_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.shifted.eq_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.QutritMoments	_private.ManuscriptProofs.QutritMoments.0.ManuscriptProofs.Qutrit.sumTo_zero._simp_1_1	theorem	propext
+DECL	ManuscriptProofs.SpinPhase	ManuscriptProofs.SpinWigner.continuous_log_with_local_formula	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.SpinPhase	ManuscriptProofs.SpinWigner.continuous_log_with_local_formula._abel_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.SpinPhase	ManuscriptProofs.SpinWigner.continuous_log_with_local_formula._simp_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.SpinWigner	ManuscriptProofs.SpinWigner.abs_overlap_le_negative_volume	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.SpinWigner	ManuscriptProofs.SpinWigner.negative_open_set_of_zero_overlap	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.SpinWigner	_private.ManuscriptProofs.SpinWigner.0.ManuscriptProofs.SpinWigner.negPart_mul_le	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.BlochVector	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.blochEffect	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.blochEffect_pos_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.blochEffect_residual_pos_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.blochEffect_sub_scaled	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.exists_blochEffect	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.pauliDot	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.rank_one_click_residual_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	_private.ManuscriptProofs.Quantum.BlochMatrix.0.ManuscriptProofs.Quantum.pauliDot_hermitian	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	_private.ManuscriptProofs.Quantum.BlochMatrix.0.ManuscriptProofs.Quantum.pauliDot_square	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	_private.ManuscriptProofs.Quantum.BlochMatrix.0.ManuscriptProofs.Quantum.shiftedPauli	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	_private.ManuscriptProofs.Quantum.BlochMatrix.0.ManuscriptProofs.Quantum.shiftedPauli_det_re	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	_private.ManuscriptProofs.Quantum.BlochMatrix.0.ManuscriptProofs.Quantum.shiftedPauli_hermitian	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	_private.ManuscriptProofs.Quantum.BlochMatrix.0.ManuscriptProofs.Quantum.shiftedPauli_pos_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	_private.ManuscriptProofs.Quantum.BlochMatrix.0.ManuscriptProofs.Quantum.shiftedPauli_trace_re	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.blochEffect._proof_1	theorem	propext
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.blochEffect.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.pauliDot._proof_1	theorem	propext
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.pauliDot.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	ManuscriptProofs.Quantum.rank_one_click_residual_iff._simp_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.BlochMatrix	_private.ManuscriptProofs.Quantum.BlochMatrix.0.ManuscriptProofs.Quantum.shiftedPauli.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.CodeCommutant	ManuscriptProofs.Quantum.blocks_of_two_commutators	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.CodeCommutant	ManuscriptProofs.Quantum.flat_mixer_weight	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.CodeCommutant	ManuscriptProofs.Quantum.paired_plane_parameters	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.CodeCommutant	ManuscriptProofs.Quantum.three_setting_product_rigidity	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.CodeCommutant	_private.ManuscriptProofs.Quantum.CodeCommutant.0.ManuscriptProofs.Quantum.comm_diag_entry	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.CodeCommutant	_private.ManuscriptProofs.Quantum.CodeCommutant.0.ManuscriptProofs.Quantum.lift_diagonal	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.CodeCommutant	ManuscriptProofs.Quantum.blocks_of_two_commutators._simp_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.CodeCommutant	ManuscriptProofs.Quantum.blocks_of_two_commutators._simp_1_2	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.compress	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.liftToDilation	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.lift_add	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.lift_annihilates_of_compressed_slack	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.lift_compress_support	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.lift_ne_zero_of_isometry	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.lift_opposite_slack_family	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.noiseless_code_of_lift_factorization	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.noiseless_code_of_product_range	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.productEncoding	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.product_encoding_exact	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.trace_lift_pair	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	_private.ManuscriptProofs.Quantum.DilationBridge.0.ManuscriptProofs.Quantum.kronecker_mul_productEncoding	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	_private.ManuscriptProofs.Quantum.DilationBridge.0.ManuscriptProofs.Quantum.productEncoding_column	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.compress.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.liftToDilation.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.productEncoding.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.productEncoding.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.DilationBridge	ManuscriptProofs.Quantum.product_encoding_exact._simp_1_3	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.Copies	definition	
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.ZeroError	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.copyDecidableEq	definition	
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.copyFintype	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.inner_vectorPower	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.lists_necessary	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.no_separable_exclusion_of_witness	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.psd_trace_pair	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors_mul	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorPower	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorPower_mulVec	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.trace_tensorFactors	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.Copies._f	definition	
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.Copies._sunfold	definition	
+RUNTIME	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.Copies._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.Copies._unsafe_rec	definition	
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.Copies.match_1	definition	
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.no_separable_exclusion_of_witness._simp_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors._f	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors._proof_1	theorem	propext
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors._sunfold	definition	propext,Classical.choice,Quot.sound
+RUNTIME	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors._unsafe_rec	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors.eq_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors.eq_def	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorFactors.match_1	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.tensorPower.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower._f	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower._sunfold	definition	propext,Classical.choice,Quot.sound
+RUNTIME	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower._unsafe_rec	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower.eq_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower.eq_def	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	ManuscriptProofs.Quantum.vectorPower.match_1	definition	
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	_private.ManuscriptProofs.Quantum.FiniteCopyLists.0.ManuscriptProofs.Quantum.tensorFactors.match_1.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	_private.ManuscriptProofs.Quantum.FiniteCopyLists.0.ManuscriptProofs.Quantum.tensorFactors.match_1.eq_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	_private.ManuscriptProofs.Quantum.FiniteCopyLists.0.ManuscriptProofs.Quantum.tensorFactors.match_1.splitter	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	_private.ManuscriptProofs.Quantum.FiniteCopyLists.0.ManuscriptProofs.Quantum.vectorPower.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	_private.ManuscriptProofs.Quantum.FiniteCopyLists.0.ManuscriptProofs.Quantum.vectorPower.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.Quantum.FiniteCopyLists	_private.ManuscriptProofs.Quantum.FiniteCopyLists.0.ManuscriptProofs.Quantum.vectorPower.match_1.splitter	definition	
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.activate_signed_decomposition	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.activatedPiece	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.activation_normalization	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate	definition	propext
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.tensorFactors_entry	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.tensorPower_one	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.zero_error_from_activated_factors	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.activatedPiece_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.sum_activated_at_word	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.sum_nonempty_words	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.sum_singletons	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.sum_tensor_words	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.tensorWord	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.tensor_update_add_smul	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.tensor_update_entry	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.tensor_update_sum	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.activate_signed_decomposition._abel_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.activate_signed_decomposition._abel_1_3	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.activate_signed_decomposition._simp_1_2	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.activatedPiece.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate._f	definition	propext
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate._sunfold	definition	propext
+RUNTIME	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate._unsafe_rec	definition	propext
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate.eq_1	theorem	propext
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate.eq_2	theorem	propext
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate.eq_def	theorem	propext
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.copyCoordinate.match_1	definition	
+DECL	ManuscriptProofs.Quantum.ListActivation	ManuscriptProofs.Quantum.zero_error_from_activated_factors._simp_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.sum_singletons._simp_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.sum_singletons._simp_1_2	theorem	propext
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.tensorWord.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.copyCoordinate.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.copyCoordinate.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.Quantum.ListActivation	_private.ManuscriptProofs.Quantum.ListActivation.0.ManuscriptProofs.Quantum.copyCoordinate.match_1.splitter	definition	
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis	definition	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.finite_copy_lists_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.zero_error_flatten	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.flattenBasis	definition	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots	definition	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots_eq	theorem	propext
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.tensor_append	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.tensor_flatten	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis._f	definition	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis._sunfold	definition	propext,Quot.sound
+RUNTIME	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis._unsafe_rec	definition	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis.eq_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis.eq_2	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis.eq_def	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	ManuscriptProofs.Quantum.appendBasis.match_1	definition	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.flattenBasis._f	definition	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.flattenBasis._sunfold	definition	propext,Quot.sound
+RUNTIME	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.flattenBasis._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.flattenBasis._unsafe_rec	definition	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots._f	definition	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots._sunfold	definition	
+RUNTIME	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots._unsafe_rec	generated partial recursion backend
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots._unsafe_rec	definition	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots.eq_1	theorem	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots.eq_2	theorem	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.slots.eq_def	theorem	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.appendBasis.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.appendBasis.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.Quantum.ListFlatten	_private.ManuscriptProofs.Quantum.ListFlatten.0.ManuscriptProofs.Quantum.appendBasis.match_1.splitter	definition	
+DECL	ManuscriptProofs.Quantum.ListSupportExpansion	ManuscriptProofs.Quantum.hermitian_range_inverse	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListSupportExpansion	ManuscriptProofs.Quantum.orthogonal_support_expansion	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListSupportExpansion	ManuscriptProofs.Quantum.posSemidef_sum_kernel	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListSupportExpansion	ManuscriptProofs.Quantum.hermitian_range_inverse._simp_1_1	theorem	propext
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	ManuscriptProofs.Quantum.list_tensor_expansion	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	ManuscriptProofs.Quantum.signed_decomposition_of_list_condition	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	ManuscriptProofs.Quantum.zero_error_on_blocks_of_list_condition	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.Fits	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.GroupedExpansion	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.grouped_expansion_aux	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.grouped_of_fit	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.kronecker_sum_left	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.kronecker_sum_right	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.parts_annihilate	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.sum_grouped_products	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.support_complement	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.grouped_expansion_aux._proof_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.grouped_expansion_aux._proof_1_2	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.grouped_expansion_aux._proof_1_3	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.grouped_expansion_aux._proof_1_4	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.grouped_expansion_aux._simp_1_5	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ListTensorExpansion	_private.ManuscriptProofs.Quantum.ListTensorExpansion.0.ManuscriptProofs.Quantum.sum_grouped_products._simp_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiseWitness	ManuscriptProofs.Quantum.parent_string_witness	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiseWitness	ManuscriptProofs.Quantum.retained_trace_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiseWitness	ManuscriptProofs.Quantum.selected_frame_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiseWitness	ManuscriptProofs.Quantum.selected_gram_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiseWitness	_private.ManuscriptProofs.Quantum.NoiseWitness.0.ManuscriptProofs.Quantum.positive_trace_pair	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiseWitness	ManuscriptProofs.Quantum.parent_string_witness._simp_1_1	theorem	propext
+DECL	ManuscriptProofs.Quantum.NoiseWitness	ManuscriptProofs.Quantum.parent_string_witness._simp_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiseWitness	ManuscriptProofs.Quantum.parent_string_witness._simp_1_3	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiseWitness	ManuscriptProofs.Quantum.parent_string_witness._simp_1_4	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.liftedUnit	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.no_full_code_in_maximally_entangled_hyperplane	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.product_embedding_of_unit_tests	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.product_vector_in_maximally_entangled_hyperplane	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.proper_subspace_has_product_copy	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.uniform_block_rigidity	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.unit_tests_of_exact_compression	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	_private.ManuscriptProofs.Quantum.NoiselessCode.0.ManuscriptProofs.Quantum.liftedUnit_mul	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.liftedUnit.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.liftedUnit.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.NoiselessCode	ManuscriptProofs.Quantum.uniform_block_rigidity._abel_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.Compatible	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.Operator	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM	inductive	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.compatible_of_parent	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM._sizeOf_1	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM._sizeOf_inst	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.casesOn	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.ctorIdx	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.effect	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.effect_le_event	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.event	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.event_mono	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.event_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.event_univ	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.mk	constructor	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.noConfusion	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.noConfusionType	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.postprocess	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.postprocess_effect	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.rec	recursor	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.recOn	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.sum_eq_one	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.compatible_of_parent._simp_1_4	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.compatible_of_parent._simp_1_5	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.event.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.mk._flat_ctor	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.mk.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.mk.inj	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.mk.injEq	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.mk.noConfusion	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.mk.sizeOf_spec	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.postprocess._proof_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.postprocess._proof_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.POVM	ManuscriptProofs.Quantum.POVM.postprocess.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.Facet	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.distinct_ray_lower_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect_disjoint	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect_rational	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect_sum_le_one_of_missing	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect_sum_not_le_one	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetMeasurement	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetMeasurement_compatible_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetMeasurement_outcome_bound	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetMeasurement_rational	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetSlope	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetWeight	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.finite_simplicial_complex_on_qubit	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.merged	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.merged_compatible_iff	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.omittedFacets	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.rayProjection	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.rayProjection_le_one	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.rayProjection_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.annihilates_of_le	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.card_lt_of_not_univ	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.eq_effect_of_eq_some	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.exists_facet_above	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.facetEffect_entry	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.facetEffect_le_weight	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.omittedFacets_ne_univ	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.perpendicular	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.perpendicularProjection	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.ray	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.rayProjection_add_complement	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.rayProjection_perpendicular	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect_disjoint._proof_1_1	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetEffect_sum_not_le_one._proof_1_2	theorem	propext,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetMeasurement._proof_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetMeasurement.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetSlope.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.facetWeight.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.merged._abel_3	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.merged._proof_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.merged._proof_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.merged.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.merged.match_1	definition	
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.omittedFacets.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.omittedFacets.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	ManuscriptProofs.Quantum.rayProjection.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.perpendicular.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.perpendicularProjection.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.ray.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.merged.match_1.eq_1	theorem	
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.merged.match_1.eq_2	theorem	
+DECL	ManuscriptProofs.Quantum.QubitUniversality	_private.ManuscriptProofs.Quantum.QubitUniversality.0.ManuscriptProofs.Quantum.merged.match_1.splitter	definition	
+DECL	ManuscriptProofs.Quantum.TernaryCode	ManuscriptProofs.Quantum.noiseless_code_of_invertible_lift_factor	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffectParent	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects_annihilation	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects_sum	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.one_add_involution_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.one_add_mul_comm	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.one_sub_involution_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.one_sub_mul_comm	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.psd_of_square_twice	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.square_sub_tripotent_pos	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffectParent._abel_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffectParent._proof_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects._proof_1	theorem	propext
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects._proof_2	theorem	propext
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects_annihilation._abel_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects_annihilation._abel_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects_annihilation._abel_1_3	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	ManuscriptProofs.Quantum.sixEffects_annihilation._abel_1_4	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.one_add_involution_pos._abel_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.one_add_mul_comm._abel_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.one_add_mul_comm._abel_1_2	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingParent	_private.ManuscriptProofs.Quantum.ThreeSettingParent.0.ManuscriptProofs.Quantum.square_sub_tripotent_pos._abel_1_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.diagonalEnvironmentBlocks	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.diagonal_environment_mixed_block	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.environmentEmbedding	definition	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.opposite_slacks_zero_mixed_block	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.third_pair_environment_average	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	_private.ManuscriptProofs.Quantum.ThreeSettingRigidity.0.ManuscriptProofs.Quantum.diagonal_blocks_mul_embedding	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.diagonalEnvironmentBlocks.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.diagonalEnvironmentBlocks.eq_1	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.diagonal_environment_mixed_block._simp_1_4	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.environmentEmbedding.congr_simp	theorem	propext,Classical.choice,Quot.sound
+DECL	ManuscriptProofs.Quantum.ThreeSettingRigidity	ManuscriptProofs.Quantum.environmentEmbedding.eq_1	theorem	propext,Classical.choice,Quot.sound
+COUNT	808

@@ -1,0 +1,117 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=25mm,top=19mm,bottom=21mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{24,62,103}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,pdfencoding=auto]{hyperref}
+\urlstyle{same}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{I}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\SU}{\mathrm{SU}}
+\author{Erfan Oliaei\\[2pt]\small Independent researcher}
+\date{26 November 2026}
+\raggedbottom
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\ray}[1]{\lvert #1\rangle\langle #1\rvert}
+\title{The exact loss threshold for two displaced on--off detectors}
+\hypersetup{pdfauthor={Erfan Oliaei},pdftitle={The exact loss threshold for two displaced on--off detectors}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Two displaced on--off detectors with distinct coherent centers are compatible exactly when their transmissivities sum to at most one, for every nonzero separation. The necessity follows by testing a hypothetical parent measurement on two coherent states. Equality constrains every third detector: at half transmission any three distinct collinear centers give an incompatible triple with compatible pairs. We also bound how many photon levels a fixed-radius incompatibility witness requires.
+\end{abstract}
+\section{Two detectors at fixed separation}
+Let \(\ket a\) be the normalized single-mode coherent state of input amplitude \(a\in\C\), so \(|\langle a|b\rangle|=e^{-|a-b|^2/2}\). A detector of transmissivity \(\tau\) applies the pure-loss channel and measures the vacuum projector displaced to output amplitude \(\sqrt\tau\,a_j\). Its two outcomes are no click and click. Joint measurability means that summing effects of a single measurement produces both binary marginals.
+\begin{theorem}\label{pair}
+Two single-mode displaced on--off detectors of positive transmissivities
+\(\tau_1,\tau_2\le1\) with distinct input coherent centers \(a_1,a_2\)
+are jointly measurable exactly when \(\tau_1+\tau_2\le1\).
+\end{theorem}
+The no-click effect \(F_j\) has expectation
+\(\langle a|F_j|a\rangle=e^{-\tau_j|a-a_j|^2}\) on coherent input \(\ket a\),
+so \(F_j\ket{a_j}=\ket{a_j}\). For any parent let \(G\) be its both-no-click
+effect. Each other outcome is bounded by a click effect and annihilates its detector's center state. Summing its zero cross element gives \(\langle a_1|(I-G)|a_2\rangle=0\).
+On \(\ket{a_1}\) the both-no-click outcome therefore has probability \(\langle a_1|F_2|a_1\rangle\), and on \(\ket{a_2}\) it has probability \(\langle a_2|F_1|a_2\rangle\). Writing \(s=|a_1-a_2|^2>0\), Cauchy--Schwarz gives
+\[
+ e^{-s/2}=|\langle a_1|G|a_2\rangle|
+ \le\sqrt{\langle a_1|G|a_1\rangle\langle a_2|G|a_2\rangle}
+ = e^{-(\tau_1+\tau_2)s/2}.
+\]
+Conversely the passive splitter of Mehboudi, Rezaeinia and Rahimi-Keshari \cite[Result~1]{loss} sends fractions \(\tau_1,\tau_2\) to
+two arms, discarding the rest. On each arm apply the ideal detector centered
+at \(\sqrt{\tau_j}\,a_j\). This realizes the two marginals on every input.
+Coincident input centers give commuting functions of the same displaced
+number operator. Result~1 of \cite{loss} gives the sufficient construction for any number of arms with \(\sum_j\tau_j\le1\). Their Appendix~C obtains the equal-efficiency obstruction in the small-separation limit. Theorem~\ref{pair} gives necessity for each fixed distinct pair.
+
+\section{What equality forces for a third detector}
+Suppose \(F_1,F_2,F_3\) have a common parent and \(\tau_1+\tau_2=1\).
+Cauchy--Schwarz above is an equality. In the direct sum over the underlying
+parent outcomes with detectors 1 and 2 both off, the vectors
+\((G_\omega^{1/2}\ket{a_1})_\omega,(G_\omega^{1/2}\ket{a_2})_\omega\)
+are proportional, say \(y=cx\), because both norms are positive. If \(P\) keeps just the coordinates with detector~3 off, then \(\langle Px,Py\rangle/\langle x,y\rangle=\|Px\|^2/\|x\|^2\). All other outcomes vanish in the cross matrix element. Consequently
+\[
+ \frac{\langle a_1|F_3|a_2\rangle}{\langle a_1|a_2\rangle}
+ = \exp[-\tau_3(\bar a_1-\bar a_3)(a_2-a_3)]\ \in[0,1].
+\]
+For the exponential, the loss isometry sends \(\ket a\) to
+\(\ket{\sqrt{\tau_3}\,a}\otimes\ket{\sqrt{1-\tau_3}\,a}\).
+Put \(b_i=\sqrt{\tau_3}\,a_i\). The environment overlap cancels from the ratio, leaving
+\(\langle b_1|b_3\rangle\langle b_3|b_2\rangle/\langle b_1|b_2\rangle\).
+Substitution of \(\langle u|v\rangle=\exp(\bar u v-(|u|^2+|v|^2)/2)\) gives the formula.
+For three distinct collinear centers of efficiency \(1/2\), choose the middle
+one as \(a_3\). The exponent is then positive, so the triple is incompatible
+at every nonzero scale even though each pair is compatible. A nonreal value
+of the same ratio also witnesses incompatibility for a noncollinear triple.
+\section{A lower bound on the photon cutoff}
+\begin{proposition}
+Fix output displacement radius \(r>0\), transmissivity \(0<\tau\le1\), and
+compress to photon numbers \(0,\ldots,L\). All phases at this radius have
+a common parent on the compression whenever, with \(y=\tau L\),
+\[
+ y+2(e^{2r\sqrt y}-1)\ \le\ \min(1,e^{r^2}-1).
+\]
+In particular if \(0<r\le1\) and \(N\ge2\) and \(\tau=1/(N-1)\), witnessing
+incompatibility by this cutoff requires \(L>r^2(N-1)/36\).
+\end{proposition}
+Write \(a\) for the annihilation operator, \(\hat n\) for the number operator
+and \(p=e^{-r^2}\). The no-click effect centered at output \(re^{i\theta}\)
+has the factorization
+\[
+ p\,e^{\sqrt{\tau}r e^{i\theta}a^\dagger}
+       (1-\tau)^{\hat n}e^{\sqrt{\tau}r e^{-i\theta}a}.
+\]
+It has the required coherent-state diagonal, which determines all matrix
+entries by power-series coefficients. Compression makes the expansion in
+the outer exponentials finite. The term with powers \(u,v\) is bounded in
+operator norm by \(p(r\sqrt y)^{u+v}/(u!v!)\), because the lowering
+operator on the cutoff has norm \(\sqrt L\). The constant term from \(u=v=0\)
+differs from \(pI\) by at most \(py\). Pair conjugate terms
+\(u\ne v\) and write each as a cosine and a sine times Hermitian matrices.
+The sum of their coefficient norms is at most twice the sum of the
+original norms. The same bound covers the remaining diagonal terms. Thus
+the family has the form \(pI+\sum_k t_k(\theta)A_k\) with \(|t_k|\le1\)
+and \(S=\sum_k\norm{A_k}\le p[y+2(e^{2r\sqrt y}-1)]\).
+For \(S>0\) select \(k\) with probability \(\norm{A_k}/S\), then measure
+the effects \((I\pm A_k/\norm{A_k})/2\). On outcome \(\pm1\), the response
+\(p\pm S t_k(\theta)\) gives the required effect whenever \(S\le\min(p,1-p)\).
+Zero summands are omitted and \(S=0\) is immediate. For \(r\le1\),
+\(y\le r^2/36\) suffices by convexity of the exponential and
+\(1/36+2(e^{1/3}-1)<1\). The estimate is a necessary cutoff size for a witness; existence of a full-space witness for arbitrary fixed radius and general \(N\) is a separate question.
+
+\paragraph{Acknowledgment.} I used OpenAI Codex to assist with literature searches, developing and checking the proofs, and preparing this manuscript.
+\begin{thebibliography}{9}
+\bibitem{loss} M. Mehboudi, F. Rezaeinia and S. Rahimi-Keshari, \href{https://doi.org/10.1103/s9sp-2fd7}{Measurement incompatibility under loss}, Phys. Rev. Lett. \textbf{135}, 100202 (2025). \href{https://arxiv.org/html/2411.05920v3}{Extended version, Result~1 and Appendix~C}.
+\end{thebibliography}
+\end{document}

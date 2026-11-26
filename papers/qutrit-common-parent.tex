@@ -1,0 +1,197 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=25mm,top=19mm,bottom=21mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{24,62,103}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,pdfencoding=auto]{hyperref}
+\urlstyle{same}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{I}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\SU}{\mathrm{SU}}
+\author{Erfan Oliaei\\[2pt]\small Independent researcher}
+\date{26 November 2026}
+\raggedbottom
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\ray}[1]{\lvert #1\rangle\langle #1\rvert}
+\title{A common parent for all noisy qutrit measurements}
+\hypersetup{pdfauthor={Erfan Oliaei},pdftitle={A common parent for all noisy qutrit measurements}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give one Haar-distributed parent measurement for every finite qutrit POVM at visibility \(29588543/73801728=0.4009193795\ldots\). The same construction gives a local hidden-state model for the two-qutrit isotropic state. It combines a qubit response on a random two-dimensional subspace with a pairwise correction whose sign is certified by a degree-fourteen polynomial. A second, elementary response achieves \(4369/11200\) without the qubit input. The exact critical visibility remains between our bound and the projective value \(5/12\).
+\end{abstract}
+\section{Universal visibility}
+For a qutrit effect \(X\) write \(D_v(X)=vX+(1-v)\tr(X)I/3\).
+A parent POVM simulates a measurement if classical randomization of its outcomes gives every target effect. Put \(P_\psi=\ray{\psi}\) and let \(\mu\) be the unitarily invariant probability on pure qutrit states.
+\begin{theorem}
+For every finite qutrit POVM \((E_i)_i\) there are measurable response probabilities \(p_i(\psi)\) such that
+\[
+ D_{v_*}(E_i)=3\int p_i(\psi)P_\psi\,d\mu(\psi),\qquad
+ v_*=\frac{29588543}{73801728}.
+\]
+Consequently all these POVMs share one parent at every visibility \(0\le v\le v_*\).
+\end{theorem}
+The parent integrates to the identity. For a finite menu, integrating the product of its response probabilities gives a joint POVM on the Cartesian product of the outcome sets. Lower visibilities follow by mixing with a coin of label probabilities \(\tr(E_i)/3\). On the isotropic state
+\(v\ray{\Phi_3}+(1-v)I/9\), where \(\Phi_3=3^{-1/2}\sum_a|aa\rangle\), the unnormalized conditional state for an effect \(E\) is \(D_v(E)^{\mathsf T}/3\). Thus the same statement is a local hidden-state model for all finite POVMs.
+
+Almeida et al.\ give an analytical all-POVM model at \(8/27\) in dimension three \cite{almeida}. The projective threshold is \(5/12\) \cite{wiseman}, so the remaining interval for the all-POVM threshold has length at most \(1162177/73801728\). Jia et al.\ suggest a value near \(0.30\) from numerical loss curves \cite[Sec.~V.2]{jia}. Our lower bound exceeds \(0.4009\). We use Renner's qubit Haar response at visibility \(1/2\) \cite{renner}; the elementary variant below uses only scalar Haar moments.
+\section{The response to a refined measurement}
+\paragraph{The response.}
+Refine the target POVM into \(w_iP_i\), where \(P_i\) are unit rays and
+\(\sum_iw_iP_i=I\). In particular \(\sum_iw_i=3\). For a given Haar outcome
+\(\psi\), draw a provisional label \(j\) with probability \(w_j x_j\),
+\(x_j=\tr(P_jP_\psi)\). Write \(y=x_j,\ Q_j=I-P_j\), and set
+\[
+ H(y)=(1-y)^7(1+7y+28y^2),\qquad \lambda=2/3,\quad k=2\lambda-\lambda^2.
+\]
+The function \(H\) is the probability of at most two successes in nine
+Bernoulli trials of parameter \(y\). With probability \(H(y)\), apply
+Renner's qubit response for the POVM \((w_iQ_jP_iQ_j)_i\) on \(Q_j\C^3\),
+using the normalized vector \(Q_j\psi\) as its Haar input. Output that
+label. At \(y=1\) this branch has probability zero.
+
+On the remaining branch, propose \(i\) with probability \(w_i\tr(P_iB_j)\), where
+\[
+ B_j=(I-\lambda P_j)P_\psi(I-\lambda P_j)
+       +k y(1+y)\,Q_jP_\psi Q_j .
+\]
+This is a subdistribution since \(B_j\succeq0\) and \(\tr B_j=1-ky^3\).
+Keep \(j\) if no proposal occurs or \(x_i\le x_j\). Otherwise switch from
+\(j\) to \(i\) with the probability specified below.
+
+\paragraph{What the qubit branch contributes.}
+Let \(\mathcal L(X)=\sum_j w_j\tr(P_jX)P_j\) and
+\(\nu(dy)=6y(1-y)\,dy\). The latter is the conditional law of \(y\) after
+drawing \(j\). Relative phase is uniform and the transverse direction is
+Haar in \(Q_j\C^3\). With \(j\) fixed, the averaged qubit response for a
+test effect \(X\), in the moment of \(P_\psi\), is
+\[
+ \tfrac y2P_j\tr(Q_jX)+(1-y)\left(\tfrac14 Q_jXQ_j
+                         +\tfrac18 Q_j\tr(Q_jX)\right).
+\]
+Indeed, for a compressed outcome \(X'=Q_jXQ_j\), Renner's response has mean \(\tr X'/2\) and transverse first moment \(X'/4+Q_j\tr X'/8\). The mixed moment vanishes by phase averaging.
+Temporarily keep \(j\) on the entire remaining branch. Starting from the
+Born response \(3\E[x_i P_\psi]=(I+P_i)/4\), replacement by the qubit response
+makes the effect for label \(i\), divided by \(w_i\), equal to
+\[
+ (1/4+2\gamma)P_i+\gamma\mathcal L(P_i)+(1/4-\gamma)I,\qquad
+ \gamma=\tfrac18\int_0^1 H(y)(3-7y)\,\nu(dy)=419/11440.
+\]
+For the sum over \(j\), use \(\sum w_jQ_jXQ_j=X+\mathcal L(X)\) and
+\(\sum w_jQ_j\tr(Q_jX)=I\tr X+\mathcal L(X)\). Keeping label \(i\) instead
+contributes \(yP_i+(1-y)Q_i/2\) at fixed \(y\).
+\section{Correcting pairs of labels}
+For distinct rays put \(s=\sqrt{1-\tr(P_iP_j)}\). A switch to the larger
+score, before thinning, adds \(w_iw_j c(s)(P_i-P_j)\) to the averaged effect
+of \(i\), with the opposite change for \(j\). To see its direction, choose a
+basis in which both rays are real. The signed moment is real by conjugation
+and changes sign upon swapping the rays. In their plane take
+\(P_{i,j}=(I+\sqrt{1-s^2}\,X\pm sZ)/2\), with \(X,Z\) the Pauli matrices.
+The swap acts by \(X\), so the real symmetric, swap-odd part is a multiple
+of \(Z\). Unitaries on the orthogonal complement kill mixed entries and the
+swap kills the remaining scalar there. Taking the trace against \(P_i-P_j\)
+gives, with \(x_{\rm lo}<x_{\rm hi}\) the two ordered scores,
+\[
+ c(s)=\frac{3}{2s^2}\E\!\left[(x_{\rm hi}-x_{\rm lo})\,x_{\rm lo}
+       (1-H(x_{\rm lo}))\,\tr(P_{\rm hi}B_{\rm lo})\right].
+\]
+Thin the switch by the factor \((a-\gamma s^2)/c(s)\), where \(a=1/20+\kappa\). Identical rays
+never switch. The sign check below proves that this factor belongs to
+\([0,1]\). Summing the pair corrections divided by \(w_i\) gives exactly
+\[
+ (a-\gamma)(3P_i-I)+\gamma(P_i-\mathcal L(P_i)).
+\]
+Adding the pre-switch effect gives \(v_*P_i+(1-v_*)I/3\), since \(v_*=1/4+3a\).
+Rank-one refinements are joined by classical coarse-graining. On the
+isotropic state the assemblage equals the transposed noisy effects divided
+by three, so the same parent supplies a local hidden-state model.
+
+\section{An exact polynomial certificate}
+The mass \(T\) of a Haar qutrit in the two-ray plane has density \(2T\).
+Independently, its normalized component has uniform Bloch direction. Thus
+\(z=|n_z|\) is uniform on \([0,1]\), \(\phi\) is uniform on \([0,2\pi]\),
+and the low and high scores are \(T\ell,T(\ell+sz)\), where
+\[
+ \ell=\tfrac12(1-sz+\sqrt{(1-s^2)(1-z^2)}\cos\phi).
+\]
+Write \(L_m=\E[z\ell^m]\), \(K_m=\E[z^2\ell^m]\), and \(1-H(y)=\sum g_m y^m\).
+If \(A=(1-\lambda)^2-\lambda^2s^2\), expansion gives
+\[
+ s c(s)=3\sum_m g_m\!\left[
+ \frac{A L_{m+2}+(1-\lambda)s K_{m+1}+\lambda s^2L_{m+1}}{m+5}
+ + k s^2\sum_{i=0}^{1}\frac{L_{m+i+2}-L_{m+i+3}}{m+i+6}\right].
+\]
+Indeed \(Q_{\rm lo}P_{\rm hi}Q_{\rm lo}=s^2(\Pi-P_{\rm lo})\), where
+\(\Pi\) projects onto the plane, and
+\(\{P_{\rm hi},P_{\rm lo}\}=P_{\rm hi}+P_{\rm lo}-s^2\Pi\).
+The moments \(M_{r,n}=\E[z^r\ell^n]\) used here are obtained by expanding the cosine powers,
+\[
+ 2^nM_{r,n}=\sum_{b=0}^{\lfloor n/2\rfloor}\binom n{2b}
+ \frac{\binom{2b}b}{4^b}(1-s^2)^b
+ \sum_{a=0}^{n-2b}\binom{n-2b}{a}(-s)^a
+ \sum_{j=0}^{b}\frac{(-1)^j\binom bj}{r+a+2j+1}.
+\]
+In the degree-14 Bernstein basis of \([0,1]\), the coefficients of
+\(s c(s)-s/20+\gamma s^3\), multiplied by \(10^5\) and rounded down, are
+\[
+ (917,670,470,316,204,131,91,79,88,109,134,152,152,118,30).
+\]
+For a polynomial \(\sum_j p_j s^j\) these coefficients before rescaling
+are \(\sum_{j\le a}p_j\binom aj/\binom{14}j\), \(0\le a\le14\).
+The exact smallest coefficient is \(\kappa=339259/1107025920\); it is the last coefficient, equal to the polynomial at \(s=1\). The Bernstein weights are nonnegative and sum to one. Hence
+\[
+ s c(s)-s/20+\gamma s^3\ge\kappa\ge s\kappa \qquad(0\le s\le1),
+\]
+where the left side at zero denotes its polynomial extension. For \(s>0\) this gives \(c(s)\ge a-\gamma s^2>0\), proving the thinning claim. At \(s=1\) equality holds, so increasing the same additive constant would require a switch probability above one for orthogonal rays. The supplementary Lean files derive the power coefficients from the finite moment sum and prove the Bernstein inequality on the entire interval. The two exact-arithmetic scripts also check the coefficients, one by direct Haar integration.
+
+\section{Two further bounds}
+\paragraph{An elementary protocol.}
+Set \(H=0,\ \lambda=4/5\) and use \(1+y+y^2\) instead of \(1+y\) in \(B_j\). Its trace is now \(1-ky^4\), so the proposals again form a subdistribution.
+The same calculation, extending the inner sum through \(i=2\), gives
+\(s(c(s)-523/11200)=(1-s)P(s)/448000\), where
+\[
+ P(s)=1680-12072s+26379s^2+s^3(10251-555s-555s^2)>0
+ \quad (0\le s\le1).
+\]
+The quadratic has negative discriminant. Thinning each switch to this common
+coefficient gives visibility \(4369/11200\) using only Haar integration.
+\paragraph{The Hesse SIC orbit.}
+The entire unitary orbit of the nine-ray Hesse SIC has a common Haar parent
+even at \(v=17/32>5/12\). In each rotated frame, output the ray of largest
+overlap \(M=\max_i\tr(P_\psi P_i)\). Ties have measure zero. Its symmetry group
+is transitive on ordered pairs of distinct rays
+\cite{zhu}. Consequently the output effect
+for \(i\) has one trace pairing with \(P_i\) and a common pairing with all
+other rays. The nine SIC projectors are a basis, so the effect lies in
+\(\operatorname{span}\{I,P_i\}\). Transitivity fixes the trace and summing
+the winning overlaps gives visibility \((3\E M-1)/2\).
+Writing \(x_i=\tr(P_\psi P_i)\), the regular simplex of traceless matrices
+\(P_i-I/3\) gives \(\sum x_i^2=3/2\), while \(\sum x_i=3\). Thus \(M\ge1/2\).
+For \(t\ge3/4\) the caps \(x_i>t\) are disjoint because
+\(\|P_i+P_j\|=3/2\). Each cap has mass \((1-t)^2\).
+Monotonicity of the tail on \([1/2,3/4]\) gives
+\(\E M\ge1/2+(1/4)(9/16)+\int_{3/4}^1 9(1-t)^2\,dt=11/16\).
+Additional coin noise supplies the stated visibility.
+
+\paragraph{Acknowledgment.} I used OpenAI Codex to assist with literature searches, developing and checking the proofs, and preparing this manuscript.
+\small
+\begin{thebibliography}{9}
+\bibitem{almeida} M. L. Almeida, S. Pironio, J. Barrett, G. T\'oth and A. Ac\'in, \href{https://arxiv.org/abs/quant-ph/0703018}{Noise robustness of the nonlocality of entangled quantum states}, Phys. Rev. Lett. \textbf{99}, 040403 (2007).
+\bibitem{wiseman} H. M. Wiseman, S. J. Jones and A. C. Doherty, \href{https://arxiv.org/abs/quant-ph/0612147}{Steering, entanglement, nonlocality, and the EPR paradox}, Phys. Rev. Lett. \textbf{98}, 140402 (2007).
+\bibitem{renner} M. J. Renner, \href{https://arxiv.org/abs/2309.12290}{Compatibility of generalized noisy qubit measurements}, Phys. Rev. Lett. \textbf{132}, 250202 (2024).
+\bibitem{jia} Y. Jia, F. Guo, M. Li, H. Dong and F. Gao, \href{https://doi.org/10.1002/qute.70348}{A general physics-informed machine learning method for determining the steerability of arbitrary entangled states}, Adv. Quantum Technol. \textbf{9}, e70348 (2026). \href{https://arxiv.org/html/2512.21848v2#S5.SS2}{Qutrit results in the preprint}.
+\bibitem{zhu} H. Zhu, \href{https://arxiv.org/abs/1412.1099}{Super-symmetric informationally complete measurements}, Ann. Phys. \textbf{362}, 311--326 (2015).
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,155 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=25mm,top=21mm,bottom=23mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{23,61,105}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,pdfencoding=auto]{hyperref}
+\hypersetup{pdfauthor={Erfan Oliaei},pdftitle={The sharp universal efficiency for predicting the conclusive outcomes of lossy qubit measurements}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Id}{I}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\dd}{\,\mathrm d}
+\DeclareMathOperator{\Poi}{Poi}
+\newcommand{\ack}{\paragraph*{Acknowledgment.} I used OpenAI Codex to assist with literature searches, developing and checking the proofs, and preparing this manuscript.}
+\raggedbottom
+\setlength{\emergencystretch}{1.5em}
+\title{The sharp universal efficiency for predicting\protect\\ the conclusive outcomes of lossy qubit measurements}
+\author{Erfan Oliaei}
+\date{25 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+How much loss permits a classical record to predict every detected sign of a qubit projective measurement, when a residual quantum system may still determine whether the detector clicks? For arbitrary finite menus of axes, the sharp universal efficiency is \(0.5409801343\ldots\). It is the maximum of an explicit one-variable function. Every finite menu admits a strictly higher efficiency. For the worst menu of at most \(N\) axes, we bound the excess below by a constant times \(N^{-4}\) and above by a constant times \(N^{-1}\). We also characterize the full two-setting efficiency region and show where the proposed double-cone bound is strictly improvable.
+\end{abstract}
+
+\section{A classical sign and a quantum click}
+
+Write \(P_n=(I+n\cdot\sigma)/2\) for the rank-one qubit projector in Bloch direction \(n\in S^2\). Setting \(i\) has conclusive effects \(\eta_iP_{n_i},\eta_iP_{-n_i}\) and inconclusive effect \((1-\eta_i)I\). We use partial-outcome joint measurability as defined by Lobo, Balanz\'o-Juand\'o and Pironio \cite[Def.~2 and Sec.~IV.B(c)]{LBP}, following the partial-measurement framework of \cite{Masini}. A classical record \(c\) specifies the sign \(s_{ci}\in\{-1,1\}\) for every setting. After the setting is revealed, a residual quantum system determines whether that sign is reported.
+
+In effects, a simulation consists of \(E_c\ge0\), \(\sum_c E_c=I\), and click effects \(0\le F_{ci}\le E_c\) with
+\[
+        \sum_{c:s_{ci}=s}F_{ci}=\eta_iP_{s n_i}.
+\]
+These conditions also suffice operationally. Use instrument operators \(\sqrt{E_c}\) and, on their supports, the conditional click effect \(E_c^{-1/2}F_{ci}E_c^{-1/2}\). Records with the same sign tuple may be grouped. For a finite menu \(\mathcal N\), let \(\eta(\mathcal N)\) be the maximal common efficiency. The maximum exists by compactness after grouping. Let \(\eta_\infty\) be its infimum over finite nonempty menus.
+
+\begin{theorem}\label{univ}
+With \(A(0)=1/2\) and \(A(1)=0\), put
+\[
+ A(r)=-\frac{1-r^2}{2r}\log(1-r)\quad (0<r<1).
+\]
+Then \(\eta_\infty=C:=A(r_*)=0.5409801343\ldots\), where \(r_*=0.3067905492\ldots\) is the unique solution in \((0,1)\) of
+\[
+                 r(1+r)=(1+r^2)\log\frac1{1-r}.
+\]
+\end{theorem}
+
+\begin{proof}
+Every conclusive summand is dominated by a rank-one marginal, hence \(F_{ci}=a_{ci}P_{s_{ci}n_i}\) for \(a_{ci}\ge0\). Write a nonzero branch effect as \(E=w(I+r m\cdot\sigma)/2\), with \(w=\tr E\), \(0\le r\le1\) and \(m\in S^2\). For a given \(n\), the largest \(a\) for which \(aP_{s n}\le E\) for some sign is \(w f_r(|m\cdot n|)\), where
+\begin{equation}\label{f}
+ f_r(t)=\frac{1-r^2}{2(1-rt)}\quad (0\le r<1),\qquad
+ f_1(t)=\mathbf1_{\{t=1\}}.
+\end{equation}
+Indeed the Bloch inequality is \(w-a\ge |wrm-asn|\). For \(r<1\) squaring and taking the better sign gives \eqref{f}. At \(r=1\) range inclusion decides the question. Since each sign has total coefficient \(\eta_i\) and \(\sum_c w_c=2\), every parent obeys
+\begin{equation}\label{necessary}
+    \eta_i\le\sum_c\frac{w_c}{2} f_{r_c}(|m_c\cdot n_i|).
+\end{equation}
+
+Conversely, the two effects \((I\pm r m\cdot\sigma)/2\) give efficiency \(f_r(|m\cdot n_i|)\) at every \(i\). In the plus branch report the sign of \(m\cdot n_i\), taking \(+1\) at zero, and report the opposite sign in the minus branch. Take the largest click effect in each. With \(m\) uniform on the sphere, \(|m\cdot n_i|\) is uniform on \([0,1]\), so each sign marginal has coefficient \(\int_0^1f_r(t)\dd t=A(r)\). For each sign tuple \(c\), integrate its branch and click effects over the measurable set of pairs \((m,\pm)\) producing \(c\), summing the two branches at each \(m\). Integration preserves \(0\le F_{ci}\le E_c\), and summing the \(E_c\) integrates the identity. The sign marginals are the integrals just computed, so this gives a finite parent.
+
+For the reverse bound take a finite \(h/2\)-net on the sphere, \(0<h\le1\). Assign each point to a nearest site, breaking ties by index. The resulting measurable cells have chord diameter at most \(h\). Use the sites \(n_i\) as representatives and the normalized cell areas as weights. At a point \(x\) of cell \(i\), \(|m\cdot n_i|\le\min(1,|m\cdot x|+h)\). Monotonicity bounds the weighted average of \(f_r(|m\cdot n_i|)\) by
+\begin{equation}\label{clipped}
+ \int_0^1 f_r(\min(1,t+h))\dd t
+ =\int_h^1 f_r(t)\dd t+h f_r(1)\le A(r)+h .
+\end{equation}
+This substitution also applies to the indicator \(f_1\). Average \eqref{necessary} and let \(h\downarrow0\). Finally the series
+\[
+            A(r)=\tfrac12+\tfrac r4-\sum_{k\ge2}\frac{r^k}{k^2-1}
+\]
+can be differentiated termwise on compact subintervals of \(0\le r<1\). It gives \(A''(r)<0\) and \(A'(0)=1/4\), while \(A(1)=0<A(0)\). Thus the maximum is interior and unique. Differentiation of the logarithmic expression gives its stated equation.
+\end{proof}
+
+\section{How close can a finite menu come?}
+
+Put \(\Delta_N=\inf_{1\le|\mathcal N|\le N}\eta(\mathcal N)-C\). The infimum over finite menus in Theorem~\ref{univ} is approached at a rate bounded as follows.
+
+\begin{theorem}\label{rate}
+Let \(a=f'_{r_*}(0)\), \(L=f'_{r_*}(1)\), and \(\kappa=a^4/(64L^3)>0\). For every \(N\ge1\),
+\[
+            \Delta_N\ge\kappa N^{-4},\qquad
+            \Delta_N=O(N^{-1})\quad(N\to\infty).
+\]
+\end{theorem}
+\begin{proof}
+Write \(f=f_{r_*}\). For a menu of \(N\) axes and probability weights \(p_i\), set \(g(m)=\sum_i p_i f(|m\cdot n_i|)\) and \(M=\max_m g(m)\). Its spherical average is \(C\). Choose \(i\) with \(p_i\ge1/N\), and fix any \(m_0\perp n_i\) on the sphere. For \(0\le h\le1\) consider \(m_\pm=\sqrt{1-h^2}m_0\pm h n_i\). The function \(x\mapsto f(|x|)\) on \([-1,1]\) is convex and \(L\)-Lipschitz. For each term other than \(i\), Jensen's inequality bounds the average at \(m_\pm\) below by its value at \(m_0\) minus \(Lh^2\), since \(1-\sqrt{1-h^2}\le h^2\). The \(i\)th term gains at least \(a h\) before weighting. Hence
+\[
+            M-g(m_0)\ge p_i a h-Lh^2.
+\]
+Take \(h=p_i a/(2L)\le1/2\) and denote the resulting lower bound by \(D=p_i^2a^2/(4L)\). The bound holds at every point on the equator \(n_i^\perp\). A point \(m\) at height \(z=|m\cdot n_i|\) lies within chord distance \(2z\) of a nearest equatorial point. As \(g\) is \(L\)-Lipschitz, \(M-g(m)\ge(D-2Lz)_+\). Integrating the uniform variable \(z\) gives
+\[
+           M-C\ge D^2/(4L)\ge\kappa N^{-4}.
+\]
+The bound \(D/(2L)\le1\) follows from \(a\le L\).
+
+Let \(K\) be the convex hull of the vectors \((f(|m\cdot n_i|))_{i=1}^N\). The generating image of the sphere is compact, so its convex hull in \(\mathbb R^N\) is compact. Every point of \(K\) is achieved by a mixture of the two-branch constructions. The finite-dimensional minimax theorem applies to the continuous bilinear payoff \(p\cdot v\) on the two compact convex sets, the probability simplex and \(K\). Its minimum over \(p\) is \(\min_i v_i\), and its maximum over \(K\) equals the maximum over generating directions. Thus
+\[
+       \max_{v\in K}\min_i v_i
+       =\min_{p\in\Delta^{N-1}}\max_{m\in S^2}g(m)
+       \ge C+\kappa N^{-4}.
+\]
+At most \(N+1\) directions suffice by Carath\'eodory's theorem. Setting-dependent thinning of clicks equalizes the efficiencies. Repeating an axis covers menus of size less than \(N\).
+
+For the upper bound use a maximal \(h\)-separated set of sites on the sphere in chord distance, with \(h=4/\sqrt N\) and \(N\) large. The disjoint open caps of chord radius \(h/2\) have normalized area \(h^2/16\), so there are at most \(N\) sites. Their nearest-site cells cover the sphere with radius \(h\). In cell \(i\), let \(b_i\) be the mean of the unit vectors, \(\lambda_i\) its normalized area, and \(n_i=b_i/|b_i|\). Dotting with its site gives \(|b_i|\ge1-h^2/2\). Every point of the cell lies within \(2h+h^2/2\le3h\) of \(n_i\).
+
+Fix \(R=(1+r_*)/2\). For \(r\le R\), \(x\mapsto f_r(|m\cdot x|)\) is convex on the unit ball and uniformly Lipschitz there, with a constant \(L_R<\infty\) from \eqref{f}. Jensen in each cell thus gives
+\[
+ \sum_i\lambda_i f_r(|m\cdot n_i|)
+ \le \sum_i\lambda_i f_r(|m\cdot b_i|)+L_Rh^2/2
+ \le A(r)+L_Rh^2/2 .
+\]
+For \(R<r\le1\), apply \eqref{clipped} with \(3h\) in place of \(h\), taking \(N\) sufficiently large that \(3h\le1\). The sum is at most \(A(r)+3h\le A(R)+3h<C\) for large \(N\). Averaging \eqref{necessary} with the weights \(\lambda_i\) now gives \(\eta(\mathcal N)\le C+L_Rh^2/2\).
+\end{proof}
+
+\newpage
+\section{Two settings and the double-cone bound}
+
+\begin{proposition}\label{two}
+Orient two axes so that \(n_1\cdot n_2\ge0\). Efficiencies \(0\le\eta_1,\eta_2\le1\) are attainable together precisely when
+\[
+                  |\eta_1 n_1-\eta_2 n_2|\le 2-\eta_1-\eta_2 .
+\]
+\end{proposition}
+\begin{proof}
+Write a branch as \((wI+v\cdot\sigma)/2\) with click coefficients \(a,b\) and signs \(s,t\). Then
+\[
+ |a n_1-b n_2|\le |as n_1-bt n_2|
+ \le |as n_1-v|+|v-bt n_2|\le2w-a-b .
+\]
+Sum over branches, using \(\sum a=2\eta_1,\sum b=2\eta_2,\sum w=2\). Conversely, the displayed criterion says the balls with centers \(\eta_i n_i\) and radii \(1-\eta_i\) intersect. Any common \(v\) satisfies \(|v|\le1\). Use the two branch effects \((I\pm v\cdot\sigma)/2\), each with click effect \(\eta_i P_{\pm n_i}\). Ball membership is precisely the required domination.
+\end{proof}
+
+For two axes making the smaller angle \(\theta\), the critical common efficiency is \(1/(1+\sin(\theta/2))\). For a general menu, define \(\theta=2\arccos(\max_m\min_i |m\cdot n_i|)\), the aperture of its smallest containing double cone. Lobo et al.\ prove sufficiency of the same expression for general menus and ask about sharpness \cite[Eq.~(20) and discussion following Eq.~(35)]{LBP}. Theorem~\ref{univ} strictly improves it whenever
+\[
+               \theta>2\arcsin(C^{-1}-1)=2.02627\ldots
+               \quad\text{radians}.
+\]
+For an exact example take three coplanar axes at angles \(0,\pi/3,2\pi/3\). Their best minimum absolute cosine is \(1/2\), since one of the three perpendicular lines lies within \(\pi/6\) of the planar projection of any candidate direction, and an axis direction attains \(1/2\). Thus \(\theta=2\pi/3\). With \(r=2-\sqrt3\), strict Jensen gives \(C\ge A(r)>f_r(1/2)=4-2\sqrt3\), the cone bound at this aperture.
+
+\ack
+\begin{thebibliography}{9}
+\bibitem{LBP} E. P. Lobo, M. Balanz\'o-Juand\'o and S. Pironio, \href{https://arxiv.org/abs/2605.16151}{Generalized measurement incompatibility}, arXiv:2605.16151 (2026).
+\bibitem{Masini} M. Masini, M. Ioannou, N. Brunner, S. Pironio and P. Sekatski, \href{https://doi.org/10.22331/q-2024-12-23-1574}{Joint-measurability and quantum communication with untrusted devices}, \emph{Quantum} \textbf{8} (2024), 1574.
+\end{thebibliography}
+\end{document}

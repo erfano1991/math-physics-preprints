@@ -1,0 +1,161 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=25mm,top=21mm,bottom=23mm]{geometry}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{23,61,105}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,pdfencoding=auto]{hyperref}
+\hypersetup{pdfauthor={Erfan Oliaei},pdftitle={Basis measurements and a spectral formula for optimal pure-state exclusion}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Id}{I}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\dd}{\,\mathrm d}
+\DeclareMathOperator{\Poi}{Poi}
+\newcommand{\ack}{\paragraph*{Acknowledgment.} I used OpenAI Codex to assist with literature searches, developing and checking the proofs, and preparing this manuscript.}
+\raggedbottom
+\setlength{\emergencystretch}{1.5em}
+\title{Basis measurements and a spectral formula\protect\\ for optimal pure-state exclusion}
+\author{Erfan Oliaei}
+\date{26 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For \(n\) pure quantum states in complex dimension \(d\ge n\), a measurement in an orthonormal basis attains the minimum probability of incorrectly excluding the prepared state. This includes perfect exclusion and extends the three-state theorem of Molina to arbitrary dimension. For any number of states and any positive priors we express the minimum error by optimizing a function of the eigenvalues of a single weighted state mixture over a probability simplex. For qutrits, perfect exclusion reduces to a minimum-purity test on the convex hull of the preparations. Under the stronger convention requiring every label to occur, adjoining one pure state always suffices in every dimension \(d\ge2\).
+\end{abstract}
+
+\section{Optimal exclusion}
+
+Let \(\rho_i=\psi_i\psi_i^*\), \(1\le i\le n\), for unit vectors in \(\C^d\) with positive priors \(p_i\) summing to one. A measurement returns a label that it rules out. Its minimum probability of naming the actual preparation is
+\begin{equation}\label{primal}
+        e=\min_{\substack{E_i\ge0\\\sum_iE_i=I}}
+                    \sum_i p_i\tr(\rho_iE_i).
+\end{equation}
+A basis measurement reads an orthonormal basis in the given ambient space and assigns a label to each outcome. Several outcomes may have the same label, and labels may be unused. This is the operational exclusion convention of Molina \cite{Molina}, who proved the case of three states in three dimensions at zero error and posed the higher-dimensional question. We use the stronger convention requiring every label to occur only in the final proposition.
+
+\begin{theorem}\label{project}
+If \(n\le d\), a basis measurement attains \(e\).
+\end{theorem}
+
+\begin{theorem}\label{formula}
+For all \(n,d\), let \(R(w)=\sum_i w_ip_i\rho_i\) for \(w_i\ge0\), \(\sum_iw_i=1\), and write \([x]_+=\max\{x,0\}\). Then
+\[
+ e=\min_w \left[2\sqrt{\lambda_{\max}(R(w))}
+                       -\tr\sqrt{R(w)}\right]_+^2.
+\]
+\end{theorem}
+
+The weights in Theorem~\ref{formula} vary independently of the fixed preparation priors. Johnston, Russo and Sikora \cite{JRS} give a Gram-matrix characterization of perfect exclusion and a spectral test for circulant Gram matrices. Diebra et al.\ \cite{Diebra} obtain analytic minimum-error formulas for group-generated pure ensembles. The expression here permits arbitrary ensembles and priors.
+
+\section{A basis that attains the optimum}
+
+On the span \(H\) of the preparations, semidefinite duality gives \(e=\max\tr Y\) subject to \(Y=Y^*\le p_i\rho_i\) for all \(i\) \cite{Bandy}. Compression to \(H\) preserves the value. Compactness gives a primal optimizer. Strict primal feasibility and a finite optimum give dual attainment by Slater's theorem. At optimality, \(\ran E_i\subseteq\ker(p_i\rho_i-Y)\). These assertions hold also with general Hermitian costs in place of \(p_i\rho_i\). Perry \cite[App.~A.2]{Perry} used complementary slackness and a full-rank dual to bound the ranks of optimal exclusion effects.
+
+\begin{lemma}\label{inertia}
+Suppose \(\tr Y>0\) and \(Y\le c_i\psi_i\psi_i^*\) for a nonempty collection of unit vectors with \(c_i>0\). Then \(Y\) has exactly one positive eigenvalue, counting multiplicity, and its kernel is perpendicular to every vector in the collection.
+\end{lemma}
+\begin{proof}
+A two-dimensional positive subspace meets \(\psi_i^\perp\), contradicting the upper bound. If \(z\in\ker Y\) had nonzero overlap with \(\psi_i\), a vector \(x+\alpha z\), with \(x\) a positive eigenvector, could be made perpendicular to \(\psi_i\) while retaining positive quadratic form.
+\end{proof}
+
+If \(e>0\), the spanning states in Lemma~\ref{inertia} make an optimal dual invertible. Each slack is strictly positive on the negative eigenspace of \(Y\), which has codimension one. Thus every \(E_i=v_iv_i^*\) has rank at most one, with \(v_i=0\) allowed. The matrix with columns \(v_i\) in a basis of \(H\) has orthonormal rows. Complete its rows to an \(n\times n\) unitary. The columns give an orthonormal basis in an \(n\)-dimensional extension of \(H\) whose projections onto \(H\) are \(v_i\). This extension fits inside \(\C^d\). Assigning any remaining basis outcomes arbitrarily gives the same error.
+
+Now suppose \(e=0\). Choose an inclusion-minimal perfectly excludable subfamily, of size \(m\), and work on its span \(H\), of dimension \(r\). A measurement on that span extends to the ambient space by assigning complementary directions any label of the subfamily. An omitted preparation then never receives its own label. We have \(m\ge2\). Let \(W=\spn\{\psi_1,\ldots,\psi_{m-1}\}\). If \(r<m\), order the states so \(W=H\). If \(r=m\), \(W\) is a hyperplane.
+
+For \(\varepsilon>0\) perturb the last cost, minimizing
+\[
+             \sum_{i=1}^m\tr(\rho_iE_i)+\varepsilon\tr E_m.
+\]
+Its optimum is positive by minimality, since zero would require \(E_m=0\) and perfect exclusion of the remaining family. Its optimal dual satisfies \(Y\le\rho_i\) for \(i<m\), \(Y\le\rho_m+\varepsilon I\), and \(\tr Y>0\). Lemma~\ref{inertia} gives \(\ker Y\subseteq W^\perp\). If \(Y\) is invertible, all slacks for \(i<m\) have nullity at most one. In the singular case \(W^\perp=\ker Y\) is a line. Each slack for \(i<m\) vanishes there, and on \(W\) it is strictly positive on the negative eigenspace of codimension one in \(W\). In both cases
+\[
+       \operatorname{rank}(P_WE_iP_W)\le1\quad(i<m).
+\]
+The last slack is strictly positive on the complement of the positive eigendirection, giving \(\operatorname{rank}E_m\le1\). Let \(\varepsilon\downarrow0\) along a convergent subsequence of optimal measurements. Comparison with any perfect measurement bounds the perturbed optimum by \(\varepsilon r\), so the limit is perfect. All the rank bounds persist. For \(W=H\), row completion as above gives the required basis using \(m\le d\).
+
+It remains to treat \(r=m\). Write \(\psi_m=u+s w\), \(u\in W\), with \(w\) a unit normal and \(s>0\). Factor \(P_WE_iP_W=v_iv_i^*\) for all \(i\), choosing \(v_m=P_Wg\) when \(E_m=gg^*\). With \(g=v_m+\alpha w\) we have \(g\perp\psi_m\) and \(\|g\|\le1\), whence
+\[
+       |\langle u,v_m\rangle|=s|\alpha|
+                        \le s\sqrt{1-\|v_m\|^2}.
+\]
+Complete the orthonormal rows of the compressed measurement on \(W\). This gives a basis \(e_1,\ldots,e_m\) of \(H\) with \(P_We_i=v_i\). The first \(m-1\) vectors exclude their labels. On the space of bases with these first exclusions set
+\[
+         F(e)=|\langle u,e_m\rangle|-s|\langle w,e_m\rangle|.
+\]
+The constructed basis satisfies \(F\le0\). A basis with \(e_1=w\) and \(e_m\in W\) satisfies \(F\ge0\). To obtain it choose \(e_2,\ldots,e_{m-1}\) successively inside \(W\) perpendicular to their states and earlier vectors, then complete in \(W\).
+
+For clarity, let \(X_j\) be the ordered orthonormal \(j\)-frames satisfying \(e_i\perp\psi_i\) for \(i\le\min(j,m-1)\). Each \(X_j\) is a closed subset of a finite product of unit spheres and is compact Hausdorff. The continuous coordinate projection \(X_j\to X_{j-1}\) forgets the last vector. The fiber of the map forgetting vector \(j<m\) is the unit sphere perpendicular to the previous \(j-1\) vectors and \(\psi_j\). Its complex dimension before taking the sphere is at least \(m-j\ge1\). At stage \(m\) the fiber is the unit circle in the remaining line. Thus each fiber is nonempty and connected, so the forgetting maps are surjective. Each frame space is compact. In a separation both pieces are compact, hence their images are closed. The images are disjoint because a connected fiber lies entirely on one side; surjectivity makes them cover the base. Induction starting at the empty frame gives connectedness. The continuous image \(F(X_m)\subset\mathbb R\) is an interval containing values of both weak signs, so it contains zero. At such a frame put \(a=\langle u,e_m\rangle\), \(b=s\langle w,e_m\rangle\), with the inner product linear in the second argument. If \(b=0\), also \(a=0\); otherwise \(-a/b\) has modulus one. Multiplying the \(w\)-component of every basis vector by this phase (by one if \(b=0\)) preserves orthonormality and the first exclusions and gives \(\langle u,e_m\rangle+s e^{i\theta}\langle w,e_m\rangle=0\). This proves Theorem~\ref{project}.
+
+\section{The spectrum of a weighted mixture}
+
+\begin{proof}[Proof of Theorem~\ref{formula}]
+Work on the span of the states. In dimension one both sides are \(\min_i p_i\). In higher dimension, if \(Y\) is invertible with precisely one positive eigenvalue and \(p>0\), then
+\begin{equation}\label{update}
+ Y\le p\psi\psi^*\quad\Longleftrightarrow\quad
+                  p\langle\psi,Y^{-1}\psi\rangle\ge1 .
+\end{equation}
+Indeed, the min--max principle keeps all but at most one eigenvalue strictly positive when \(p\psi\psi^*\) is added to \(-Y\). Thus the update is positive semidefinite exactly when its determinant is nonnegative. The determinant is \(\det(-Y)(1-p\langle\psi,Y^{-1}\psi\rangle)\), with \(\det(-Y)<0\).
+
+If \(e>0\), take an optimal dual \(Y\). As above its eigenvalues are \(a>0\) and \(-t_j<0\), with \(T=\sum_jt_j<a\) and \(e=a-T\). For any \(w\), let \(\lambda_1\ge\lambda_2\ge\cdots\) be the eigenvalues of \(R=R(w)\), and put \(S=\sum_{j>1}\sqrt{\lambda_j}\). Since \(\tr\sqrt R=\sqrt{\lambda_1}+S\), the expression inside the positive part in Theorem~\ref{formula} is \(\sqrt{\lambda_1}-S\). Averaging \eqref{update} with weights \(w_i\) gives the first inequality in
+\[
+             1\le\tr(Y^{-1}R)\le\lambda_1/a-S^2/T .
+\]
+For the second, let \(d_i=\sum_j |U_{ij}|^2\lambda_j\) be the diagonal of \(R\) in an eigenbasis of \(Y\), with \(d_1\) on its positive line. By Cauchy--Schwarz, \(\sqrt{d_i}\ge\sum_j|U_{ij}|^2\sqrt{\lambda_j}\). The columns of \(U\) have norm one and \(d_1\le\lambda_1\), so \(\sum_{i>1}\sqrt{d_i}\ge S\). A second Cauchy--Schwarz inequality gives \(\sum_{i>1}d_i/t_i\ge S^2/T\); subtract this from \(d_1/a\). It follows that \(\sqrt{\lambda_1}>S\) and
+\[
+ e\le(a-T)(\lambda_1/a-S^2/T)\le(\sqrt{\lambda_1}-S)^2 .
+\]
+The final difference is \((\sqrt{T\lambda_1/a}-S\sqrt{a/T})^2\). This proves \(e\le\min_w[\,\sqrt{\lambda_1}-S\,]_+^2\), also immediate if \(e=0\).
+
+Write \(q\) for this minimum and suppose \(q>0\). Choose a minimizing \(R\), which exists by compactness. It is full rank on the span. Otherwise mix it with a positive definite feasible mixture \(R_0\), writing \(R_x=(1-x)R+xR_0\). The old positive eigenvalues of \(R_x\) are at least \(1-x\) times their previous values and every eigenvalue is at least \(x\lambda_{\min}(R_0)\). Thus \(\tr\sqrt{R_x}\ge(1-x)\tr\sqrt R+\sqrt{x\lambda_{\min}(R_0)}\). Meanwhile \(\sqrt{\lambda_{\max}(R_x)}-\sqrt{\lambda_1}\le x\|R_0-R\|/\sqrt{\lambda_1}\) by the variational bound. For sufficiently small \(x>0\) the positive square-root gain dominates both linear terms, contradicting minimality.
+
+Let \(P\) project onto the top eigenspace and write \(\delta=\sqrt{\lambda_1}-S>0\), so \(q=\delta^2\). If \(\lambda_1=\lambda_2\), then \(S\ge\sqrt{\lambda_2}=\sqrt{\lambda_1}\), contradicting \(\delta>0\). Thus \(P\) has rank one. The gradient of the squared objective in the trace pairing is \(K=\delta(2P-I)R^{-1/2}\). Since \(2P-I\) commutes with \(R\), squares to \(I\), and satisfies \(\tr((2P-I)\sqrt R)=\delta\), we have
+\[
+          \tr(KR)=q,\qquad \tr(K^{-1})=1.
+\]
+Along the feasible segment from \(R\) to \(p_i\rho_i\), the derivative of the objective at \(R\) is \(\tr(K(p_i\rho_i-R))\ge0\). Hence \(p_i\langle\psi_i,K\psi_i\rangle\ge q\). For \(Y=qK^{-1}\) this is \(p_i\langle\psi_i,Y^{-1}\psi_i\rangle\ge1\), so \eqref{update} gives dual feasibility. Its trace is \(q\), proving \(e\ge q\). For \(q=0\) the previous upper bound already gives equality.
+\end{proof}
+
+\begin{corollary}
+For qutrit pure preparations, \(e=0\) if and only if their convex hull contains a density matrix \(\sigma\) with \(\tr(\sigma^2)\le1/2\).
+\end{corollary}
+\begin{proof}
+Normalizing \(R(w)\) ranges over the convex hull since all priors are positive. For its three eigenvalues \(\lambda_1\ge\lambda_2\ge\lambda_3\ge0\), the inequality \(\sqrt{\lambda_1}\le\sqrt{\lambda_2}+\sqrt{\lambda_3}\) says that their square roots form a possibly degenerate triangle. Heron's product has sign determined by that inequality, and equals \((\sum_j\lambda_j)^2-2\sum_j\lambda_j^2\). The claim follows, including the rank-deficient cases.
+\end{proof}
+
+In particular, if \(G_{ij}=|\langle\psi_i,\psi_j\rangle|^2\), the qutrit test is the convex quadratic inequality \(\min_{\alpha_i\ge0,\,\sum_i\alpha_i=1}\alpha^{\mathsf T}G\alpha\le1/2\). It involves only the measured pairwise fidelities.
+
+\section{When every label must occur}
+
+Heinosaari and Kerppo \cite{HK} require every exclusion label to have positive probability on at least one preparation. They show that one additional state suffices for qubits and give a bound of \(n\) additions in general dimension.
+
+\begin{proposition}
+In any complex dimension \(d\ge2\), every finite nonempty set of pure states can be made perfectly excludable in this stronger sense by adjoining at most one pure state. The bound is sharp.
+\end{proposition}
+\begin{proof}
+A singleton needs one orthogonal partner. Otherwise work on the span of the distinct rays, of dimension at least two. Set \(S=\sum_i(I-\rho_i)\), \(L=\lambda_{\max}(S)>0\), and use
+\[
+                  E_i=(I-\rho_i)/L,\qquad E_*=I-S/L.
+\]
+These positive effects sum to \(I\). Each \(E_i\) kills its own state and every nonzero effect fires on some spanning preparation. If \(E_*=0\) we are done. Otherwise \(E_*\) kills a top eigenvector of \(S\). Add that ray and assign it \(E_*\), or merge \(E_*\) into its excluding effect if it is already present. Extend the measurement arbitrarily on the orthogonal complement.
+\end{proof}
+
+\ack
+\begin{thebibliography}{9}
+\bibitem{Molina} A. Molina, \href{https://doi.org/10.22331/q-2019-01-25-117}{POVMs are equivalent to projections for perfect state exclusion of three pure states in three dimensions}, \emph{Quantum} \textbf{3} (2019), 117.
+\bibitem{Bandy} S. Bandyopadhyay, R. Jain, J. Oppenheim and C. Perry, \href{https://doi.org/10.1103/PhysRevA.89.022336}{Conclusive exclusion of quantum states}, \emph{Phys. Rev. A} \textbf{89} (2014), 022336.
+\bibitem{Perry} C. D. Perry, \href{https://discovery.ucl.ac.uk/id/eprint/1473944/}{Conclusive exclusion of quantum states and aspects of thermo-majorization}, Ph.D. thesis, University College London (2016).
+\bibitem{JRS} N. Johnston, V. Russo and J. Sikora, \href{https://doi.org/10.22331/q-2025-02-04-1622}{Tight bounds for antidistinguishability and circulant sets of pure quantum states}, \emph{Quantum} \textbf{9} (2025), 1622.
+\bibitem{Diebra} A. Diebra, S. Llorens, E. Bagan, G. Sent\'is and R. Mu\~noz-Tapia, \href{https://arxiv.org/abs/2503.02568}{Quantum state exclusion for group-generated ensembles of pure states}, \emph{Phys. Rev. Research} \textbf{8} (2026), L012001.
+\bibitem{HK} T. Heinosaari and O. Kerppo, \href{https://doi.org/10.1088/1751-8121/aad1fc}{Antidistinguishability of pure quantum states}, \emph{J. Phys. A} \textbf{51} (2018), 365303.
+\end{thebibliography}
+\end{document}
